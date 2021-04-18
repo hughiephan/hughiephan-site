@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="preview"> </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown.js/0.5.0/markdown.min.js"></script>
+    <script>
+      function Editor(input, preview) {
+        this.update = function () {
+          preview.innerHTML = markdown.toHTML(input);
+        };
+        input.editor = this;
+        this.update();
+      }
+
+      function getTextAndUpdate(){
+          var request = new XMLHttpRequest();
+          request.open('GET', 'https://raw.githubusercontent.com/thala321/implement-basic-rust/main/libp2p-rust-implementation/README.md', true);
+          request.send(null);
+          request.onreadystatechange = function () {
+              if (request.readyState === 4 && request.status === 200) {
+                  var type = request.getResponseHeader('Content-Type');
+                  console.log(request.responseText);
+                  var $ = function (id) { return document.getElementById(id); };
+                  new Editor(request.responseText, $("preview"));
+                  return request.responseText;
+              }
+          }
+      }
+
+      getTextAndUpdate();
+    </script>
+  </body>
+</html>
