@@ -1,0 +1,92 @@
+<link href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="index.css">
+
+<div class="app-container">
+  <div class="left-area">
+    <button class="btn-close-left">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-x-circle" viewBox="0 0 24 24">
+        <defs/>
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M15 9l-6 6M9 9l6 6"/>
+      </svg>
+    </button>
+
+    <div class="app-name"> </div>
+
+    <a href="index.html" class="item-link" id="pageLink">
+      <p> Main </p>
+    </a>
+    
+    <a href="course1.html" class="item-link" id="pageLink">
+      <p> Course 1 </p>
+    </a>
+
+    <a href="course2.html" class="item-link" id="pageLink">
+      <p>Course 2</p>
+    </a>
+
+    <a href="research.html" class="item-link active" id="pageLink">
+      <p>Research</p>
+    </a>
+
+  </div>
+  <div class="main-area">
+
+    <button class="btn-show-right-area">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="btn-show-left-area">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+
+
+    <section class="content-section">
+      <h1 class="section-header">Research Proposal</h1>
+      <div>
+        <div class="line-header">November 20, 2023</div>
+        <p> Robust Meta Learning for Risk-aware Recommender System </p>
+        <p> Description: Risk discrepancy in recommender system is often minimized by methods such as rebalancing, 
+          multi-tasking, adversarial or hyper-learning. Our meta model is inspired by the traditional 
+          Bayesian approach, where we need to balance between exploiting and exploring through a 
+          surrogate function. By learning a set of hyperparameters on a small unbiased dataset, 
+          these alternative hyperparameters can be injected along with the feature representation 
+          on the biased dataset. Our algorithm can also benefits from adversarial training, 
+          where we intentionally mix up the information between unbiased and biased data sets. 
+          In theory, this should make the hyperparameter more robust to bias. The surrogate model 
+          acts as an unbiased generator and the adversarial model acts as a biased generator, 
+          both playing the min-max game with the base discriminantor model. On each iteration, 
+          the discriminator must be updated with the new values ​​and backward the loss value to both generators. Experimenting with our initial design will provide insight into how we can tweak our model and remove bias information. </p>
+      </div>
+
+      <div>
+        <div class="line-header">November 20, 2023</div>
+        <p> Robust Meta Learning for Risk-aware Recommender System </p>
+        <p> Description: Risk discrepancy in recommender system is often minimized by methods such as rebalancing, 
+          multi-tasking, adversarial or hyper-learning. Our meta model is inspired by the traditional 
+          Bayesian approach, where we need to balance between exploiting and exploring through a 
+          surrogate function. By learning a set of hyperparameters on a small unbiased dataset, 
+          these alternative hyperparameters can be injected along with the feature representation 
+          on the biased dataset. Our algorithm can also benefits from adversarial training, 
+          where we intentionally mix up the information between unbiased and biased data sets. 
+          In theory, this should make the hyperparameter more robust to bias. The surrogate model 
+          acts as an unbiased generator and the adversarial model acts as a biased generator, 
+          both playing the min-max game with the base discriminantor model. On each iteration, 
+          the discriminator must be updated with the new values ​​and backward the loss value to both generators. Experimenting with our initial design will provide insight into how we can tweak our model and remove bias information. </p>
+      </div>
+
+      <h1 class="section-header">Published Research</h1>
+      <div class="line-header">November 20, 2023</div>
+      <p> Implementation of Automated Feedback System for Japanese Essays in Intermediate Education 
+        <br> Authors: Huy Thanh PHAN, Shinobu HASEGAWA, Wen GU <br>
+        <a href="https://doi.org/10.52731/liir.v003.057"> https://doi.org/10.52731/liir.v003.057 </a> <br>
+        <a href="https://iaiai.org/letters/index.php/liir/article/view/57"> https://iaiai.org/letters/index.php/liir/article/view/57</a>
+      </p>
+      </section>
+
+      
+
+  </div>
+</div>
+
+
+<script src="index.js"></script>
