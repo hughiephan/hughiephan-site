@@ -362,6 +362,11 @@
     background-color: #bbdbdd;
     color: #302d7d;
   }
+  .name-cell.c5:before {
+    content: "Course 4";
+    background-color: #bbdbdd;
+    color: #302d7d;
+  }
   .name-cell:before {
     border-radius: 4px;
     font-size: 8px;
