@@ -130,9 +130,9 @@ const HeaderLandingDocSignature = () => {
       {/* Mobile Menu Start */}
       <div className={click ? "mobile-menu  menu-open" : "mobile-menu"}>
         <div className="logo order-md-1">
-          <Link to="/">
+          {/* <Link to="/">
             <img src="images/logo/deski_06.svg" alt="brand" />
-          </Link>
+          </Link> */}
           <div className="fix-icon text-dark" onClick={handleClick}>
             <img src="images/icon/close.svg" alt="icon" />
           </div>
@@ -147,33 +147,28 @@ const HeaderLandingDocSignature = () => {
           offset={-200}
         >
           <li className="nav-item">
-            <a href="#home" className="nav-link" onClick={handleClick}>
+            <a href="/" className="nav-link" onClick={handleClick}>
               Home
             </a>
           </li>
           <li className="nav-item">
-            <a href="#product" className="nav-link" onClick={handleClick}>
-              Product
+            <a href="/#/course" className="nav-link" onClick={handleClick}>
+              Course
             </a>
           </li>
           <li className="nav-item">
-            <a href="#feature" className="nav-link" onClick={handleClick}>
-              Features
+            <a href="/#/tutorial" className="nav-link" onClick={handleClick}>
+              Tutorial
             </a>
           </li>
           <li className="nav-item">
-            <a href="#story" className="nav-link" onClick={handleClick}>
-              Stories
+            <a href="/#/research" className="nav-link" onClick={handleClick}>
+              Research
             </a>
           </li>
           <li className="nav-item">
-            <a href="#pricing" className="nav-link" onClick={handleClick}>
-              Pricing
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="#faq" className="nav-link" onClick={handleClick}>
-              FAQ’s
+            <a href="/#/about-me" className="nav-link" onClick={handleClick}>
+              About me
             </a>
           </li>
         </Scrollspy>
