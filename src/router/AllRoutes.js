@@ -104,7 +104,7 @@ import ProductDetails from "../views/inner-pages/e-commerce/ProductDetails";
 const AllRoutes = () => {
   return (
     <>
-      <ScrollTopBehaviour />
+    <ScrollTopBehaviour />
       <Routes>
         <Route path="/" element={<DocSignatureLanding />} />
         <Route path="/doc-landing" element={<DocLanding />} />

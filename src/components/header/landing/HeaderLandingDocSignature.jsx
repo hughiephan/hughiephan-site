@@ -87,27 +87,27 @@ const HeaderLandingDocSignature = () => {
                       </div>
                     </li> */}
                     <li className="nav-item">
-                      <a href="../" className="nav-link">
+                      <a href="/" className="nav-link">
                         Home
                       </a>
                     </li>
                     <li className="nav-item">
-                      <a href="../course" className="nav-link">
+                      <a href="/#/course" className="nav-link">
                         Course
                       </a>
                     </li>
                     <li className="nav-item">
-                      <a href="../tutorial" className="nav-link">
+                      <a href="/#/tutorial" className="nav-link">
                         Tutorial
                       </a>
                     </li>
                     <li className="nav-item">
-                      <a href="../research" className="nav-link">
+                      <a href="/#/research" className="nav-link">
                         Research
                       </a>
                     </li>
                     <li className="nav-item">
-                      <a href="../about-me" className="nav-link">
+                      <a href="/#/about-me" className="nav-link">
                         About me
                       </a>
                     </li>
