@@ -66,8 +66,9 @@ const HeaderLandingDocSignature = () => {
                     className="navbar-nav  main-side-nav font-gordita"
                     items={[
                       "Home",
-                      "Course",
+                      "Lesson",
                       "Tutorial",
+                      "Exercise",
                       "Research",
                       "About me"
                     ]}
@@ -92,13 +93,18 @@ const HeaderLandingDocSignature = () => {
                       </a>
                     </li>
                     <li className="nav-item">
-                      <a href="/#/course" className="nav-link">
-                        Course
+                      <a href="/#/lesson" className="nav-link">
+                        Lesson
                       </a>
                     </li>
                     <li className="nav-item">
                       <a href="/#/tutorial" className="nav-link">
                         Tutorial
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a href="/#/exercise" className="nav-link">
+                        Exercise
                       </a>
                     </li>
                     <li className="nav-item">
@@ -152,13 +158,18 @@ const HeaderLandingDocSignature = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a href="/#/course" className="nav-link" onClick={handleClick}>
-              Course
+            <a href="/#/lesson" className="nav-link" onClick={handleClick}>
+              Lesson
             </a>
           </li>
           <li className="nav-item">
             <a href="/#/tutorial" className="nav-link" onClick={handleClick}>
               Tutorial
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="/#/exercise" className="nav-link" onClick={handleClick}>
+              Exercise
             </a>
           </li>
           <li className="nav-item">

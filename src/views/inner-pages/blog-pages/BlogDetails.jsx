@@ -3,26 +3,26 @@ import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import HeaderLandingDocSignature from "../../../components/header/landing/HeaderLandingDocSignature";
 import CourseIframe from '../../CourseIframe';
-import { getCourse } from '../../FirebaseClient';
+import { getLesson } from '../../FirebaseClient';
 
 
-const CourseDetails = () => {
-  const { courseId } = useParams();
-  const [course, setCourse] = useState('');
+const LessonDetails = () => {
+  const { lessonId } = useParams();
+  const [lesson, setLesson] = useState('');
   
   useEffect(() => {
-    const fetchCourse = async () => {
-      const course = await getCourse(courseId)
-      setCourse(course);
+    const fetchLesson = async () => {
+      const lesson = await getLesson(lessonId)
+      setLesson(lesson);
     }
-    fetchCourse()
+    fetchLesson()
   }, []);
 
 
   return (
     <div className="main-page-wrapper p0">
       <Helmet>
-        <title>Blog Details || Deski-Saas & Software React Template</title>
+        <title>Lesson Details || Hughie Phan</title>
       </Helmet>
       {/* End Page SEO Content */}
 
@@ -47,10 +47,10 @@ const CourseDetails = () => {
         <div className="bg-wrapper ">
           <div className="container">
             <div className="col-lg-10 m-auto text-center">
-              <h6 className="page-title"> {course.course} </h6>
+              <h6 className="page-title"> {lesson.course} </h6>
               <h1 className="heading">
                 <span>
-                  {course.title}
+                  {lesson.title}
                   <img src="../images/shape/line-shape-11.svg" alt="" />
                 </span>
               </h1>
@@ -72,11 +72,12 @@ const CourseDetails = () => {
           <div className="row">
             <div className="col-xl-10 offset-xl-1 col-lg-12 feature-blog-one width-lg blog-details-post-v1">
               <div className="post-meta">
-                <div className="tag">{course.date}</div>
+                <div className="tag">{lesson.date}</div>
                 <h3 className="title">
-                  {course.title}
+                  {lesson.title}
                 </h3>
-                <CourseIframe courseIframe={course.iframe}/>
+                <p> {lesson.description} </p>
+                <CourseIframe courseIframe={lesson.iframe}/>
               </div>
               {/* /End post content  */}
             </div>
@@ -90,4 +91,4 @@ const CourseDetails = () => {
   );
 };
 
-export default CourseDetails;
+export default LessonDetails;

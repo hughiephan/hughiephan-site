@@ -6,7 +6,7 @@ const CourseIframe = (props) => {
     return (
         <div>
           <iframe
-            title="My Iframe Course"
+            title="Course Iframe"
             src={courseIframe}
             width="100%" 
             height="500px" 

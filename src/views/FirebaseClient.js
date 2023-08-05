@@ -16,32 +16,33 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const database = getDatabase();
-const courseRef = ref(database, 'course');
+const lessonRef = ref(database, 'lesson');
 const tutorialRef = ref(database, 'tutorial');
+const questionRef = ref(database, 'question');
 
-export async function getCourse(courseId) {
-    return await get(courseRef).then(function (snapshot) {
+export async function getLesson(lessonId) {
+    return await get(lessonRef).then(function (snapshot) {
         if (snapshot.exists()) {
             const data = snapshot.val();
-            return data[courseId]
+            return data[lessonId]
         } else {
-            console.log("No course data found");
+            console.log("No lesson data found");
         }
     }).catch(function (error) {
-        console.error("Error loading course data: ", error);
+        console.error("Error loading lesson data: ", error);
     });
 };
 
-export async function getAllCourse() {
-    return await get(courseRef).then(function (snapshot) {
+export async function getAllLesson() {
+    return await get(lessonRef).then(function (snapshot) {
         if (snapshot.exists()) {
             const data = snapshot.val();
             return data
         } else {
-            console.log("No course data found");
+            console.log("No lesson data found");
         }
     }).catch(function (error) {
-        console.error("Error loading course data: ", error);
+        console.error("Error loading lesson data: ", error);
     });
 };
 
@@ -58,7 +59,7 @@ export async function getTutorial(tutorialId) {
     });
 };
 
-export async function getAllTutorial(tutorialId) {
+export async function getAllTutorial() {
     return await get(tutorialRef).then(function (snapshot) {
         if (snapshot.exists()) {
             const data = snapshot.val();
@@ -70,3 +71,17 @@ export async function getAllTutorial(tutorialId) {
         console.error("Error loading tutorial data: ", error);
     });
 };
+
+export async function getAllQuestion() {
+    return await get(questionRef).then(function (snapshot) {
+        if (snapshot.exists()) {
+            const data = snapshot.val();
+            return data
+        } else {
+            console.log("No question data found");
+        }
+    }).catch(function (error) {
+        console.error("Error loading question data: ", error);
+    });
+};
+

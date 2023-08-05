@@ -31,7 +31,7 @@ import Team5 from "../views/inner-pages/pages/team/Team5";
 import Team6 from "../views/inner-pages/pages/team/Team6";
 import TeamDetailsV1 from "../views/inner-pages/pages/team/TeamDetailsV1";
 import TeamDetailsV2 from "../views/inner-pages/pages/team/TeamDetailsV2";
-import Course from "../views/inner-pages/pages/Faq";
+import Lesson from "../views/inner-pages/pages/Lesson";
 import Tutorial from "../views/inner-pages/pages/Tutorial";
 import FaqDetails from "../views/inner-pages/pages/FaqDetails";
 
@@ -64,7 +64,7 @@ import FeaturesCustomerSupport from "../views/inner-pages/features/FeaturesCusto
 import ServiceV1 from "../views/inner-pages/service/ServiceV1";
 import ServiceV2 from "../views/inner-pages/service/ServiceV2";
 import ServiceV3 from "../views/inner-pages/service/ServiceV3";
-import ServiceV4 from "../views/inner-pages/service/ServiceV4";
+import Excerise from "../views/inner-pages/service/Exercise";
 import ServiceDetails from "../views/inner-pages/service/ServiceDetails";
 
 // DOCS DROPDOWN ALL ROUTES
@@ -89,7 +89,7 @@ import BlogV3 from "../views/inner-pages/blog-pages/BlogV3";
 import BlogV4 from "../views/inner-pages/blog-pages/BlogV4";
 import BlogV5 from "../views/inner-pages/blog-pages/BlogV5";
 import BlogV6 from "../views/inner-pages/blog-pages/BlogV6";
-import CourseDetails from "../views/inner-pages/blog-pages/BlogDetails";
+import LessonDetails from "../views/inner-pages/blog-pages/BlogDetails";
 import TutorialDetails from "../views/inner-pages/blog-pages/TutorialDetails";
 
 // Not Found Page
@@ -174,7 +174,7 @@ const AllRoutes = () => {
         <Route path="/service-v1" element={<ServiceV1 />} />
         <Route path="/service-v2" element={<ServiceV2 />} />
         <Route path="/service-v3" element={<ServiceV3 />} />
-        <Route path="/service-v4" element={<ServiceV4 />} />
+        <Route path="/exercise" element={<Excerise />} />
         <Route path="/service-details" element={<ServiceDetails />} />
 
         {/* inner pages Docs   */}
@@ -199,14 +199,13 @@ const AllRoutes = () => {
         <Route path="/blog-v4" element={<BlogV4 />} />
         <Route path="/blog-v5" element={<BlogV5 />} />
         <Route path="/blog-v6" element={<BlogV6 />} />
-        <Route path="/course" element={<Course />} />
-        <Route path="/course/:courseId" element={<CourseDetails />} />
+        <Route path="/lesson" element={<Lesson />} />
+        <Route path="/lesson/:lessonId" element={<LessonDetails />} />
         <Route path="/tutorial" element={<Tutorial />} />
         <Route path="/tutorial/:tutorialId" element={<TutorialDetails />} />
-        <Route path="*" element={<NotFound />} />
 
         {/* NotFound Route */}
-        <Route path="*" element={<NotFound />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </>
   );

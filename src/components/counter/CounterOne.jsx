@@ -2,28 +2,30 @@ import React from "react";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 
-const counterUpContent = [
-  {
-    startCount: "0",
-    endCount: "13",
-    meta: "Projects",
-    colorClass: "color-one",
-  },
-  {
-    startCount: "0",
-    endCount: "3",
-    meta: "Workers",
-    colorClass: "color-two",
-  },
-  {
-    startCount: "0",
-    endCount: "123",
-    meta: "Offices",
-    colorClass: "color-three",
-  },
-];
 
-const CounterOne = () => {
+const CounterOne = (prop) => {
+  const { numQuestion } = prop
+  const counterUpContent = [
+    {
+      startCount: "0",
+      endCount: numQuestion,
+      meta: "Questions",
+      colorClass: "color-one",
+    },
+    {
+      startCount: "0",
+      endCount: "0",
+      meta: "Quiz",
+      colorClass: "color-two",
+    },
+    {
+      startCount: "0",
+      endCount: "1",
+      meta: "Topic",
+      colorClass: "color-three",
+    },
+  ];
+
   const [focus, setFocus] = React.useState(false);
   return (
     <div className="counter-info-classic">
@@ -51,7 +53,7 @@ const CounterOne = () => {
                 )}
               </CountUp>{" "}
             </span>{" "}
-            k
+            
           </h2>
           <p className="font-rubik">{val.meta}</p>
         </div>

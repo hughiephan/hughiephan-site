@@ -2,24 +2,24 @@ import React, { useEffect, useState }  from "react";
 import { Helmet } from "react-helmet";
 import HeaderLandingDocSignature from "../../../components/header/landing/HeaderLandingDocSignature";
 import { Link } from "react-router-dom";
-import { getAllCourse } from '../../FirebaseClient';
+import { getAllLesson } from '../../FirebaseClient';
 
 
 const Course = () => {
-  const [allCourse, setAllCourse] = useState('');
+  const [allCourse, setAllLesson] = useState('');
 
   useEffect(() => {
-    const fetchCourse = async () => {
-      const allCourse = await getAllCourse()
-      setAllCourse(allCourse);
+    const fetchLesson = async () => {
+      const allLesson = await getAllLesson()
+      setAllLesson(allLesson);
     }
-    fetchCourse()
+    fetchLesson()
   }, []);
 
   return (
     <div className="main-page-wrapper">
       <Helmet>
-        <title>Course || Hughie Phan</title>
+        <title>Lesson || Hughie Phan</title>
       </Helmet>
       {/* End Page SEO Content */}
 
@@ -33,7 +33,8 @@ const Course = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-9 m-auto">
-              <h2 className="font-rubik">My Courses</h2>
+              <h2 className="font-rubik">Lessons
+              </h2>
               <p className="sub-heading">
                 Build your knowledge on Neural Network and Machine Learning
               </p>
@@ -76,7 +77,7 @@ const Course = () => {
                   {allCourse && allCourse.map((course, i) => (
                     <Link
                       className="article-preview d-flex"
-                      to={`/course/${i}`}
+                      to={`/lesson/${i}`}
                       key={i}
                       data-aos="fade-up"
                       data-aos-duration="1200"
@@ -86,7 +87,7 @@ const Course = () => {
                         <h3 className="font-rubik">{course.title}</h3>
                         <div className="avatar-info">
                           {course.date} <br /> 
-                          From Course: <span> {course.course} </span>  <br/>
+                          From Course: <span> {course.course} </span> - Topic: <span> {course.topic} </span> <br/>
                           {course.description}
                         </div>
                       </div>

@@ -9,7 +9,7 @@ const DocSignatureLanding = () => {
       <Helmet>
         <title>
           {" "}
-          Courses || Hughie Phan
+          Home || Hughie Phan
         </title>
       </Helmet>
       {/* End Page SEO Content */}
