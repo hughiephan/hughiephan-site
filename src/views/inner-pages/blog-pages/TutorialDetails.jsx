@@ -25,7 +25,7 @@ const TutorialDetails = () => {
   return (
     <div className="main-page-wrapper p0">
       <Helmet>
-        <title>Blog Details || Deski-Saas & Software React Template</title>
+        <title>Tutorial Details || Hughie Phan</title>
       </Helmet>
       {/* End Page SEO Content */}
 
