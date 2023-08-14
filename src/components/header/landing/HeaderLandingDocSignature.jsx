@@ -164,7 +164,7 @@ const HeaderLandingDocSignature = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a href="/#/lesson" className="nav-link" onClick={handleClick}>
+            <a href="/#/course" className="nav-link" onClick={handleClick}>
               Course
             </a>
           </li>
