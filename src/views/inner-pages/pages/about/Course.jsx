@@ -91,7 +91,7 @@ const Course = () => {
                 For 1st, 2nd highest score submission (~ 5 students), group will get maximum: 10 points.  <br/>
                 For 3rd, 4th highest score submission (~ 5 students), group will get maximum: 9 points. <br/>
                 For 5th+ highest score submission, group will get maximum: 8 points. <br/>
-                Submit on Kaggle and send email of your code to huypt24@fe.edu.vn 
+                Submit on Kaggle and send your code to my email huypt24@fe.edu.vn 
                 
                 <br/> <br/>
                 <h3> Note </h3> <br/>
@@ -137,7 +137,7 @@ const Course = () => {
                 <h3> Submission </h3> <br/>
                 In-class submission: you will get maximum 10 points. <br/>
                 After-class submission: you will get maximum 8 points (no Q/A is needed). <br/>
-                Send email of your code to huypt24@fe.edu.vn
+                Send your code to my email huypt24@fe.edu.vn
                 
               </p>
             </div>
@@ -174,7 +174,7 @@ const Course = () => {
                 No Q/A session for report. <br/>
                 <br/> 
                 <h3> Submission </h3> <br/>
-                Send email of your code and demo video to huypt24@fe.edu.vn
+                Send your code and demo video to my email huypt24@fe.edu.vn
               </p>
             </div>
           </div>
@@ -217,6 +217,10 @@ const Course = () => {
                 18. Confronting the Partition Function <br/>
                 19. Approximate Inference <br/>
                 20. Deep Generative Models <br/>
+
+                <br/>
+                <h3> Submission </h3> <br/>
+                Send your slide to my email huypt24@fe.edu.vn <br/>
               </p>
             </div>
           </div>
