@@ -257,18 +257,17 @@
       }
 
       if (inputText.value.toLowerCase().includes("love you")) {
-        result = "Love you toooo!!"
+        result = atob("TG92ZSB5b3UgdG9vb28hIQ==")
       }
 
       if (inputText.value.toLowerCase().includes("miss")) {
-        result = "Miss you toooo!!"
+        result = atob("TWlzcyB5b3UgdG9vb28hIQ==")
       }
 
       if (inputText.value.toLowerCase().includes("miss you")) {
-        result = "Miss you alot toooo!!"
+        result = atob("TWlzcyB5b3UgYWxvdCB0b29vbyEh")
       }
 
-      console.log(hashCode("25/08/2023"))
       // You sneaky bastard!!!! Try to guess the keyword
       if (
         hashCode(inputText.value.toLowerCase()) == "1541934" ||
@@ -315,8 +314,9 @@
     response.innerHTML = `<i class="fa-solid fa-ellipsis"></i>`
     chat.appendChild(response);
     setTimeout(function () { 
-        response.innerHTML = "I know a lot of thing";  // Yes, this is the secret message!
+        response.innerHTML = atob("TWFueSBwcm9taXNlcyBhbmQgcGxhbnMgYXJlbid0IGFzIHNtb290aCBhcyB3ZSB3YW50IGZvciB0aGlzIHllYXIuIEknbGwgdHJ5IG15IGJlc3QgdG8ga2VlcCB1cCB3aXRoIG15IHByb21pc2VzIGFuZCBiZSB0aGVyZSB3aXRoIHlvdSBpbiBCcmlzYmFuZSBpbiB0aGUgbmV4dCB5ZWFy");  
         chat.appendChild(response);
+        chat.scrollTop = chat.scrollHeight;
         heart.removeEventListener('mouseenter', handleHeart); // Remove heart event
     }, 1500);
   }
