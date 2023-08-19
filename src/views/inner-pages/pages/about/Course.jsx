@@ -1,15 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-// import HeaderTwo from "../../../../components/header/HeaderTwo";
 import HeaderLandingDocSignature from "../../../../components/header/landing/HeaderLandingDocSignature";
-import CallToActionThree from "../../../../components/call-to-action/CallToActionThree";
-import FooterTwo from "../../../../components/footer/FooterTwo";
-import CopyRightTwo from "../../../../components/footer/CopyRightTwo";
-import CounterThreeColored from "../../../../components/counter/CounterThreeColored";
-import FancyTextBlockTen from "../../../../components/fancy-text-block/FancyTextBlockTen";
-import FancyFeatureSeven from "../../../../components/features/FancyFeatureSeven";
-import TeamFour from "../../../../components/team/TeamFour";
+import FancyVideoFive from "../../../../components/video/FancyVideoFive";
 
 const Course = () => {
   return (
@@ -33,12 +25,12 @@ const Course = () => {
       <div className="fancy-hero-two">
         <div className="bg-wrapper">
           <div className="container">
-            <div className="page-title">Summer 2023</div>
+            <div className="page-title">DPL302m FPT Unversity</div>
             <div className="row">
               <div className="col-xl-8 col-lg-10 col-md-10 m-auto">
                 <h1 className="heading">Deep Learning</h1>
                 <p className="sub-heading">
-                  DPL302m from FPT University 
+                By the end of this course, you'll possess a solid grasp of deep learning principles and confidence to tackle AI-related challenges.
                 </p>
               </div>
             </div>
@@ -105,8 +97,6 @@ const Course = () => {
           </div>
           {/* End .row */}
 
-
-
           <br/> <br/>
           <div className="title-style-two text-center mb-35 md-mb-10">
             <div className="row">
@@ -138,13 +128,10 @@ const Course = () => {
                 In-class submission: you will get maximum 10 points. <br/>
                 After-class submission: you will get maximum 8 points (no Q/A is needed). <br/>
                 Send your code to my email huypt24@fe.edu.vn
-                
               </p>
             </div>
           </div>
           {/* End .row */}
-
-
 
           <br/> <br/>
           <div className="title-style-two text-center mb-35 md-mb-10">
@@ -180,9 +167,6 @@ const Course = () => {
           </div>
           {/* End .row */}
           
-
-
-
           <br/> <br/>
           <div className="title-style-two text-center mb-35 md-mb-10">
             <div className="row">
@@ -220,11 +204,19 @@ const Course = () => {
 
                 <br/>
                 <h3> Submission </h3> <br/>
-                Send your slide to my email huypt24@fe.edu.vn <br/>
+                Send your slides to my email huypt24@fe.edu.vn
               </p>
             </div>
           </div>
           {/* End .row */}
+
+      <div className="fancy-text-block-eleven mt-200 md-mt-100">
+        <div className="container">
+          <FancyVideoFive />
+        </div>
+      </div>
+      {/* /.fancy-text-block-eleven */}
+
 
         </div>
       </div>

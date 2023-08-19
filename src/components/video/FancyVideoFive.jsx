@@ -9,7 +9,7 @@ const FancyVideoFive = () => {
         channel="youtube"
         autoplay
         isOpen={isOpen}
-        videoId="7e90gBu4pas"
+        videoId="qjE9vpd906o"
         onClose={() => setOpen(false)}
       />
       <div className="row align-items-center">
@@ -18,16 +18,15 @@ const FancyVideoFive = () => {
             <div className="title-style-two mb-35 md-mb-20">
               <h2>
                 <span>
-                  Service we offer is{" "}
+                  Student Projects{" "}
                   <img src="images/shape/line-shape-5.svg" alt="icon" />
                 </span>
-                specifically designed to meet your needs.
+                from our Deep Learning Course (Summer 2023)
               </h2>
             </div>
             {/* <!-- /.title-style-two --> */}
             <p>
-              With Benefits from deski Pro, Earn rewards & Score discounts on
-              purchases* Foryourself and your customers.
+            Aspiring students delved into the captivating realm of Generative AI to produce unique and imaginative projects.
             </p>
           </div>
         </div>
@@ -35,7 +34,7 @@ const FancyVideoFive = () => {
 
         <div className="col-lg-6 col-md-12 order-lg-first">
           <div className="video-box">
-            <img className="w-100" src="images/media/img_110.png" alt="media" />
+            <img className="w-100" src="images/assets/ils_12.svg" alt="media" />
             <div
               onClick={() => setOpen(true)}
               className="fancybox video-button d-flex align-items-center justify-content-center"

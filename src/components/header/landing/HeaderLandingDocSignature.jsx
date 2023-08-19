@@ -76,27 +76,23 @@ const HeaderLandingDocSignature = () => {
                     currentClassName="active"
                     offset={-500}
                   >
-                    {/* <li className="nav-item dropdown position-static">
-                      <a
-                        className="nav-link dropdown-toggle"
-                        href="#home"
-                        data-toggle="dropdown"
-                      >
-                        Home
-                      </a>
-                      <div className="dropdown-menu">
-                        <MegaMenuLanding />
-                      </div>
-                    </li> */}
+
                     <li className="nav-item">
                       <a href="/" className="nav-link">
                         Home
                       </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="/#/course" className="nav-link">
+                    </li>  
+                    <li className="nav-item dropdown">
+                      <a className="nav-link dropdown-toggle" data-toggle="dropdown">
                         Course
                       </a>
+                      <ul className="dropdown-menu">
+                          <li>
+                            <Link to="/course/dpl302m" className="dropdown-item">
+                              Deep Learning (DPL302m)
+                            </Link>
+                          </li>
+                      </ul>
                     </li>
                     <li className="nav-item">
                       <a href="/#/lesson" className="nav-link">
@@ -164,8 +160,8 @@ const HeaderLandingDocSignature = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a href="/#/course" className="nav-link" onClick={handleClick}>
-              Course
+            <a href="/#/course/dpl302m" className="nav-link" onClick={handleClick}>
+              Course (Deep Learning)
             </a>
           </li>
           <li className="nav-item">

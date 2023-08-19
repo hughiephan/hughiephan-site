@@ -147,7 +147,7 @@ const AllRoutes = () => {
         <Route path="/contact-pm" element={<ContactProjectManagement />} />
         <Route path="/about-me" element={<ContactDocumentation />} />
         {/* about us inner pages */}
-        <Route path="/course" element={<Course />} />
+        <Route path="/course/dpl302m" element={<Course />} />
         <Route path="/about-eo" element={<AboutEventOrganizer />} />
         <Route path="/about-pm" element={<AboutProjectManagement />} />
         <Route path="/about-doc" element={<AboutDocumentation />} />
