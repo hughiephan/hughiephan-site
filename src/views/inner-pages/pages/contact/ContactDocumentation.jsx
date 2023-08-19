@@ -13,7 +13,7 @@ const ContactDocumentation = () => {
     <div className="main-page-wrapper p0">
       <Helmet>
         <title>
-          Contact Documentation || Deski-Saas & Software React Template
+          About Me || Hughie Phan
         </title>
       </Helmet>
       {/* End Page SEO Content */}

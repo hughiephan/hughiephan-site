@@ -56,8 +56,8 @@ const ContactAddress = () => {
           <p className="font-rubik">Find on social media</p>
           <ul className="d-flex justify-content-center">
               <li>
-                <a href="https://github.com/hughiephan" target="_blank" rel="noreferrer">
-                  <i className="fa fa-github"></i>
+                <a href="https://www.facebook.com/groups/hughiephan" target="_blank" rel="noreferrer">
+                  <i className="fa fa-facebook"></i>
                 </a>
               </li>
               <li>
@@ -66,13 +66,18 @@ const ContactAddress = () => {
                 </a>
               </li>
               <li>
-                <a href="https://medium.com/@hughiephan" target="_blank" rel="noreferrer">
-                  <i className="fa fa-medium"></i>
+                <a href="https://github.com/hughiephan" target="_blank" rel="noreferrer">
+                  <i className="fa fa-github"></i>
                 </a>
               </li>
               <li>
                 <a href="https://www.linkedin.com/in/hughie-phan" target="_blank" rel="noreferrer">
                   <i className="fa fa-linkedin"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://medium.com/@hughiephan" target="_blank" rel="noreferrer">
+                  <i className="fa fa-medium"></i>
                 </a>
               </li>
           </ul>
