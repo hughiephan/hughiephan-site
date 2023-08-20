@@ -233,19 +233,19 @@
       }
       
       if (inputText.value.includes("yes")) {
-        result = "Yes what?"
+        result = "Yes?"
       }
 
-      if (inputText.value.toLowerCase().includes("huy")) {
-        result = "Woahh! You know my name"
+      if (inputText.value.toLowerCase().includes("huy") || inputText.value.toLowerCase().includes("hughie")) {
+        result = "Oh! That name belongs to me"
       }
 
       if (inputText.value.toLowerCase().includes("vy")) {
-        result = "Yes, it is your name"
+        result = "Haha, it is your name"
       }
 
       if (inputText.value.toLowerCase().includes("bi") || inputText.value.toLowerCase().includes("beo") || inputText.value.toLowerCase().includes("ollie")) {
-        result = "Dogs are good for your heart"
+        result = "Dogs are so cool and awesome!!!"
       }
 
       if (inputText.value.toLowerCase().includes("love")) {
@@ -313,11 +313,13 @@
         chat.appendChild(response);
         chat.scrollTop = chat.scrollHeight;
         heart.removeEventListener('mouseenter', handleHeart); // Remove heart event
+        heart.removeEventListener('click', handleHeart); // Remove heart event
     }, 1000);
 
   }
   // Listen to heart event
   heart.addEventListener('mouseenter', handleHeart);
+  heart.addEventListener('click', handleHeart);
 </script>
 
 </html>
