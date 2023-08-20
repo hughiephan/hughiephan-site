@@ -170,7 +170,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
 
 <head>
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
   <title> Hidden Page </title>
 </head>
 
@@ -188,9 +187,7 @@
 </body>
 
 <script>
-  /* 
-    Helper
-  */
+  // Helper
   hashCode = function(s) {
     return s.split("").reduce(function(a, b) {
       a = ((a << 5) - a) + b.charCodeAt(0);
@@ -198,14 +195,13 @@
     }, 0);
   }
 
-  /* 
-    Init
-  */
+  // Init
   const chat = document.getElementById("chat");
   const reviewBtn = document.getElementById("reviewBtn");
   const inputText = document.getElementById('inputText');
   const heart = document.getElementById("heart");
 
+  // Append a first response
   const response = document.createElement("div");
   response.innerHTML = `<i class="fa-solid fa-ellipsis"></i>`;
   response.classList.add("message", "review");
@@ -241,7 +237,7 @@
       }
 
       if (inputText.value.toLowerCase().includes("huy")) {
-        result = "Oh nice! You remeber my name"
+        result = "Woahh! You know my name"
       }
 
       if (inputText.value.toLowerCase().includes("vy")) {
@@ -268,21 +264,13 @@
         result = atob("TWlzcyB5b3UgYWxvdCB0b29vbyEh")
       }
 
+      if (inputText.value.toLowerCase().includes("25") || inputText.value.toLowerCase().includes("8") || inputText.value.toLowerCase().includes("2019")) {
+        result = atob("MjUtOCBpcyBvdXIgYW5uaXZlcnNhcnkgZGF0ZSEh")
+      }
+
       // You sneaky bastard!!!! Try to guess the keyword
       if (
-        hashCode(inputText.value.toLowerCase()) == "1541934" ||
-        hashCode(inputText.value.toLowerCase()) == "47799762" ||
-        hashCode(inputText.value.toLowerCase()) == "-1321185640" ||
-        hashCode(inputText.value.toLowerCase()) == "1541996" ||
-        hashCode(inputText.value.toLowerCase()) == "47801684" ||
-        hashCode(inputText.value.toLowerCase()) == "-1321126058" ||
-        hashCode(inputText.value.toLowerCase()) == "49749" ||
-        hashCode(inputText.value.toLowerCase()) == "1541531" ||
-        hashCode(inputText.value.toLowerCase()) == "-1075131776" ||
-        hashCode(inputText.value.toLowerCase()) == "630545470" ||
-        hashCode(inputText.value.toLowerCase()) == "-127661030" ||
-        hashCode(inputText.value.toLowerCase()) == "-1887567422" ||
-        hashCode(inputText.value.toLowerCase()) == "-935160614"
+        hashCode(inputText.value.toLowerCase()) == "1574"
       ) {
         heart.style.display = "block";
         result = "Yayy !! You guessed it"
@@ -314,11 +302,19 @@
     response.innerHTML = `<i class="fa-solid fa-ellipsis"></i>`
     chat.appendChild(response);
     setTimeout(function () { 
-        response.innerHTML = atob("TWFueSBwcm9taXNlcyBhbmQgcGxhbnMgYXJlbid0IGFzIHNtb290aCBhcyB3ZSB3YW50IGZvciB0aGlzIHllYXIuIEknbGwgdHJ5IG15IGJlc3QgdG8ga2VlcCB1cCB3aXRoIG15IHByb21pc2VzIGFuZCBiZSB0aGVyZSB3aXRoIHlvdSBpbiBCcmlzYmFuZSBpbiB0aGUgbmV4dCB5ZWFy");  
+        response.innerHTML = "Yêu em Vy !!"
+          + "<br /> <br />" 
+          + "Anh cảm nhận niềm vui và sự tự hào khi thấy em trưởng thành hơn qua từng ngày, mạnh mẽ vượt qua những thử thách trong môi trường mới. " 
+          + "Anh từng không hiểu tại sao em dễ khóc. Không phải vì yếu đuối mà vì những khó khăn em trải qua không phải ai cũng hiểu. 4 năm trôi qua dần hình thành nên một sợi dây liên kết mạnh mẽ, giúp anh hiểu em và lý do em khóc vì những điều nhỏ bé như vậy."
+          + "<br /> <br />"
+          + "Giữ những lời hứa khó khăn hơn so với những gì anh mong đợi, và năm nay có thể anh vẫn chưa đến được nước Úc. Nhưng mọi thứ rồi sẽ ổn thôi, 2 đứa mình hãy phấn đấu từng ngày cho những giấc mơ. Với anh, giấc mơ Úc là giấc mơ có em bên cạnh."
+          + "<br /> <br />"
+          + "Dù gặp phải những thất bại trong công việc, khó khăn trong môi trường học tập, hay cảm thấy mình không được mọi người công nhận, anh vẫn sẽ luôn yêu và tự hào về em.";  
         chat.appendChild(response);
         chat.scrollTop = chat.scrollHeight;
         heart.removeEventListener('mouseenter', handleHeart); // Remove heart event
-    }, 1500);
+    }, 1000);
+
   }
   // Listen to heart event
   heart.addEventListener('mouseenter', handleHeart);
