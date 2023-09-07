@@ -19,6 +19,20 @@ const database = getDatabase();
 const lessonRef = ref(database, 'lesson');
 const tutorialRef = ref(database, 'tutorial');
 const questionRef = ref(database, 'question');
+const courseRef = ref(database, 'course');
+
+export async function getCourse(courseId) {
+    return await get(courseRef).then(function (snapshot) {
+        if (snapshot.exists()) {
+            const data = snapshot.val();
+            return data[courseId]
+        } else {
+            console.log("No course data found");
+        }
+    }).catch(function (error) {
+        console.error("Error loading course data: ", error);
+    });
+};
 
 export async function getLesson(lessonId) {
     return await get(lessonRef).then(function (snapshot) {

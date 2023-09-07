@@ -100,6 +100,7 @@ import VrLanding from "../views/all-home-pages/VrLanding";
 import Cart from "../views/inner-pages/e-commerce/Cart";
 import Checkout from "../views/inner-pages/e-commerce/Checkout";
 import ProductDetails from "../views/inner-pages/e-commerce/ProductDetails";
+import CourseNLP from "../views/inner-pages/pages/about/CourseNLP";
 
 const AllRoutes = () => {
   return (
@@ -148,6 +149,7 @@ const AllRoutes = () => {
         <Route path="/about-me" element={<ContactDocumentation />} />
         {/* about us inner pages */}
         <Route path="/course/dpl302m" element={<Course />} />
+        <Route path="/course/nlp301c" element={<CourseNLP />} />
         <Route path="/about-eo" element={<AboutEventOrganizer />} />
         <Route path="/about-pm" element={<AboutProjectManagement />} />
         <Route path="/about-doc" element={<AboutDocumentation />} />
