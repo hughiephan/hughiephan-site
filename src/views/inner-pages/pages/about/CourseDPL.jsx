@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import HeaderLandingDocSignature from "../../../../components/header/landing/HeaderLandingDocSignature";
 import FancyVideoFive from "../../../../components/video/FancyVideoFive";
+import Content from "./Content"
+import { getCourse } from "../../../FirebaseClient"
 
-const Course = () => {
+const CourseDPL = () => {
+  const [course, setCourse] = useState('');
+
+  useEffect(() => {
+    const fetchCourse = async () => {
+      const course = await getCourse(0) // Manually get course Deep Learning
+      setCourse(course);
+    }
+    fetchCourse()
+  }, []);
+
   return (
     <div className="main-page-wrapper">
       <Helmet>
         <title>
-          Course || Hughie Phan
+          Deep Learning - Course
         </title>
       </Helmet>
       {/* End Page SEO Content */}
@@ -40,6 +52,30 @@ const Course = () => {
         {/* /.bg-wrapper */}
       </div>
       {/* /.fancy-hero-two */}
+
+      {/* =============================================
+				Fancy Text block Nine
+			==============================================  */}
+      <div className="fancy-text-block-nine mt-130 md-mt-80">
+        <div className="shapes shape-one"></div>
+        <div className="shapes shape-two"></div>
+        <div className="shapes shape-three"></div>
+        <div className="shapes shape-four"></div>
+        <div className="container">
+          <div className="title-style-two text-center mb-35 md-mb-10">
+            <div className="row">
+              <div className="col-lg-10 m-auto">
+                <p>Recommend</p>
+                <h2>Learning Path</h2>
+              </div>
+            </div>
+          </div>
+
+          { course ? <Content course={course}></Content> : null}
+
+        </div>
+      </div>
+      {/* /.fancy-text-block-nine */}
 
       {/* =============================================
 				Fancy Text block Nine
@@ -238,4 +274,4 @@ const Course = () => {
   );
 };
 
-export default Course;
+export default CourseDPL;

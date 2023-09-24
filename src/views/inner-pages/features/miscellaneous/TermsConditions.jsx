@@ -10,7 +10,7 @@ const TermsConditions = () => {
     <div className="doc-container main-page-wrapper">
       <Helmet>
         <title>
-          Research || Hughie Phan
+          Research 
         </title>
       </Helmet>
       {/* End Page SEO Content */}

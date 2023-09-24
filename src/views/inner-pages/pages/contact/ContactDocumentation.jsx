@@ -13,7 +13,7 @@ const ContactDocumentation = () => {
     <div className="main-page-wrapper p0">
       <Helmet>
         <title>
-          About Me || Hughie Phan
+          About Me 
         </title>
       </Helmet>
       {/* End Page SEO Content */}

@@ -51,6 +51,8 @@ export async function getAllLesson() {
     return await get(lessonRef).then(function (snapshot) {
         if (snapshot.exists()) {
             const data = snapshot.val();
+
+            console.log(data[0])
             return data
         } else {
             console.log("No lesson data found");

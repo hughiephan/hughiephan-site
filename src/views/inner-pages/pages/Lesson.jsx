@@ -19,7 +19,7 @@ const Course = () => {
   return (
     <div className="main-page-wrapper">
       <Helmet>
-        <title>Lesson || Hughie Phan</title>
+        <title>Lesson </title>
       </Helmet>
       {/* End Page SEO Content */}
 
@@ -33,7 +33,7 @@ const Course = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-9 m-auto">
-              <h2 className="font-rubik">Lessons
+              <h2 className="font-rubik">Lesson
               </h2>
               <p className="sub-heading">
                 Build your knowledge on Neural Network and Machine Learning

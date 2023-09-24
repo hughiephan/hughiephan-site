@@ -18,7 +18,7 @@ const Tutorial = () => {
   return (
     <div className="main-page-wrapper">
       <Helmet>
-        <title>Tutorial || Hughie Phan</title>
+        <title>Tutorial </title>
       </Helmet>
       {/* End Page SEO Content */}
 
@@ -32,7 +32,7 @@ const Tutorial = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-9 m-auto">
-              <h2 className="font-rubik">Tutorials</h2>
+              <h2 className="font-rubik">Tutorial</h2>
               <p className="sub-heading">
                 Practice your coding on Neural Network and Machine Learning
               </p>

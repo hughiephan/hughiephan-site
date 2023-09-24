@@ -25,7 +25,7 @@ const TutorialDetails = () => {
   return (
     <div className="main-page-wrapper p0">
       <Helmet>
-        <title>Tutorial Details || Hughie Phan</title>
+        <title> {tutorial && tutorial.title} - Tutorial Details</title>
       </Helmet>
       {/* End Page SEO Content */}
 

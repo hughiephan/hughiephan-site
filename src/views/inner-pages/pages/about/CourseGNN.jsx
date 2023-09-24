@@ -4,12 +4,12 @@ import HeaderLandingDocSignature from "../../../../components/header/landing/Hea
 import Content from "./Content"
 import { getCourse } from "../../../FirebaseClient"
 
-const CourseNLP = () => {
+const CourseGNN = () => {
   const [course, setCourse] = useState('');
 
   useEffect(() => {
     const fetchCourse = async () => {
-      const course = await getCourse(1) // Manually get course NLP
+      const course = await getCourse(2) // Manually get course GNN
       setCourse(course);
     }
     fetchCourse()
@@ -20,7 +20,7 @@ const CourseNLP = () => {
     <div className="main-page-wrapper">
       <Helmet>
         <title>
-          Natural Language Processing - Course
+          Graph Neural Network - Course
         </title>
       </Helmet>
       {/* End Page SEO Content */}
@@ -37,12 +37,12 @@ const CourseNLP = () => {
       <div className="fancy-hero-two">
         <div className="bg-wrapper">
           <div className="container">
-            <div className="page-title">NLP301c FPT Unversity</div>
+            <div className="page-title">Hughie Phan</div>
             <div className="row">
               <div className="col-xl-8 col-lg-10 col-md-10 m-auto">
-                <h1 className="heading">Natural Language Processing</h1>
+                <h1 className="heading">Graph Neural Network</h1>
                 <p className="sub-heading">
-                  Join our course to explore Natural Language Processing and unlock the power of human-computer interaction through language understanding and generation.
+                  Explore the fundamentals and applications of Graph Neural Network, offering insights into solving complex problems in fields like social networks, recommendation systems, and molecular chemistry.
                 </p>
               </div>
             </div>
@@ -87,4 +87,4 @@ const CourseNLP = () => {
   );
 };
 
-export default CourseNLP;
+export default CourseGNN;

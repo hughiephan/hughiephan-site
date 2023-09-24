@@ -42,7 +42,6 @@ import ContactProjectManagement from "../views/inner-pages/pages/contact/Contact
 import ContactDocumentation from "../views/inner-pages/pages/contact/ContactDocumentation";
 
 // About us inner pages
-import Course from "../views/inner-pages/pages/about/Course";
 import AboutEventOrganizer from "../views/inner-pages/pages/about/AboutEventOrganizer";
 import AboutProjectManagement from "../views/inner-pages/pages/about/AboutProjectManagement";
 import AboutDocumentation from "../views/inner-pages/pages/about/AboutDocumentation";
@@ -92,15 +91,20 @@ import BlogV6 from "../views/inner-pages/blog-pages/BlogV6";
 import LessonDetails from "../views/inner-pages/blog-pages/BlogDetails";
 import TutorialDetails from "../views/inner-pages/blog-pages/TutorialDetails";
 
+// Course
+import CourseDPL from "../views/inner-pages/pages/about/CourseDPL";
+import CourseNLP from "../views/inner-pages/pages/about/CourseNLP";
+import CourseGNN from "../views/inner-pages/pages/about/CourseGNN";
+
 // Not Found Page
 import NotFound from "../views/NotFound";
-
 import FormSurveyLanding from "../views/all-home-pages/FormSurveyLanding";
 import VrLanding from "../views/all-home-pages/VrLanding";
 import Cart from "../views/inner-pages/e-commerce/Cart";
 import Checkout from "../views/inner-pages/e-commerce/Checkout";
 import ProductDetails from "../views/inner-pages/e-commerce/ProductDetails";
-import CourseNLP from "../views/inner-pages/pages/about/CourseNLP";
+
+
 
 const AllRoutes = () => {
   return (
@@ -148,8 +152,9 @@ const AllRoutes = () => {
         <Route path="/contact-pm" element={<ContactProjectManagement />} />
         <Route path="/about-me" element={<ContactDocumentation />} />
         {/* about us inner pages */}
-        <Route path="/course/dpl302m" element={<Course />} />
-        <Route path="/course/nlp301c" element={<CourseNLP />} />
+        <Route path="/course/dpl" element={<CourseDPL />} />
+        <Route path="/course/nlp" element={<CourseNLP />} />
+        <Route path="/course/gnn" element={<CourseGNN />} />
         <Route path="/about-eo" element={<AboutEventOrganizer />} />
         <Route path="/about-pm" element={<AboutProjectManagement />} />
         <Route path="/about-doc" element={<AboutDocumentation />} />

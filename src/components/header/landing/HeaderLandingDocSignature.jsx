@@ -88,13 +88,18 @@ const HeaderLandingDocSignature = () => {
                       </a>
                       <ul className="dropdown-menu">
                           <li>
-                            <Link to="/course/dpl302m" className="dropdown-item">
+                            <Link to="/course/dpl" className="dropdown-item">
                               Deep Learning
                             </Link>
                           </li>
                           <li>
-                            <Link to="/course/nlp301c" className="dropdown-item">
+                            <Link to="/course/nlp" className="dropdown-item">
                               Natural Language
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/course/gnn" className="dropdown-item">
+                              Graph Neural Network
                             </Link>
                           </li>
                       </ul>
@@ -165,13 +170,18 @@ const HeaderLandingDocSignature = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a href="/#/course/dpl302m" className="nav-link" onClick={handleClick}>
+            <a href="/#/course/dpl" className="nav-link" onClick={handleClick}>
               Course (Deep Learning)
             </a>
           </li>
           <li className="nav-item">
-            <a href="/#/course/nlp301c" className="nav-link" onClick={handleClick}>
+            <a href="/#/course/nlp" className="nav-link" onClick={handleClick}>
               Course (NLP)
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="/#/course/gnn" className="nav-link" onClick={handleClick}>
+              Course (GNN)
             </a>
           </li>
           <li className="nav-item">

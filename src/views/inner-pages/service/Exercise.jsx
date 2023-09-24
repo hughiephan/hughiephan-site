@@ -26,7 +26,7 @@ const Exercise = () => {
   return (
     <div className="main-page-wrapper p0">
       <Helmet>
-        <title>Exercise || Hughie Phan</title>
+        <title>Exercise </title>
       </Helmet>
       {/* End Page SEO Content */}
 
