@@ -20,6 +20,7 @@ const lessonRef = ref(database, 'lesson');
 const tutorialRef = ref(database, 'tutorial');
 const questionRef = ref(database, 'question');
 const courseRef = ref(database, 'course');
+const researchRef = ref(database, 'research');
 
 export async function getCourse(courseId) {
     return await get(courseRef).then(function (snapshot) {
@@ -101,3 +102,15 @@ export async function getAllQuestion() {
     });
 };
 
+export async function getAllResearch() {
+    return await get(researchRef).then(function (snapshot) {
+        if (snapshot.exists()) {
+            const data = snapshot.val();
+            return data
+        } else {
+            console.log("No research data found");
+        }
+    }).catch(function (error) {
+        console.error("Error loading research data: ", error);
+    });
+};
