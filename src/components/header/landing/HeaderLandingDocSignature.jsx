@@ -102,6 +102,11 @@ const HeaderLandingDocSignature = () => {
                               Graph Neural Network
                             </Link>
                           </li>
+                          <li>
+                            <Link to="/course/aip" className="dropdown-item">
+                              AI Planning
+                            </Link>
+                          </li>
                       </ul>
                     </li>
                     <li className="nav-item">
@@ -182,6 +187,11 @@ const HeaderLandingDocSignature = () => {
           <li className="nav-item">
             <a href="/#/course/gnn" className="nav-link" onClick={handleClick}>
               Course (GNN)
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="/#/course/aip" className="nav-link" onClick={handleClick}>
+              Course (AIP)
             </a>
           </li>
           <li className="nav-item">

@@ -95,6 +95,7 @@ import TutorialDetails from "../views/inner-pages/blog-pages/TutorialDetails";
 import CourseDPL from "../views/inner-pages/pages/about/CourseDPL";
 import CourseNLP from "../views/inner-pages/pages/about/CourseNLP";
 import CourseGNN from "../views/inner-pages/pages/about/CourseGNN";
+import CourseAIP from "../views/inner-pages/pages/about/CourseAIP";
 
 // Not Found Page
 import NotFound from "../views/NotFound";
@@ -155,6 +156,7 @@ const AllRoutes = () => {
         <Route path="/course/dpl" element={<CourseDPL />} />
         <Route path="/course/nlp" element={<CourseNLP />} />
         <Route path="/course/gnn" element={<CourseGNN />} />
+        <Route path="/course/aip" element={<CourseAIP />} />
         <Route path="/about-eo" element={<AboutEventOrganizer />} />
         <Route path="/about-pm" element={<AboutProjectManagement />} />
         <Route path="/about-doc" element={<AboutDocumentation />} />
