@@ -42,7 +42,7 @@ const CourseAIP = () => {
               <div className="col-xl-8 col-lg-10 col-md-10 m-auto">
                 <h1 className="heading">AI Planning</h1>
                 <p className="sub-heading">
-                  Introduce the fundamental principles and techniques used in designing intelligent systems capable of making decisions and actions based on predefined goals and constraints.
+                  Not exactly a course. I'm just researching a little bit on this topic.
                 </p>
               </div>
             </div>
