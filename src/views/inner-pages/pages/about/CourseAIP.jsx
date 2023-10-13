@@ -9,7 +9,7 @@ const CourseAIP = () => {
 
   useEffect(() => {
     const fetchCourse = async () => {
-      const course = await getCourse(3) // Manually get course GNN
+      const course = await getCourse(3) // Manually get course AIP
       setCourse(course);
     }
     fetchCourse()
