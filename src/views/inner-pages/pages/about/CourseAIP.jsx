@@ -42,7 +42,7 @@ const CourseAIP = () => {
               <div className="col-xl-8 col-lg-10 col-md-10 m-auto">
                 <h1 className="heading">AI Planning</h1>
                 <p className="sub-heading">
-                  Not exactly a course. I'm just researching a little bit on this topic.
+                  AI planning is a subfield of AI that focuses on the development of intelligent systems capable of generating sequences of actions or strategies to achieve specific goals or solve complex problems.
                 </p>
               </div>
             </div>

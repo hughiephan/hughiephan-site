@@ -42,7 +42,7 @@ const CourseNLP = () => {
               <div className="col-xl-8 col-lg-10 col-md-10 m-auto">
                 <h1 className="heading">Natural Language Processing</h1>
                 <p className="sub-heading">
-                  Join our course to explore Natural Language Processing and unlock the power of human-computer interaction through language understanding and generation.
+                  Join this course to explore Natural Language Processing and unlock the power of human-computer interaction through language understanding and generation.
                 </p>
               </div>
             </div>

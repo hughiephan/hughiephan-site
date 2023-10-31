@@ -65,13 +65,12 @@ const HeaderLandingDocSignature = () => {
                   <Scrollspy
                     className="navbar-nav  main-side-nav font-gordita"
                     items={[
-                      "Home",
+                      "About me",
                       "Course",
                       "Lesson",
                       "Tutorial",
                       "Exercise",
                       "Research",
-                      "About me"
                     ]}
                     currentClassName="active"
                     offset={-500}
@@ -82,6 +81,8 @@ const HeaderLandingDocSignature = () => {
                         Home
                       </a>
                     </li>  
+
+
                     <li className="nav-item dropdown">
                       <a className="nav-link dropdown-toggle" data-toggle="dropdown">
                         Course
@@ -109,29 +110,31 @@ const HeaderLandingDocSignature = () => {
                           </li>
                       </ul>
                     </li>
-                    <li className="nav-item">
-                      <a href="/#/lesson" className="nav-link">
-                        Lesson
+                    <li className="nav-item dropdown">
+                      <a className="nav-link dropdown-toggle" data-toggle="dropdown">
+                        Teaching
                       </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="/#/tutorial" className="nav-link">
-                        Tutorial
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="/#/exercise" className="nav-link">
-                        Exercise
-                      </a>
+                      <ul className="dropdown-menu">
+                          <li>
+                            <Link to="/lesson" className="dropdown-item">
+                              Lesson
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/tutorial" className="dropdown-item">
+                              Tutorial
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/exercise" className="dropdown-item">
+                              Exercise
+                            </Link>
+                          </li>
+                      </ul>
                     </li>
                     <li className="nav-item">
                       <a href="/#/research" className="nav-link">
                         Research
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="/#/about-me" className="nav-link">
-                        About me
                       </a>
                     </li>
                     {/* <li className="nav-item">
@@ -176,7 +179,7 @@ const HeaderLandingDocSignature = () => {
           </li>
           <li className="nav-item">
             <a href="/#/course/dpl" className="nav-link" onClick={handleClick}>
-              Course (Deep Learning)
+              Course (DPL)
             </a>
           </li>
           <li className="nav-item">
@@ -212,11 +215,6 @@ const HeaderLandingDocSignature = () => {
           <li className="nav-item">
             <a href="/#/research" className="nav-link" onClick={handleClick}>
               Research
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="/#/about-me" className="nav-link" onClick={handleClick}>
-              About me
             </a>
           </li>
         </Scrollspy>

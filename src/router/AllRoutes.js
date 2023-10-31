@@ -112,7 +112,7 @@ const AllRoutes = () => {
     <>
     <ScrollTopBehaviour />
       <Routes>
-        <Route path="/" element={<DocSignatureLanding />} />
+        {/* <Route path="/" element={<DocSignatureLanding />} /> */}
         <Route path="/doc-landing" element={<DocLanding />} />
         <Route path="/doc-signature" element={<DocSignatureLanding />} />
         <Route path="/project-management" element={<ProjectManagement />} />
@@ -151,7 +151,7 @@ const AllRoutes = () => {
         <Route path="/contact-cs" element={<ContactCustomerSupport />} />
         <Route path="/contact-eo" element={<ContactEventOrganizer />} />
         <Route path="/contact-pm" element={<ContactProjectManagement />} />
-        <Route path="/about-me" element={<ContactDocumentation />} />
+        <Route path="/" element={<ContactDocumentation />} />
         {/* about us inner pages */}
         <Route path="/course/dpl" element={<CourseDPL />} />
         <Route path="/course/nlp" element={<CourseNLP />} />
