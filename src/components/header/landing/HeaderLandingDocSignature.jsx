@@ -132,16 +132,23 @@ const HeaderLandingDocSignature = () => {
                           </li>
                       </ul>
                     </li>
+                    <li className="nav-item dropdown">
+                      <a className="nav-link dropdown-toggle" data-toggle="dropdown">
+                        Student
+                      </a>
+                      <ul className="dropdown-menu">
+                          <li>
+                            <Link to="/student" className="dropdown-item">
+                              Andy
+                            </Link>
+                          </li>
+                      </ul>
+                    </li>
                     <li className="nav-item">
                       <a href="/#/research" className="nav-link">
                         Research
                       </a>
                     </li>
-                    {/* <li className="nav-item">
-                      <a href="#faq" className="nav-link">
-                        FAQ’s
-                      </a>
-                    </li> */}
                   </Scrollspy>
                 </div>
               </div>
@@ -210,6 +217,11 @@ const HeaderLandingDocSignature = () => {
           <li className="nav-item">
             <a href="/#/exercise" className="nav-link" onClick={handleClick}>
               Exercise
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="/#/student" className="nav-link" onClick={handleClick}>
+              Student (Andy)
             </a>
           </li>
           <li className="nav-item">

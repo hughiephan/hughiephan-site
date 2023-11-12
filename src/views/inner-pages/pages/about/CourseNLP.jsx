@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import HeaderLandingDocSignature from "../../../../components/header/landing/HeaderLandingDocSignature";
-import Content from "./Content"
+import LearningPath from "../../../core/LearningPath"
 import { getCourse } from "../../../FirebaseClient"
 
 const CourseNLP = () => {
@@ -71,7 +71,7 @@ const CourseNLP = () => {
             </div>
           </div>
 
-          { course ? <Content course={course}></Content> : null}
+          { course && <LearningPath course={course}></LearningPath> }
 
         </div>
       </div>

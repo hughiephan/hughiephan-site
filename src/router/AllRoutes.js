@@ -79,7 +79,7 @@ import PortfolioV2 from "../views/inner-pages/portfolio/PortfolioV2";
 import PortfolioV3 from "../views/inner-pages/portfolio/PortfolioV3";
 import PortfolioV4 from "../views/inner-pages/portfolio/PortfolioV4";
 import PortfolioV5 from "../views/inner-pages/portfolio/PortfolioV5";
-import PortfolioDetailsV1 from "../views/inner-pages/portfolio/PortfolioDetailsV1";
+import Student from "../views/inner-pages/portfolio/Student";
 
 // BLOGS DROPDOWN ALL ROUTES
 import BlogV1 from "../views/inner-pages/blog-pages/BlogV1";
@@ -199,7 +199,7 @@ const AllRoutes = () => {
         <Route path="/grid-three-col" element={<PortfolioV3 />} />
         <Route path="/gallery-slider" element={<PortfolioV4 />} />
         <Route path="/grid-single" element={<PortfolioV5 />} />
-        <Route path="/portfolio-details-v1" element={<PortfolioDetailsV1 />} />
+        <Route path="/student" element={<Student />} />
 
         {/* inner Blog pages Dropdown   */}
         <Route path="/blog-v1" element={<BlogV1 />} />
