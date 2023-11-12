@@ -12,7 +12,7 @@ const PortfolioV5 = () => {
 
   useEffect(() => {
     const fetchStudent = async () => {
-      const student = await getStudent(0)
+      const student = await getStudent(0) // Hard Code for Andy
       setStudent(student);
     }
     fetchStudent()
