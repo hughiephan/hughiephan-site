@@ -6,13 +6,13 @@ import StudentInfo from "./StudentInfo";
 import { getStudent } from '../../FirebaseClient';
 import LearningPath from "../../core/LearningPath"
 
-const PortfolioV5 = () => {
+const Student = () => {
   const { studentId } = useParams();
   const [student, setStudent] = useState('');
 
   useEffect(() => {
     const fetchStudent = async () => {
-      const student = await getStudent(0) // Hard Code for Andy
+      const student = await getStudent(studentId)
       setStudent(student);
     }
     fetchStudent()
@@ -85,4 +85,4 @@ const PortfolioV5 = () => {
   );
 };
 
-export default PortfolioV5;
+export default Student;

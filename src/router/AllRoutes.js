@@ -199,7 +199,7 @@ const AllRoutes = () => {
         <Route path="/grid-three-col" element={<PortfolioV3 />} />
         <Route path="/gallery-slider" element={<PortfolioV4 />} />
         <Route path="/grid-single" element={<PortfolioV5 />} />
-        <Route path="/student" element={<Student />} />
+        <Route path="/student/:studentId" element={<Student />} />
 
         {/* inner Blog pages Dropdown   */}
         <Route path="/blog-v1" element={<BlogV1 />} />
