@@ -1,8 +1,4 @@
-# Deski-Saas & Software React Template
-
-## Description
-
-Setup Procedure
+# Hughie Phan Personal Website
 
 ## Project setup
 

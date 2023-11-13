@@ -171,7 +171,7 @@ const AllRoutes = () => {
         <Route path="/research" element={<TermsConditions />} />
         <Route path="/solution-management" element={<SolutionMangement />} />
         <Route
-          path="/product-customer-support"
+          path="/book"
           element={<ProductCustomerSupport />}
         />
         <Route

@@ -18,26 +18,26 @@ const App = () => {
   return (
     <>
       <Helmet>
-        <title>Deski - Saas & Software React Template</title>
+        <title>Hughie Phan</title>
         <meta property="og:site_name" content="deski" />
         <meta
           property="og:url"
-          content="https://themeforest.net/user/ib-themes"
+          content="https://hughiephan.co"
         />
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Deski: Creative Saas & Software React Template"
+          content="Hughie Phan Personal Website"
         />
         <meta
           name="keywords"
-          content="agency, bootstrap 5, business, clean, corporate, creative, fullpage, minimal, modern, multipurpose, parallax, personal, photography, portfolio, showcase, Digital marketing agency, Digital marketing company, Digital marketing services, sass, software company"
+          content="AI, Machine Learning, Deep Learning, Research, Personal AI Teacher, Book, Study, Neural Network, Hughie Phan"
         />
         <meta
           name="description"
-          content="Deski is a creative saas and software React template designed for saas and software Agency websites."
+          content="I'm Huy Phan, but you can call me Hughie. I'm an AI Lecturer at FPT University and my research is centered on creating next-generation AI models. On this website, you can discover the courses I'm currently teaching and my research as well. Feel free to contact me or just say hi!"
         />
-        <meta name="description" content="Portfolio & Agency React Template" />
+        <meta name="description" content="Hughie Phan Personal Website" />
       </Helmet>
       {/* End Seo Helmt */}
 
