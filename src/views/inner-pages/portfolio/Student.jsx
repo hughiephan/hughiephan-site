@@ -64,6 +64,8 @@ const Student = () => {
                     <p> {student && student.prerequisite} </p>
                     <h4>Expectation</h4>
                     <p> {student && student.expectation} </p>
+                    <h4>Recommendation</h4>
+                    <p> {student && student.recommend} </p>
                     {student && student.learningPath.map((val, i) => (
                       <div key={i}>
                         <h4> Learning Path: {student.learningPath[i].label}</h4>
