@@ -16,7 +16,7 @@ const Student = () => {
       setStudent(student);
     }
     fetchStudent()
-  }, []);
+  }, [studentId]);
 
   return (
     <div className="main-page-wrapper">
@@ -64,15 +64,33 @@ const Student = () => {
                     <p> {student && student.prerequisite} </p>
                     <h4>Expectation</h4>
                     <p> {student && student.expectation} </p>
-                    <h4>Recommendation</h4>
-                    <p> {student && student.recommend} </p>
-                    {student && student.learningPath.map((val, i) => (
+
+                    {student && student.recommend && (
+                      <div>
+                        <h4>Recommendation</h4>
+                        <p> {student && student.recommend} </p>
+                      </div>
+                    )}
+
+                    {student && student.learningPath && student.learningPath.map((val, i) => (
                       <div key={i}>
                         <h4> Learning Path: {student.learningPath[i].label}</h4>
                         <LearningPath course={student.learningPath[i]}></LearningPath> <br></br>
                       </div>
                     ))}
+
+                    {student && student.record && (
+                      <div>
+                        <h4>Recorded Lesson</h4> 
+                        {student.record.map((val, i) => (
+                          <div key={i}>
+                            <a href={val.url}> {val.title} on {val.date}</a>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
+              
                   {/* End .col */}
                 </div>
                 {/* End .row */}

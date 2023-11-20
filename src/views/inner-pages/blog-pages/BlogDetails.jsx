@@ -16,8 +16,7 @@ const LessonDetails = () => {
       setLesson(lesson);
     }
     fetchLesson()
-  }, []);
-
+  }, [lessonId]);
 
   return (
     <div className="main-page-wrapper p0">

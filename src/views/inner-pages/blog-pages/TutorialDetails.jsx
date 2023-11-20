@@ -20,7 +20,7 @@ const TutorialDetails = () => {
       });
     }
     fetchTutorial()
-  }, []);
+  }, [tutorialId]);
 
   return (
     <div className="main-page-wrapper p0">
