@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Top</title>
+    <title>Unity WebGL Player | Hello World</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
@@ -17,11 +17,11 @@
         </div>
       </div>
       <div id="unity-warning"> </div>
-      <div id="unity-footer">
+      <!-- <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Top</div>
-      </div>
+        <div id="unity-build-title">Hello World</div>
+      </div> -->
     </div>
     <script>
 
@@ -59,13 +59,13 @@
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/WebBuild.loader.js";
       var config = {
-        dataUrl: buildUrl + "/WebBuild.data.unityweb",
-        frameworkUrl: buildUrl + "/WebBuild.framework.js.unityweb",
-        codeUrl: buildUrl + "/WebBuild.wasm.unityweb",
+        dataUrl: buildUrl + "/WebBuild.data.gz",
+        frameworkUrl: buildUrl + "/WebBuild.framework.js.gz",
+        codeUrl: buildUrl + "/WebBuild.wasm.gz",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
-        productName: "Top",
-        productVersion: "",
+        productName: "Hello World",
+        productVersion: "0.1",
         showBanner: unityShowBanner,
       };
 
