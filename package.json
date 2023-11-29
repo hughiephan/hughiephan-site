@@ -54,8 +54,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "serve": "serve -s build",
-    "deploy": "npm run build && gh-pages -d build",
-    "deploy-gh": "gh-pages -d build"
+    "deploy": "npm run build && copy CNAME build && gh-pages -d build",
+    "deploy-gh": "copy CNAME build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
