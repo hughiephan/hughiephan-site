@@ -22,7 +22,7 @@ const Course = () => {
     <div className="main-page-wrapper">
       <Helmet>
         <title>
-          Deep Learning - Course
+          {course && course.title} - Course
         </title>
       </Helmet>
       {/* End Page SEO Content */}
