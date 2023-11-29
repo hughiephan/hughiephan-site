@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Scrollspy from "react-scrollspy";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import HeaderPopupForm from "../../form/HeaderPopupForm";
 import MegaMenuLanding from "../../header/mega-menu/MegaMenuLanding";
+import { getAllCourse } from '../../../views/FirebaseClient';
 
 Modal.setAppElement("#root");
 
@@ -12,6 +13,17 @@ const HeaderLandingDocSignature = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const [navbar, setNavbar] = useState(false);
+  const [allCourse, setAllCourse] = useState('');
+
+  useEffect(() => {
+    const fetchAllCourse = async () => {
+      const allCourse = await getAllCourse()
+      console.log(allCourse)
+      setAllCourse(allCourse);
+    }
+    fetchAllCourse()
+  }, []);
+
 
   function toggleModalOne() {
     setIsOpen(!isOpen);
@@ -62,51 +74,24 @@ const HeaderLandingDocSignature = () => {
                 id="navbarSupportedContent"
               >
                 <div className="d-lg-flex justify-content-between align-items-center">
-                  <Scrollspy
-                    className="navbar-nav  main-side-nav font-gordita"
-                    items={[
-                      "About me",
-                      "Course",
-                      "Lesson",
-                      "Tutorial",
-                      "Exercise",
-                      "Research",
-                    ]}
-                    currentClassName="active"
-                    offset={-500}
-                  >
-
+                  <Scrollspy className="navbar-nav  main-side-nav font-gordita">
                     <li className="nav-item">
                       <a href="/" className="nav-link">
                         Home
                       </a>
-                    </li>  
-
+                    </li>
                     <li className="nav-item dropdown">
                       <a className="nav-link dropdown-toggle" data-toggle="dropdown">
                         Course
                       </a>
                       <ul className="dropdown-menu">
-                          <li>
-                            <Link to="/course/dpl" className="dropdown-item">
-                              Deep Learning
+                        {allCourse && allCourse.map((course, i) => (
+                          <li key={i}>
+                            <Link to={`/course/${i}`} className="dropdown-item">
+                              {course.title}
                             </Link>
                           </li>
-                          <li>
-                            <Link to="/course/nlp" className="dropdown-item">
-                              Natural Language
-                            </Link>
-                          </li>
-                          <li>
-                            <Link to="/course/gnn" className="dropdown-item">
-                              Graph Neural Network
-                            </Link>
-                          </li>
-                          <li>
-                            <Link to="/course/aip" className="dropdown-item">
-                              AI Planning
-                            </Link>
-                          </li>
+                        ))}
                       </ul>
                     </li>
                     <li className="nav-item dropdown">
@@ -114,21 +99,21 @@ const HeaderLandingDocSignature = () => {
                         Teaching
                       </a>
                       <ul className="dropdown-menu">
-                          <li>
-                            <Link to="/lesson" className="dropdown-item">
-                              Lesson
-                            </Link>
-                          </li>
-                          <li>
-                            <Link to="/tutorial" className="dropdown-item">
-                              Tutorial
-                            </Link>
-                          </li>
-                          <li>
-                            <Link to="/exercise" className="dropdown-item">
-                              Exercise
-                            </Link>
-                          </li>
+                        <li>
+                          <Link to="/lesson" className="dropdown-item">
+                            Lesson
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/tutorial" className="dropdown-item">
+                            Tutorial
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/exercise" className="dropdown-item">
+                            Exercise
+                          </Link>
+                        </li>
                       </ul>
                     </li>
                     <li className="nav-item dropdown">
@@ -136,19 +121,19 @@ const HeaderLandingDocSignature = () => {
                         Student
                       </a>
                       <ul className="dropdown-menu">
-                          <li>
-                            <Link to="/book" className="dropdown-item">
-                              Book lesson
-                            </Link>
-                          </li>
-                          <li>
-                            <Link to="/student/0" className="dropdown-item">
-                              Andy
-                            </Link>
-                            <Link to="/student/1" className="dropdown-item">
-                              Jin
-                            </Link>
-                          </li>
+                        <li>
+                          <Link to="/book" className="dropdown-item">
+                            Book lesson
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/student/0" className="dropdown-item">
+                            Andy
+                          </Link>
+                          <Link to="/student/1" className="dropdown-item">
+                            Jin
+                          </Link>
+                        </li>
                       </ul>
                     </li>
                     <li className="nav-item">
@@ -191,26 +176,15 @@ const HeaderLandingDocSignature = () => {
               Home
             </a>
           </li>
-          <li className="nav-item">
-            <a href="/#/course/dpl" className="nav-link" onClick={handleClick}>
-              Course (DPL)
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="/#/course/nlp" className="nav-link" onClick={handleClick}>
-              Course (NLP)
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="/#/course/gnn" className="nav-link" onClick={handleClick}>
-              Course (GNN)
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="/#/course/aip" className="nav-link" onClick={handleClick}>
-              Course (AIP)
-            </a>
-          </li>
+
+          {allCourse && allCourse.map((course, i) => (
+            <li key={i} className="nav-item">
+              <a href={`/#/course/${i}`} className="nav-link" onClick={handleClick}>
+                {course.title}
+              </a>
+            </li>
+          ))}
+
           <li className="nav-item">
             <a href="/#/lesson" className="nav-link" onClick={handleClick}>
               Lesson

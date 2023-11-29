@@ -36,6 +36,19 @@ export async function getCourse(courseId) {
     });
 };
 
+export async function getAllCourse() {
+    return await get(courseRef).then(function (snapshot) {
+        if (snapshot.exists()) {
+            const data = snapshot.val();
+            return data
+        } else {
+            console.log("No course data found");
+        }
+    }).catch(function (error) {
+        console.error("Error loading course data: ", error);
+    });
+};
+
 export async function getLesson(lessonId) {
     return await get(lessonRef).then(function (snapshot) {
         if (snapshot.exists()) {
@@ -53,8 +66,6 @@ export async function getAllLesson() {
     return await get(lessonRef).then(function (snapshot) {
         if (snapshot.exists()) {
             const data = snapshot.val();
-
-            console.log(data[0])
             return data
         } else {
             console.log("No lesson data found");

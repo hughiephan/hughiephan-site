@@ -92,10 +92,7 @@ import LessonDetails from "../views/inner-pages/blog-pages/BlogDetails";
 import TutorialDetails from "../views/inner-pages/blog-pages/TutorialDetails";
 
 // Course
-import CourseDPL from "../views/inner-pages/pages/about/CourseDPL";
-import CourseNLP from "../views/inner-pages/pages/about/CourseNLP";
-import CourseGNN from "../views/inner-pages/pages/about/CourseGNN";
-import CourseAIP from "../views/inner-pages/pages/about/CourseAIP";
+import Course from "../views/inner-pages/pages/about/Course";
 
 // Not Found Page
 import NotFound from "../views/NotFound";
@@ -104,7 +101,6 @@ import VrLanding from "../views/all-home-pages/VrLanding";
 import Cart from "../views/inner-pages/e-commerce/Cart";
 import Checkout from "../views/inner-pages/e-commerce/Checkout";
 import ProductDetails from "../views/inner-pages/e-commerce/ProductDetails";
-
 
 
 const AllRoutes = () => {
@@ -153,10 +149,7 @@ const AllRoutes = () => {
         <Route path="/contact-pm" element={<ContactProjectManagement />} />
         <Route path="/" element={<ContactDocumentation />} />
         {/* about us inner pages */}
-        <Route path="/course/dpl" element={<CourseDPL />} />
-        <Route path="/course/nlp" element={<CourseNLP />} />
-        <Route path="/course/gnn" element={<CourseGNN />} />
-        <Route path="/course/aip" element={<CourseAIP />} />
+        <Route path="/course/:courseId" element={<Course />} />
         <Route path="/about-eo" element={<AboutEventOrganizer />} />
         <Route path="/about-pm" element={<AboutProjectManagement />} />
         <Route path="/about-doc" element={<AboutDocumentation />} />

@@ -9,7 +9,7 @@ const LearningPath = (props) => {
         "--bs-card-border-color": 'unset',
         "--bs-card-bg": 'unset',
     };
-    const { course } = props;
+    const { learningPath } = props;
 
     const customNodeTemplate = (node) => {
         if (node.lesson || node.lesson == 0) return <Link to={`/lesson/${node.lesson}`}> Lesson: {node.label} </Link>
@@ -36,7 +36,7 @@ const LearningPath = (props) => {
 
     return (
         <div style={customStyles} className="card overflow-x-auto">
-          <OrganizationChart value={[course]} nodeTemplate={customNodeTemplate} />
+          <OrganizationChart value={[learningPath]} nodeTemplate={customNodeTemplate} />
         </div>
     )
 }

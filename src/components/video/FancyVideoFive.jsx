@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import ModalVideo from "react-modal-video";
 
-const FancyVideoFive = () => {
+const FancyVideoFive = (props) => {
+  const { description, videoId, date } = props;
   const [isOpen, setOpen] = useState(false);
+
   return (
     <>
       <ModalVideo
         channel="youtube"
         autoplay
         isOpen={isOpen}
-        videoId="qjE9vpd906o"
+        videoId={videoId}
         onClose={() => setOpen(false)}
       />
       <div className="row align-items-center">
@@ -21,13 +23,11 @@ const FancyVideoFive = () => {
                   Student Projects{" "}
                   <img src="images/shape/line-shape-5.svg" alt="icon" />
                 </span>
-                from our Deep Learning Course (Summer 2023)
+                from {date}
               </h2>
             </div>
             {/* <!-- /.title-style-two --> */}
-            <p>
-            Aspiring students delved into the captivating realm of Generative AI to produce unique and imaginative projects.
-            </p>
+            <p> {description} </p>
           </div>
         </div>
         {/* End .col */}

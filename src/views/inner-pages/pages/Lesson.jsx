@@ -5,21 +5,21 @@ import { Link } from "react-router-dom";
 import { getAllLesson } from '../../FirebaseClient';
 
 
-const Course = () => {
-  const [allCourse, setAllLesson] = useState('');
+const Lesson = () => {
+  const [allLesson, setAllLesson] = useState('');
 
   useEffect(() => {
-    const fetchLesson = async () => {
+    const fetchAllLesson = async () => {
       const allLesson = await getAllLesson()
       setAllLesson(allLesson);
     }
-    fetchLesson()
+    fetchAllLesson()
   }, []);
 
   return (
     <div className="main-page-wrapper">
       <Helmet>
-        <title>Lesson </title>
+        <title> Lesson </title>
       </Helmet>
       {/* End Page SEO Content */}
 
@@ -74,7 +74,7 @@ const Course = () => {
 
               <div className="all-faqs">
                 <div className="faqs-all-qus">
-                  {allCourse && allCourse.map((course, i) => (
+                  {allLesson && allLesson.map((course, i) => (
                     <Link
                       className="article-preview d-flex"
                       to={`/lesson/${i}`}
@@ -107,4 +107,4 @@ const Course = () => {
   );
 };
 
-export default Course;
+export default Lesson;
