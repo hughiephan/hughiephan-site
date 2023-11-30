@@ -9,6 +9,7 @@ import { getCourse } from "../../../FirebaseClient"
 const Course = () => {
   const { courseId } = useParams();
   const [course, setCourse] = useState('');
+  const [keyword, setKeyword] = useState('');
 
   useEffect(() => {
     const fetchCourse = async () => {
@@ -18,12 +19,44 @@ const Course = () => {
     fetchCourse()
   }, [courseId]);
 
+  
+  useEffect(() => { // Generate Keywords for SEO based on all the labels of all learning path
+    const extractLabels = (data, labels) => {
+      if (data && data.length > 0) {
+        for (let i = 0; i < data.length; i++) {
+          const item = data[i];
+          if (item.label) {
+            labels.push(item.label);
+          }
+          if (item.children) {
+            extractLabels(item.children, labels);
+          }
+        }
+      }
+    };
+
+    const extractedLabels = [];
+    extractLabels(course.learningPath, extractedLabels);
+    setKeyword(extractedLabels);
+  }, [course]);
+
+
   return (
     <div className="main-page-wrapper">
       <Helmet>
-        <title>
-          {course && course.title} - Course
-        </title>
+        <title> {course && course.title} - Course </title>
+
+        {course && keyword &&
+          <meta name="keywords" content={keyword} />
+        }
+
+        {course && course.description &&
+          <meta name="description" content={course && course.description} />
+        }
+
+        {course && course.title &&
+          <meta property="og:title" content={course.title} />
+        }
       </Helmet>
       {/* End Page SEO Content */}
 

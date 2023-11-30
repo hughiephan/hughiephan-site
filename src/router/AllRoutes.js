@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import ScrollTopBehaviour from "../components/ScrollTopBehaviour";
 
 // All HOME PAGE ROUTES
-import EventOrganizer from "../views/all-home-pages/EventOrganizer";
+// import EventOrganizer from "../views/all-home-pages/EventOrganizer";
 import DocLanding from "../views/all-home-pages/DocLanding";
 import DocSignatureLanding from "../views/all-home-pages/DocSignatureLanding";
 import ProjectManagement from "../views/all-home-pages/ProjectManagement";
@@ -56,7 +56,7 @@ import Login from "../views/inner-pages/features/miscellaneous/Login";
 import SignUp from "../views/inner-pages/features/miscellaneous/SignUp";
 import TermsConditions from "../views/inner-pages/features/miscellaneous/TermsConditions";
 import SolutionMangement from "../views/inner-pages/features/SolutionMangement";
-import ProductCustomerSupport from "../views/inner-pages/features/ProductCustomerSupport";
+import BookLesson from "../views/inner-pages/features/BookLesson";
 import FeaturesCustomerSupport from "../views/inner-pages/features/FeaturesCustomerSupport";
 
 // SERVICE PAGES ROUTES
@@ -88,7 +88,7 @@ import BlogV3 from "../views/inner-pages/blog-pages/BlogV3";
 import BlogV4 from "../views/inner-pages/blog-pages/BlogV4";
 import BlogV5 from "../views/inner-pages/blog-pages/BlogV5";
 import BlogV6 from "../views/inner-pages/blog-pages/BlogV6";
-import LessonDetails from "../views/inner-pages/blog-pages/BlogDetails";
+import LessonDetails from "../views/inner-pages/blog-pages/LessonDetails";
 import TutorialDetails from "../views/inner-pages/blog-pages/TutorialDetails";
 
 // Course
@@ -165,7 +165,7 @@ const AllRoutes = () => {
         <Route path="/solution-management" element={<SolutionMangement />} />
         <Route
           path="/book"
-          element={<ProductCustomerSupport />}
+          element={<BookLesson />}
         />
         <Route
           path="/features-customer-support"

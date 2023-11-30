@@ -18,7 +18,6 @@ const HeaderLandingDocSignature = () => {
   useEffect(() => {
     const fetchAllCourse = async () => {
       const allCourse = await getAllCourse()
-      console.log(allCourse)
       setAllCourse(allCourse);
     }
     fetchAllCourse()

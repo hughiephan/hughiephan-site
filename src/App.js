@@ -19,7 +19,7 @@ const App = () => {
     <>
       <Helmet>
         <title>Hughie Phan</title>
-        <meta property="og:site_name" content="deski" />
+        <meta property="og:site_name" content="hughiephan" />
         <meta
           property="og:url"
           content="https://hughiephan.co"

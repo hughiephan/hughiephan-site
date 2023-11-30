@@ -26,6 +26,18 @@ const TutorialDetails = () => {
     <div className="main-page-wrapper p0">
       <Helmet>
         <title> {tutorial && tutorial.title} - Tutorial Details</title>
+
+        {tutorial && tutorial.keyword &&
+          <meta name="keywords" content={tutorial && tutorial.keyword} />
+        }
+        
+        {tutorial && tutorial.description &&
+          <meta name="description" content={tutorial && tutorial.description} />
+        }
+
+        {tutorial && tutorial.title &&
+          <meta property="og:title" content={tutorial.title} />
+        }
       </Helmet>
       {/* End Page SEO Content */}
 

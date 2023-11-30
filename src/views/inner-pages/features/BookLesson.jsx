@@ -4,13 +4,14 @@ import HeaderLandingDocSignature from "../../../components/header/landing/Header
 import BookIframe from "../../BookIframe"
 
 
-const ProductCustomerSupport = () => {
+const BookLesson = () => {
   return (
     <div className="main-page-wrapper p0">
       <Helmet>
-        <title>
-          Book Lesson
-        </title>
+        <title> Book Lesson </title>
+        <meta name="keywords" content="AI tutoring, Personalized learning, Online tutoring, Deep learning algorithms, Machine learning models, AI-driven education, Customized tutoring, Adaptive learning, Virtual tutoring sessions, Individualized tutoring" />
+        <meta name="description" content="Why Learn AI with Me? AI is transforming industries worldwide, and having a personal AI teacher can make all the difference in your learning journey. With my guidance, you'll gain the knowledge and skills needed to excel in the AI field, whether you're pursuing a career, working on a personal project, or simply satisfying your curiosity." />
+        <meta property="og:title" content="Book Lesson" />
       </Helmet>
       {/* End Page SEO Content */}
 
@@ -20,7 +21,7 @@ const ProductCustomerSupport = () => {
       {/* 	=============================================
 				Fancy Hero Three
 			============================================== */}
-      
+
       {/* /.fancy-hero-three */}
 
       {/* 	=============================================
@@ -49,7 +50,7 @@ const ProductCustomerSupport = () => {
                   <div className="text-wrapper">
                     <h6>Book a Lesson</h6>
                     <h3 className="title font-gilroy-bold">
-                      Personalized AI lessons 
+                      Personalized AI lessons
                     </h3>
                     <p className="font-rubik">
                       I'll share and simplify complex AI topics for easy comprehension. No matter your skill level, I tailor lessons to meet your specific needs and through hands-on tutorials. https://www.fiverr.com/hughiephan
@@ -69,4 +70,4 @@ const ProductCustomerSupport = () => {
   );
 };
 
-export default ProductCustomerSupport;
+export default BookLesson;

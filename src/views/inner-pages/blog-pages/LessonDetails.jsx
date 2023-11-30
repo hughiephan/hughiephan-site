@@ -9,7 +9,7 @@ import { getLesson } from '../../FirebaseClient';
 const LessonDetails = () => {
   const { lessonId } = useParams();
   const [lesson, setLesson] = useState('');
-  
+
   useEffect(() => {
     const fetchLesson = async () => {
       const lesson = await getLesson(lessonId)
@@ -22,6 +22,18 @@ const LessonDetails = () => {
     <div className="main-page-wrapper p0">
       <Helmet>
         <title> {lesson && lesson.title} - Lesson Details</title>
+
+        {lesson && lesson.keyword &&
+          <meta name="keywords" content={lesson && lesson.keyword} />
+        }
+        
+        {lesson && lesson.description &&
+          <meta name="description" content={lesson && lesson.description} />
+        }
+
+        {lesson && lesson.title &&
+          <meta property="og:title" content={lesson.title} />
+        }
       </Helmet>
       {/* End Page SEO Content */}
 
@@ -76,7 +88,7 @@ const LessonDetails = () => {
                   {lesson.title}
                 </h3>
                 <p> {lesson.description} </p>
-                <CourseIframe courseIframe={lesson.iframe}/>
+                <CourseIframe courseIframe={lesson.iframe} />
               </div>
               {/* /End post content  */}
             </div>
