@@ -3,8 +3,8 @@ import Scrollspy from "react-scrollspy";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import HeaderPopupForm from "../../form/HeaderPopupForm";
-import MegaMenuLanding from "../../header/mega-menu/MegaMenuLanding";
-import { getAllCourse } from '../../../views/FirebaseClient';
+// import MegaMenuLanding from "../../header/mega-menu/MegaMenuLanding";
+import { getAllCourse, getAllStudent } from '../../../views/FirebaseClient';
 
 Modal.setAppElement("#root");
 
@@ -14,13 +14,14 @@ const HeaderLandingDocSignature = () => {
   const handleClick = () => setClick(!click);
   const [navbar, setNavbar] = useState(false);
   const [allCourse, setAllCourse] = useState('');
+  const [allStudent, setAllStudent] = useState('');
 
   useEffect(() => {
-    const fetchAllCourse = async () => {
-      const allCourse = await getAllCourse()
-      setAllCourse(allCourse);
-    }
+    const fetchAllCourse = async () => { setAllCourse(await getAllCourse()); }
+    const fetchAllStudent = async () => { setAllStudent(await getAllStudent()); }
+
     fetchAllCourse()
+    fetchAllStudent()
   }, []);
 
 
@@ -125,14 +126,13 @@ const HeaderLandingDocSignature = () => {
                             Book lesson
                           </Link>
                         </li>
-                        <li>
-                          <Link to="/student/0" className="dropdown-item">
-                            Andy
-                          </Link>
-                          <Link to="/student/1" className="dropdown-item">
-                            Jin
-                          </Link>
-                        </li>
+                        {allStudent && allStudent.map((student, i) => (
+                          <li key={i}>
+                            <Link to={`/student/${i}`} className="dropdown-item">
+                              {student.name}
+                            </Link>
+                          </li>
+                        ))}
                       </ul>
                     </li>
                     <li className="nav-item">
@@ -204,16 +204,13 @@ const HeaderLandingDocSignature = () => {
               Book Lesson
             </a>
           </li>
-          <li className="nav-item">
-            <a href="/#/student/0" className="nav-link" onClick={handleClick}>
-              Student (Andy)
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="/#/student/1" className="nav-link" onClick={handleClick}>
-              Student (Jin)
-            </a>
-          </li>
+          {allStudent && allStudent.map((student, i) => (
+            <li key={i} className="nav-item">
+              <a href={`/#/student/${i}`} className="nav-link" onClick={handleClick}>
+                Student ({student.name})
+              </a>
+            </li>
+          ))}
           <li className="nav-item">
             <a href="/#/research" className="nav-link" onClick={handleClick}>
               Research

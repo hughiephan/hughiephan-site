@@ -139,3 +139,16 @@ export async function getStudent(id) {
         console.error("Error loading student data: ", error);
     });
 };
+
+export async function getAllStudent() {
+    return await get(studentRef).then(function (snapshot) {
+        if (snapshot.exists()) {
+            const data = snapshot.val();
+            return data
+        } else {
+            console.log("No student data found");
+        }
+    }).catch(function (error) {
+        console.error("Error loading student data: ", error);
+    });
+};
