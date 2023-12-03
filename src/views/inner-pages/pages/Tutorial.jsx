@@ -8,12 +8,20 @@ const Tutorial = () => {
   const [allTutorial, setAllTutorial] = useState('');
 
   useEffect(() => {
-    const fetchTutorial = async () => {
+    const fetchAllTutorial = async () => {
       const allTutorial = await getAllTutorial()
       setAllTutorial(allTutorial);
     }
-    fetchTutorial()
+    fetchAllTutorial()
   }, []);
+
+  // useEffect(() => {
+  //   var text = ''
+  //   {allTutorial && allTutorial.map((tutorial, i) => (
+  //     text = text + `<url><loc> https://hughiephan.co/#/tutorial/` + i + `</loc></url>`
+  //   ))}
+  //   console.log(text)
+  // }, [allTutorial]);
 
   return (
     <div className="main-page-wrapper">

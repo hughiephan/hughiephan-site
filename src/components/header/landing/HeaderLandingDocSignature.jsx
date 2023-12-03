@@ -24,6 +24,13 @@ const HeaderLandingDocSignature = () => {
     fetchAllStudent()
   }, []);
 
+  // useEffect(() => {
+  //   var text = ''
+  //   {allCourse && allCourse.map((course, i) => (
+  //     text = text + `<url><loc> https://hughiephan.co/#/course/` + i + `</loc></url>`
+  //   ))}
+  //   console.log(text)
+  // }, [allCourse]);
 
   function toggleModalOne() {
     setIsOpen(!isOpen);

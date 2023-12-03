@@ -29,6 +29,7 @@ const App = () => {
           property="og:title"
           content="Hughie Phan Personal Website"
         />
+        <meta property="og:description" content="I'm Huy Phan, but you can call me Hughie. I'm an AI Lecturer at FPT University and my research is centered on creating next-generation AI models. On this website, you can discover the courses I'm currently teaching and my research as well. Feel free to contact me or just say hi!" />
         <meta
           name="keywords"
           content="AI, Machine Learning, Deep Learning, Research, Personal AI Teacher, Book, Study, Neural Network, Hughie Phan"
