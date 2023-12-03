@@ -19,7 +19,7 @@ const Lesson = () => {
   // useEffect(() => {
   //   var text = ''
   //   {allLesson && allLesson.map((lesson, i) => (
-  //     text = text + `<url><loc> https://hughiephan.co/#/lesson/` + i + `</loc></url>`
+  //     text = text + `<url><loc>https://hughiephan.co/#/lesson/` + i + `</loc></url>`
   //   ))}
   //   console.log(text)
   // }, [allLesson]);

@@ -18,7 +18,7 @@ const Tutorial = () => {
   // useEffect(() => {
   //   var text = ''
   //   {allTutorial && allTutorial.map((tutorial, i) => (
-  //     text = text + `<url><loc> https://hughiephan.co/#/tutorial/` + i + `</loc></url>`
+  //     text = text + `<url><loc>https://hughiephan.co/#/tutorial/` + i + `</loc></url>`
   //   ))}
   //   console.log(text)
   // }, [allTutorial]);

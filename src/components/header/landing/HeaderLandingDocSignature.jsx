@@ -27,7 +27,7 @@ const HeaderLandingDocSignature = () => {
   // useEffect(() => {
   //   var text = ''
   //   {allCourse && allCourse.map((course, i) => (
-  //     text = text + `<url><loc> https://hughiephan.co/#/course/` + i + `</loc></url>`
+  //     text = text + `<url><loc>https://hughiephan.co/#/course/` + i + `</loc></url>`
   //   ))}
   //   console.log(text)
   // }, [allCourse]);
