@@ -9,7 +9,7 @@ import CallToActionTwo from "../../../../components/call-to-action/CallToActionT
 import HeaderLandingDocSignature from "../../../../components/header/landing/HeaderLandingDocSignature";
 import FeatureSixV2 from "../../../../components/features/FeatureSixV2";
 
-const ContactDocumentation = () => {
+const Home = () => {
   return (
     <div className="main-page-wrapper p0">
       <Helmet>
@@ -86,4 +86,4 @@ const ContactDocumentation = () => {
   );
 };
 
-export default ContactDocumentation;
+export default Home;

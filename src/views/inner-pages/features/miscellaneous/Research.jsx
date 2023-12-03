@@ -4,7 +4,7 @@ import HeaderLandingDocSignature from "../../../../components/header/landing/Hea
 import ScrollspyNav from "react-scrollspy-nav";
 import { getAllResearch } from "../../../FirebaseClient"
 
-const TermsConditions = () => {
+const Research = () => {
   const [allResearch, setAllResearch] = useState('');
 
   useEffect(() => {
@@ -107,4 +107,4 @@ const TermsConditions = () => {
   );
 };
 
-export default TermsConditions;
+export default Research;

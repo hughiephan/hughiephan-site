@@ -54,6 +54,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "serve": "serve -s build",
+    "sitemap": "babel-node path/to/your/sitemap-generator.js",
     "deploy": "npm run build && copy CNAME build && gh-pages -d build",
     "deploy-gh": "copy CNAME build && gh-pages -d build"
   },
