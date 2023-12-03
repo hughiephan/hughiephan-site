@@ -1,33 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://hughiephan.co/</loc>
+        <loc>https://hughiephan.co</loc>
     </url>
     <url>
-        <loc>https://hughiephan.co/course</loc>
+        <loc>https://hughiephan.co/#/research</loc>
     </url>
     <url>
-        <loc>https://hughiephan.co/research</loc>
+        <loc>https://hughiephan.co/#/exercise</loc>
     </url>
     <url>
-        <loc>https://hughiephan.co/book</loc>
+        <loc>https://hughiephan.co/#/lesson</loc>
     </url>
     <url>
-        <loc>https://hughiephan.co/exercise</loc>
-    </url>
-    <url>
-        <loc>https://hughiephan.co/student</loc>
-    </url>
-    <url>
-        <loc>https://hughiephan.co/lesson</loc>
-    </url>
-    <url>
-        <loc>https://hughiephan.co/lesson</loc>
-    </url>
-    <url>
-        <loc>https://hughiephan.co/tutorial</loc>
-    </url>
-    <url>
-        <loc>https://hughiephan.co/tutorial</loc>
+        <loc>https://hughiephan.co/#/tutorial</loc>
     </url>
 </urlset>
