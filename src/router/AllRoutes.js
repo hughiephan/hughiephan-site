@@ -103,7 +103,7 @@ import NotFound from "../views/NotFound";
 
 const AllRoutes = () => {
   return (
-    <>
+    <div>
     <ScrollTopBehaviour />
       <Routes>
         {/* <Route path="/" element={<DocSignatureLanding />} /> */}
@@ -206,7 +206,7 @@ const AllRoutes = () => {
         {/* NotFound Route */}
         <Route path="/*" element={<NotFound />} />
       </Routes>
-    </>
+    </div>
   );
 };
 
