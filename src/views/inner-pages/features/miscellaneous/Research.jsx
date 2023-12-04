@@ -1,4 +1,4 @@
-import React, { useEffect, useState }  from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import HeaderLandingDocSignature from "../../../../components/header/landing/HeaderLandingDocSignature";
 import ScrollspyNav from "react-scrollspy-nav";
@@ -57,6 +57,11 @@ const Research = () => {
                       3. Published Papers
                     </a>
                   </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#opt4">
+                      4. Guide
+                    </a>
+                  </li>
                 </ul>
               </div>
 
@@ -88,13 +93,36 @@ const Research = () => {
                     {allResearch && allResearch.filter(research => research.type === "published").map((research, i) => (
                       <div>
                         <h3> {research.title} </h3>
-                        <div className="update-date"> {research.author} </div>                        
+                        <div className="update-date"> {research.author} </div>
                         <p> {research.description} </p>
                         {research.link && research.link.map((link, i) => (
                           <a href={link}> {link} </a>
                         ))}
                       </div>
                     ))}
+                  </div> <br />
+                  <div id="opt4">
+                    <h2 className="font-gilroy-bold">Guide for students</h2>
+                    <div>
+
+                      <p> To graduate you need to write a 50-page Thesis following FPT Thesis format. Most of the students I'm guiding are encouranged to write an Acadmic Paper based on the Thesis. Conference Paper length should be about: 6 to 10 pages or Journal article can range from around 8 to 15 pages </p>           
+
+                      <h4> Research Proposal </h4>
+                      <p> https://docs.google.com/document/d/162mYgciw8uCHKy0ra70rVnQ2Jb7_S-Z1/edit </p>
+
+                      <h4> Image Processing Tips </h4>
+                      <p> https://neptune.ai/blog/image-segmentation-tips-and-tricks-from-kaggle-competitions </p>
+
+                      <h4> Natural Language Processing Tips </h4>
+                      <p> https://neptune.ai/blog/tips-to-train-nlp-models </p>
+
+                      <h4> FPT Thesis Template </h4>
+                      <p> https://github.com/hughiephan/DPL/raw/main/FPT%20Thesis%20Template.docx </p>
+                      
+                      <h4> Writing Format</h4>
+                      <p> https://www.overleaf.com/latex/templates/ieee-conference-template/grfzhhncsfqn </p>
+                                
+                    </div>
                   </div>
                 </div>
                 {/*  /.tab-content */}

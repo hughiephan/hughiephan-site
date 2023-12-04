@@ -103,7 +103,7 @@ const HeaderLandingDocSignature = () => {
                     </li>
                     <li className="nav-item dropdown">
                       <a className="nav-link dropdown-toggle" data-toggle="dropdown">
-                        Teaching
+                        Material
                       </a>
                       <ul className="dropdown-menu">
                         <li>
@@ -119,6 +119,11 @@ const HeaderLandingDocSignature = () => {
                         <li>
                           <Link to="/exercise" className="dropdown-item">
                             Exercise
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/lab" className="dropdown-item">
+                            Lab
                           </Link>
                         </li>
                       </ul>
@@ -204,6 +209,11 @@ const HeaderLandingDocSignature = () => {
           <li className="nav-item">
             <a href="/#/exercise" className="nav-link" onClick={handleClick}>
               Exercise
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="/#/lab" className="nav-link" onClick={handleClick}>
+              Lab
             </a>
           </li>
           <li className="nav-item">

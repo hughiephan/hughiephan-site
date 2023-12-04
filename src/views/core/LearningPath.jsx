@@ -14,6 +14,7 @@ const LearningPath = (props) => {
     const customNodeTemplate = (node) => {
         if (node.lesson || node.lesson == 0) return <Link to={`/lesson/${node.lesson}`}> Lesson: {node.label} </Link>
         if (node.tutorial || node.tutorial == 0) return <Link to={`/tutorial/${node.tutorial}`}> Tutorial: {node.label} </Link>
+        if (node.lab || node.lab == 0) return <Link to={`/lab/${node.lab}`}> Lab: {node.label} </Link>
         if (node.link) return <a href={node.link}> {node.label} </a>
         return node.label
     };
