@@ -22,7 +22,7 @@ const questionRef = ref(database, 'question');
 const courseRef = ref(database, 'course');
 const researchRef = ref(database, 'research');
 const studentRef = ref(database, 'student');
-const labRef = ref(database, 'lab');
+const assignmentRef = ref(database, 'assignment');
 
 export async function getCourse(courseId) {
     return await get(courseRef).then(function (snapshot) {
@@ -154,28 +154,28 @@ export async function getAllStudent() {
     });
 };
 
-export async function getLab(id) {
-    return await get(labRef).then(function (snapshot) {
+export async function getAssignment(id) {
+    return await get(assignmentRef).then(function (snapshot) {
         if (snapshot.exists()) {
             const data = snapshot.val();
             return data[id]
         } else {
-            console.log("No lab data found");
+            console.log("No assignment data found");
         }
     }).catch(function (error) {
-        console.error("Error loading lab data: ", error);
+        console.error("Error loading assignment data: ", error);
     });
 };
 
-export async function getAllLab() {
-    return await get(labRef).then(function (snapshot) {
+export async function getAllAssignment() {
+    return await get(assignmentRef).then(function (snapshot) {
         if (snapshot.exists()) {
             const data = snapshot.val();
             return data
         } else {
-            console.log("No lab data found");
+            console.log("No assignment data found");
         }
     }).catch(function (error) {
-        console.error("Error loading lab data: ", error);
+        console.error("Error loading assignment data: ", error);
     });
 };

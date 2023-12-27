@@ -2,23 +2,23 @@ import React, { useEffect, useState }  from "react";
 import { Helmet } from "react-helmet";
 import HeaderLandingDocSignature from "../../../components/header/landing/HeaderLandingDocSignature";
 import { Link } from "react-router-dom";
-import { getAllLab } from '../../FirebaseClient';
+import { getAllAssignment } from '../../FirebaseClient';
 
-const Lab = () => {
-  const [allLab, setAllLab] = useState('');
+const Assignment = () => {
+  const [allAssignment, setAllAssignment] = useState('');
 
   useEffect(() => {
-    const fetchAllLab = async () => {
-      const allLab = await getAllLab()
-      setAllLab(allLab);
+    const fetchAllAssignment = async () => {
+      const allAssignment = await getAllAssignment()
+      setAllAssignment(allAssignment);
     }
-    fetchAllLab()
+    fetchAllAssignment()
   }, []);
 
   // useEffect(() => {
   //   var text = ''
   //   {allLab && allLab.map((tutorial, i) => (
-  //     text = text + `<url><loc>https://hughiephan.co/#/lab/` + i + `</loc></url>`
+  //     text = text + `<url><loc>https://hughiephan.co/#/assignment/` + i + `</loc></url>`
   //   ))}
   //   console.log(text)
   // }, [allLab]);
@@ -26,7 +26,7 @@ const Lab = () => {
   return (
     <div className="main-page-wrapper">
       <Helmet>
-        <title> Lab </title>
+        <title> Assignment </title>
       </Helmet>
       {/* End Page SEO Content */}
 
@@ -40,7 +40,7 @@ const Lab = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-9 m-auto">
-              <h2 className="font-rubik">Lab</h2>
+              <h2 className="font-rubik">Assignment</h2>
               <p className="sub-heading">
                 Hands-on coding with formal grading
               </p>
@@ -80,19 +80,19 @@ const Lab = () => {
 
               <div className="all-faqs">
                 <div className="faqs-all-qus">
-                  {allLab && allLab.map((lab, i) => (
+                  {allAssignment && allAssignment.map((assignment, i) => (
                     <Link
                       className="article-preview d-flex"
-                      to={`/lab/${i}`}
+                      to={`/assignment/${i}`}
                       key={i}
                       data-aos="fade-up"
                       data-aos-duration="1200"
                     >
                       <div>
-                        <h3 className="font-rubik">{lab.title}</h3>
+                        <h3 className="font-rubik">{assignment.title}</h3>
                         <div className="avatar-info">
-                          {lab.date} <br />
-                          {lab.description}
+                          {assignment.date} <br />
+                          {assignment.description}
                         </div>
                       </div>
                     </Link>
@@ -111,4 +111,4 @@ const Lab = () => {
   );
 };
 
-export default Lab;
+export default Assignment;

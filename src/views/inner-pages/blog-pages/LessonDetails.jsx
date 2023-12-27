@@ -26,7 +26,7 @@ const LessonDetails = () => {
         {lesson && lesson.keyword &&
           <meta name="keywords" content={lesson && lesson.keyword} />
         }
-        
+
         {lesson && lesson.description &&
           <meta name="description" content={lesson && lesson.description} />
         }
@@ -84,11 +84,43 @@ const LessonDetails = () => {
             <div className="col-xl-10 offset-xl-1 col-lg-12 feature-blog-one width-lg blog-details-post-v1">
               <div className="post-meta">
                 <div className="tag">{lesson.date}</div>
-                <h3 className="title">
-                  {lesson.title}
-                </h3>
-                <p> {lesson.description} </p>
-                <CourseIframe courseIframe={lesson.iframe} />
+
+                {lesson && lesson.description &&
+                  <div>
+                    <h4 className="title"> Introduction </h4>
+                    <p> {lesson.description} </p>
+                  </div>
+                }
+
+                {lesson && lesson.iframe &&
+                  <div>
+                    <h4 className="title">Slides</h4>
+                    {lesson.question && <p> {lesson.question} </p>}
+                    <CourseIframe courseIframe={lesson.iframe} />
+                  </div>
+                }
+
+                {lesson && lesson.material &&
+                  <div>
+                    <h4 style={{ marginBottom: '15px' }} className="title">Material</h4>
+                    {lesson.material.map((material, i) => (
+                      <div key={i}>
+                        <a href={material.url}> {material.type.charAt(0).toUpperCase() + material.type.slice(1)} {i + 1}: {material.label} </a>
+                      </div>
+                    ))}
+                  </div>
+                }
+
+                {lesson && lesson.reference &&
+                  <div>
+                    <h4 style={{ marginBottom: '10px' }} className="title">Reference</h4>
+                    {lesson.reference.map((reference, i) => (
+                      <div>
+                        <p style={{ paddingTop: '5px' }}> {reference.url} </p>
+                      </div>
+                    ))}
+                  </div>
+                }
               </div>
               {/* /End post content  */}
             </div>

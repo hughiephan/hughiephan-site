@@ -122,8 +122,8 @@ const HeaderLandingDocSignature = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/lab" className="dropdown-item">
-                            Lab
+                          <Link to="/assignment" className="dropdown-item">
+                            Assignment
                           </Link>
                         </li>
                       </ul>
@@ -212,8 +212,8 @@ const HeaderLandingDocSignature = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a href="/#/lab" className="nav-link" onClick={handleClick}>
-              Lab
+            <a href="/#/assignment" className="nav-link" onClick={handleClick}>
+              Assignment
             </a>
           </li>
           <li className="nav-item">

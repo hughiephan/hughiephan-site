@@ -91,14 +91,14 @@ import ScrollTopBehaviour from "../components/ScrollTopBehaviour";
 import Home from "../views/inner-pages/pages/contact/Home";
 import Lesson from "../views/inner-pages/pages/Lesson";
 import Tutorial from "../views/inner-pages/pages/Tutorial";
-import Lab from "../views/inner-pages/pages/Lab";
+import Assignment from "../views/inner-pages/pages/Assignment";
 import BookLesson from "../views/inner-pages/features/BookLesson";
 import Research from "../views/inner-pages/features/miscellaneous/Research";
 import Excerise from "../views/inner-pages/service/Exercise";
 import Student from "../views/inner-pages/portfolio/Student";
 import LessonDetails from "../views/inner-pages/blog-pages/LessonDetails";
 import TutorialDetails from "../views/inner-pages/blog-pages/TutorialDetails";
-import LabDetails from "../views/inner-pages/blog-pages/LabDetails";
+import AssignmentDetails from "../views/inner-pages/blog-pages/AssignmentDetails";
 import Course from "../views/inner-pages/pages/about/Course";
 import NotFound from "../views/NotFound";
 
@@ -204,8 +204,8 @@ const AllRoutes = () => {
         <Route path="/lesson/:lessonId" element={<LessonDetails />} />
         <Route path="/tutorial" element={<Tutorial />} />
         <Route path="/tutorial/:tutorialId" element={<TutorialDetails />} />
-        <Route path="/lab" element={<Lab />} />
-        <Route path="/lab/:labId" element={<LabDetails />} />
+        <Route path="/assignment" element={<Assignment />} />
+        <Route path="/assignment/:assignmentId" element={<AssignmentDetails />} />
 
         {/* NotFound Route */}
         <Route path="/*" element={<NotFound />} />

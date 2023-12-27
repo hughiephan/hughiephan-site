@@ -3,40 +3,40 @@ import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import HeaderLandingDocSignature from "../../../components/header/landing/HeaderLandingDocSignature";
 import TutorialMarkdown from '../../TutorialMarkdown';
-import { getLab } from '../../FirebaseClient';
+import { getAssignment } from '../../FirebaseClient';
 import axios from 'axios';
 
-const LabDetails = () => {
-  const { labId } = useParams();
-  const [ lab, setLab] = useState('');
+const AssignmentDetails = () => {
+  const { assignmentId } = useParams();
+  const [ assignment, setAssignment] = useState('');
   const [ markdownContent, setMarkdownContent] = useState('');
   
   useEffect(() => {
-    const fetchLab = async () => {
-      const lab = await getLab(labId)
-      setLab(lab);
-      axios.get(lab.markdown).then((response) => {
+    const fetchAssignment = async () => {
+      const assignment = await getAssignment(assignmentId)
+      setAssignment(assignment);
+      axios.get(assignment.markdown).then((response) => {
         setMarkdownContent(response.data);
       });
     }
-    fetchLab()
-  }, [labId]);
+    fetchAssignment()
+  }, [assignmentId]);
 
   return (
     <div className="main-page-wrapper p0">
       <Helmet>
-        <title> {lab && lab.title} - Lab Details</title>
+        <title> {assignment && assignment.title} - Assignment Details</title>
 
-        {lab && lab.keyword &&
-          <meta name="keywords" content={lab && lab.keyword} />
+        {assignment && assignment.keyword &&
+          <meta name="keywords" content={assignment && assignment.keyword} />
         }
         
-        {lab && lab.description &&
-          <meta name="description" content={lab && lab.description} />
+        {assignment && assignment.description &&
+          <meta name="description" content={assignment && assignment.description} />
         }
 
-        {lab && lab.title &&
-          <meta property="og:title" content={lab.title} />
+        {assignment && assignment.title &&
+          <meta property="og:title" content={assignment.title} />
         }
       </Helmet>
       {/* End Page SEO Content */}
@@ -62,10 +62,10 @@ const LabDetails = () => {
         <div className="bg-wrapper ">
           <div className="container">
             <div className="col-lg-10 m-auto text-center">
-              <h6 className="page-title"> {lab.course} </h6>
+              {/* <h6 className="page-title"> {assignment.course} </h6> */}
               <h1 className="heading">
                 <span>
-                  {lab.title}
+                  {assignment.title}
                   <img src="../images/shape/line-shape-11.svg" alt="" />
                 </span>
               </h1>
@@ -87,7 +87,7 @@ const LabDetails = () => {
           <div className="row">
             <div className="col-xl-10 offset-xl-1 col-lg-12 feature-blog-one width-lg blog-details-post-v1">
               <div className="post-meta">
-                <div className="tag">{lab.date}</div>
+                <div className="tag">{assignment.date}</div>
 
                 <div className='tutorial-markdown'> 
                   <TutorialMarkdown markdownContent={markdownContent} />
@@ -106,4 +106,4 @@ const LabDetails = () => {
   );
 };
 
-export default LabDetails;
+export default AssignmentDetails;
