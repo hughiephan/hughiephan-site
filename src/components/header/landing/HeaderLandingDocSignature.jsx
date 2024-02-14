@@ -128,6 +128,25 @@ const HeaderLandingDocSignature = () => {
                         </li>
                       </ul>
                     </li>
+
+                    <li className="nav-item dropdown">
+                      <a className="nav-link dropdown-toggle" data-toggle="dropdown">
+                        Demo
+                      </a>
+                      <ul className="dropdown-menu">
+                        <li>
+                          <a href="/demo/rnn_reviewbot.html" className="dropdown-item">
+                            Review Bot
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/game" className="dropdown-item">
+                            Chase Game
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+
                     <li className="nav-item dropdown">
                       <a className="nav-link dropdown-toggle" data-toggle="dropdown">
                         Student
@@ -178,7 +197,6 @@ const HeaderLandingDocSignature = () => {
         <Scrollspy
           className="navbar-nav"
           id="theme-menu-list"
-          items={["home", "product", "feature", "story", "pricing", "faq"]}
           currentClassName="active"
           offset={-200}
         >
@@ -216,6 +234,19 @@ const HeaderLandingDocSignature = () => {
               Assignment
             </a>
           </li>
+
+          <li className="nav-item">
+            <a href="/demo/rnn_reviewbot.html" className="nav-link" onClick={handleClick}>
+              Review Bot
+            </a>
+          </li>
+
+          <li className="nav-item">
+            <a href="/game/index.html" className="nav-link" onClick={handleClick}>
+              Chase Game
+            </a>
+          </li>
+
           <li className="nav-item">
             <a href="/#/book" className="nav-link" onClick={handleClick}>
               Book Lesson
