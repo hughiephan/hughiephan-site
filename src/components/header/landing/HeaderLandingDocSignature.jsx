@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import HeaderPopupForm from "../../form/HeaderPopupForm";
 // import MegaMenuLanding from "../../header/mega-menu/MegaMenuLanding";
-import { getAllCourse, getAllStudent } from '../../../views/FirebaseClient';
+import { getAllCourse, getAllStudent, getAllTopic } from '../../../views/FirebaseClient';
 
 Modal.setAppElement("#root");
 
@@ -15,13 +15,16 @@ const HeaderLandingDocSignature = () => {
   const [navbar, setNavbar] = useState(false);
   const [allCourse, setAllCourse] = useState('');
   const [allStudent, setAllStudent] = useState('');
+  const [allTopic, setAllTopic] = useState('');
 
   useEffect(() => {
     const fetchAllCourse = async () => { setAllCourse(await getAllCourse()); }
     const fetchAllStudent = async () => { setAllStudent(await getAllStudent()); }
+    const fetchAllTopic = async () => { setAllTopic(await getAllTopic()); }
 
     fetchAllCourse()
     fetchAllStudent()
+    fetchAllTopic()
   }, []);
 
   // useEffect(() => {
@@ -87,6 +90,7 @@ const HeaderLandingDocSignature = () => {
                         Home
                       </a>
                     </li>
+
                     <li className="nav-item dropdown">
                       <a className="nav-link dropdown-toggle" data-toggle="dropdown">
                         Course
@@ -101,6 +105,22 @@ const HeaderLandingDocSignature = () => {
                         ))}
                       </ul>
                     </li>
+
+                    <li className="nav-item dropdown">
+                      <a className="nav-link dropdown-toggle" data-toggle="dropdown">
+                        Topic
+                      </a>
+                      <ul className="dropdown-menu">
+                        {allTopic && allTopic.map((topic, i) => (
+                          <li key={i}>
+                            <Link to={`/topic/${i}`} className="dropdown-item">
+                              {topic.title}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+
                     <li className="nav-item dropdown">
                       <a className="nav-link dropdown-toggle" data-toggle="dropdown">
                         Material
@@ -210,6 +230,14 @@ const HeaderLandingDocSignature = () => {
             <li key={i} className="nav-item">
               <a href={`/#/course/${i}`} className="nav-link" onClick={handleClick}>
                 {course.title}
+              </a>
+            </li>
+          ))}
+
+          {allTopic && allTopic.map((topic, i) => (
+            <li key={i} className="nav-item">
+              <a href={`/#/topic/${i}`} className="nav-link" onClick={handleClick}>
+                {topic.title}
               </a>
             </li>
           ))}

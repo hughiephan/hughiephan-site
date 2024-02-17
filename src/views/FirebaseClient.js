@@ -23,6 +23,7 @@ const courseRef = ref(database, 'course');
 const researchRef = ref(database, 'research');
 const studentRef = ref(database, 'student');
 const assignmentRef = ref(database, 'assignment');
+const topicRef = ref(database, 'topic');
 
 export async function getCourse(courseId) {
     return await get(courseRef).then(function (snapshot) {
@@ -177,5 +178,31 @@ export async function getAllAssignment() {
         }
     }).catch(function (error) {
         console.error("Error loading assignment data: ", error);
+    });
+};
+
+export async function getAllTopic() {
+    return await get(topicRef).then(function (snapshot) {
+        if (snapshot.exists()) {
+            const data = snapshot.val();
+            return data
+        } else {
+            console.log("No topic data found");
+        }
+    }).catch(function (error) {
+        console.error("Error loading topic data: ", error);
+    });
+};
+
+export async function getTopic(topicId) {
+    return await get(topicRef).then(function (snapshot) {
+        if (snapshot.exists()) {
+            const data = snapshot.val();
+            return data[topicId]
+        } else {
+            console.log("No topic data found");
+        }
+    }).catch(function (error) {
+        console.error("Error loading topic data: ", error);
     });
 };

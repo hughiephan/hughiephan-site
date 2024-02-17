@@ -4,20 +4,20 @@ import { Helmet } from "react-helmet";
 import HeaderLandingDocSignature from "../../../../components/header/landing/HeaderLandingDocSignature";
 import FancyVideoFive from "../../../../components/video/FancyVideoFive";
 import LearningPath from "../../../core/LearningPath"
-import { getCourse } from "../../../FirebaseClient"
+import { getTopic } from "../../../FirebaseClient"
 
-const Course = () => {
-  const { courseId } = useParams();
-  const [course, setCourse] = useState('');
+const Topic = () => {
+  const { topicId } = useParams();
+  const [topic, setTopic] = useState('');
   const [keyword, setKeyword] = useState('');
 
   useEffect(() => {
-    const fetchCourse = async () => {
-      const course = await getCourse(courseId)
-      setCourse(course);
+    const fetchTopic = async () => {
+      const topic = await getTopic(topicId)
+      setTopic(topic);
     }
-    fetchCourse()
-  }, [courseId]);
+    fetchTopic()
+  }, [topicId]);
 
   
   useEffect(() => { // Generate Keywords for SEO based on all the labels of all learning path
@@ -36,26 +36,26 @@ const Course = () => {
     };
 
     const extractedLabels = [];
-    extractLabels(course.learningPath, extractedLabels);
+    extractLabels(topic.learningPath, extractedLabels);
     setKeyword(extractedLabels);
-  }, [course]);
+  }, [topic]);
 
 
   return (
     <div className="main-page-wrapper">
       <Helmet>
-        <title> {course && course.title} - Course </title>
+        <title> {topic && topic.title} - Topic </title>
 
-        {course && keyword &&
+        {topic && keyword &&
           <meta name="keywords" content={keyword} />
         }
 
-        {course && course.description &&
-          <meta name="description" content={course && course.description} />
+        {topic && topic.description &&
+          <meta name="description" content={topic && topic.description} />
         }
 
-        {course && course.title &&
-          <meta property="og:title" content={course.title} />
+        {topic && topic.title &&
+          <meta property="og:title" content={topic.title} />
         }
       </Helmet>
       {/* End Page SEO Content */}
@@ -72,12 +72,12 @@ const Course = () => {
       <div className="fancy-hero-two">
         <div className="bg-wrapper">
           <div className="container">
-            <div className="page-title"> {course && course.subTitle} </div>
+            <div className="page-title"> {topic && topic.subTitle} </div>
             <div className="row">
               <div className="col-xl-8 col-lg-10 col-md-10 m-auto">
-                <h1 className="heading"> {course && course.title} </h1>
+                <h1 className="heading"> {topic && topic.title} </h1>
                 <p className="sub-heading">
-                  {course && course.description}
+                  {topic && topic.description}
                 </p>
               </div>
             </div>
@@ -98,13 +98,13 @@ const Course = () => {
         <div className="shapes shape-four"></div>
         <div className="container">
 
-          {course && course.learningPath && course.learningPath.map((val, i) => (
+          {topic && topic.learningPath && topic.learningPath.map((val, i) => (
             <div key={i} className="title-style-two text-center mb-35 md-mb-10">
               <div className="row">
                 <div className="col-lg-10 m-auto">
                   <p>Learning Path {i + 1}</p>
-                  <h2> {course.learningPath[i].label} </h2> <br></br> <br></br>
-                  <LearningPath learningPath={course.learningPath[i]}></LearningPath> <br></br>
+                  <h2> {topic.learningPath[i].label} </h2> <br></br> <br></br>
+                  <LearningPath learningPath={topic.learningPath[i]}></LearningPath> <br></br>
                 </div>
               </div>
             </div>
@@ -124,7 +124,7 @@ const Course = () => {
         <div className="shapes shape-four"></div>
         <div className="container">
 
-          {course && course.rule && course.rule.map((rule, i) => (
+          {topic && topic.rule && topic.rule.map((rule, i) => (
             <div key={i}>
               <div className="title-style-two text-center mb-35 md-mb-10">
                 <div className="row">
@@ -178,10 +178,10 @@ const Course = () => {
             </div>
           ))};
 
-          {course && course.demo &&
+          {topic && topic.demo &&
             <div className="fancy-text-block-eleven mt-100 md-mt-50">
               <div className="container">
-                <FancyVideoFive description={course.demo.description} videoId={course.demo.videoId} date={course.demo.date} />
+                <FancyVideoFive description={topic.demo.description} videoId={topic.demo.videoId} date={topic.demo.date} />
               </div>
             </div>
             /* /.fancy-text-block-eleven */
@@ -200,4 +200,4 @@ const Course = () => {
   );
 };
 
-export default Course;
+export default Topic;
