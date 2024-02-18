@@ -88,7 +88,15 @@ const LessonDetails = () => {
                 {lesson && lesson.description &&
                   <div>
                     <h4 className="title"> Introduction </h4>
-                    <p> {lesson.description} </p>
+                    {lesson.video &&
+                      <div>
+                        <a href="https://www.youtube.com/@hughiephan" target="_blank" rel="noreferrer">
+                          <i className="fa fa-youtube-play" ></i>
+                        </a>
+                        <p style={{ paddingTop: '0px' }}> {lesson.description} </p>
+                      </div>
+                    }
+                    {!lesson.video && <p> {lesson.description} </p>}
                   </div>
                 }
 
@@ -130,7 +138,7 @@ const LessonDetails = () => {
         </div>
       </div>
       {/* /.feature-blog-one */}
-    </div>
+    </div >
   );
 };
 
