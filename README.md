@@ -12,18 +12,8 @@ npm install
 npm run start
 ```
 
-### Compiles and minifies for production
+### Build and deploy 
 
 ```
-npm run build
+npm run deploy
 ```
-
-### Lints and fixes files
-
-```
-npm run lint
-```
-
-### Customize configuration (vue-cli)
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
