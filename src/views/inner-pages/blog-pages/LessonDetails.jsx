@@ -90,7 +90,7 @@ const LessonDetails = () => {
                     <h4 className="title"> Introduction </h4>
                     {lesson.video &&
                       <div>
-                        <a href="https://www.youtube.com/@hughiephan" target="_blank" rel="noreferrer">
+                        <a href={lesson.video} target="_blank" rel="noreferrer">
                           <i className="fa fa-youtube-play" ></i>
                         </a>
                         <p style={{ paddingTop: '0px' }}> {lesson.description} </p>
