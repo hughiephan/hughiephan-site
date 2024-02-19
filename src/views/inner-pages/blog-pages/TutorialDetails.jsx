@@ -8,9 +8,9 @@ import axios from 'axios';
 
 const TutorialDetails = () => {
   const { tutorialId } = useParams();
-  const [ tutorial, setTutorial] = useState('');
-  const [ markdownContent, setMarkdownContent] = useState('');
-  
+  const [tutorial, setTutorial] = useState('');
+  const [markdownContent, setMarkdownContent] = useState('');
+
   useEffect(() => {
     const fetchTutorial = async () => {
       const tutorial = await getTutorial(tutorialId)
@@ -30,7 +30,7 @@ const TutorialDetails = () => {
         {tutorial && tutorial.keyword &&
           <meta name="keywords" content={tutorial && tutorial.keyword} />
         }
-        
+
         {tutorial && tutorial.description &&
           <meta name="description" content={tutorial && tutorial.description} />
         }
@@ -87,12 +87,19 @@ const TutorialDetails = () => {
           <div className="row">
             <div className="col-xl-10 offset-xl-1 col-lg-12 feature-blog-one width-lg blog-details-post-v1">
               <div className="post-meta">
-                <div className="tag">{tutorial.date}</div>
+                <div className="tag">{tutorial.date} </div>
+
+                {tutorial.video &&
+                  <a href={tutorial.video} target="_blank" rel="noreferrer">
+                    <i className="fa fa-youtube-play" ></i> Available on Youtube
+                  </a>
+                }
+
                 {/* <h3 className="title">
                   {tutorial.title}
                 </h3> */}
 
-                <div className='tutorial-markdown'> 
+                <div className='tutorial-markdown'>
                   <TutorialMarkdown markdownContent={markdownContent} />
                 </div>
 
