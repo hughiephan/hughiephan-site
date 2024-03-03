@@ -155,6 +155,9 @@ const HeaderLandingDocSignature = () => {
                       </a>
                       <ul className="dropdown-menu">
                         <li>
+                          <a href="/demo/item_based_cosine_recommend.html" className="dropdown-item">
+                            Item-based Recommend
+                          </a>
                           <a href="/demo/rnn_reviewbot.html" className="dropdown-item">
                             Review Bot
                           </a>
@@ -264,6 +267,9 @@ const HeaderLandingDocSignature = () => {
           </li>
 
           <li className="nav-item">
+            <a href="/demo/item_based_cosine_recommend.html" className="nav-link" onClick={handleClick}>
+              Item-based Recommend
+            </a>
             <a href="/demo/rnn_reviewbot.html" className="nav-link" onClick={handleClick}>
               Review Bot
             </a>
