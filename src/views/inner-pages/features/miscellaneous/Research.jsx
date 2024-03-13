@@ -34,7 +34,7 @@ const Research = () => {
       <div className="terms_and_policy">
         <div className="container">
           <ScrollspyNav
-            scrollTargetIds={["opt1", "opt2", "opt3", "opt4", "opt5", "opt6"]}
+            scrollTargetIds={["opt1", "opt2", "opt3", "opt4"]}
             activeNavClass="active"
             offset={170}
             scrollDuration="300"
@@ -73,8 +73,34 @@ const Research = () => {
                     {allResearch && allResearch.filter(research => research.type === "proposal").map((research, i) => (
                       <div>
                         <h3> {research.title} </h3>
-                        <div className="update-date"> {research.author} </div>
                         <p> {research.description} </p>
+
+                        {(research.proposal || research.paper || research.report) &&
+                          <div>
+                            Detail (access required):
+                            <span> </span>
+
+                            {research.proposal &&
+                              <a href={research.proposal} target="_blank" rel="noreferrer">
+                                <i className="fa fa-file-text-o"> Proposal</i>
+                              </a>
+                            }
+                            <span> </span> <span> </span>
+
+                            {research.paper &&
+                              <a href={research.paper} target="_blank" rel="noreferrer">
+                                <i className="fa fa-book"> Paper</i>
+                              </a>
+                            }
+                            <span> </span> <span> </span>
+
+                            {research.report &&
+                              <a href={research.report} target="_blank" rel="noreferrer">
+                                <i className="fa fa-pencil-square-o"> Report</i>
+                              </a>
+                            }
+                          </div>
+                        }
                       </div>
                     ))}
                   </div>
@@ -85,6 +111,33 @@ const Research = () => {
                         <h3> {research.title} </h3>
                         <div className="update-date"> {research.author} </div>
                         <p> {research.description} </p>
+
+                        {(research.proposal || research.paper || research.report) &&
+                          <div>
+                            Detail (access required):
+                            <span> </span>
+
+                            {research.proposal &&
+                              <a href={research.proposal} target="_blank" rel="noreferrer">
+                                <i className="fa fa-file-text-o"> Proposal</i>
+                              </a>
+                            }
+                            <span> </span> <span> </span>
+
+                            {research.paper &&
+                              <a href={research.paper} target="_blank" rel="noreferrer">
+                                <i className="fa fa-book"> Paper</i>
+                              </a>
+                            }
+                            <span> </span> <span> </span>
+
+                            {research.report &&
+                              <a href={research.report} target="_blank" rel="noreferrer">
+                                <i className="fa fa-pencil-square-o"> Report</i>
+                              </a>
+                            }
+                          </div>
+                        }
                       </div>
                     ))}
                   </div>
@@ -105,7 +158,7 @@ const Research = () => {
                     <h2 className="font-gilroy-bold">Guide for students</h2>
                     <div>
 
-                      <p> To graduate you need to write a 50-page Thesis following FPT Thesis format. Most of the students I'm guiding are encouranged to write an Acadmic Paper based on the Thesis. Conference Paper length should be about: 6 to 10 pages or Journal article can range from around 8 to 15 pages </p>           
+                      <p> To graduate you need to write a 50-page Thesis following FPT Thesis format. Most of the students I'm guiding are encouranged to write an Acadmic Paper based on the Thesis. Conference Paper length should be about: 6 to 10 pages or Journal article can range from around 8 to 15 pages </p>
 
                       <h4> Research Proposal </h4>
                       <p> https://docs.google.com/document/d/162mYgciw8uCHKy0ra70rVnQ2Jb7_S-Z1/edit </p>
@@ -118,10 +171,10 @@ const Research = () => {
 
                       <h4> FPT Thesis Template </h4>
                       <p> https://github.com/hughiephan/DPL/raw/main/FPT%20Thesis%20Template.docx </p>
-                      
+
                       <h4> Writing Format</h4>
                       <p> https://www.overleaf.com/latex/templates/ieee-conference-template/grfzhhncsfqn </p>
-                                
+
                     </div>
                   </div>
                 </div>
