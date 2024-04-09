@@ -101,6 +101,7 @@ import TutorialDetails from "../views/inner-pages/blog-pages/TutorialDetails";
 import AssignmentDetails from "../views/inner-pages/blog-pages/AssignmentDetails";
 import Course from "../views/inner-pages/pages/about/Course";
 import Topic from "../views/inner-pages/pages/about/Topic";
+import Domain from "../views/inner-pages/pages/about/Domain";
 import NotFound from "../views/NotFound";
 
 
@@ -198,6 +199,7 @@ const AllRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/course/:courseId" element={<Course />} />
         <Route path="/topic/:topicId" element={<Topic />} />
+        <Route path="/domain/:domainId" element={<Domain />} />
         <Route path="/research" element={<Research />} />
         <Route path="/book" element={<BookLesson />}/>
         <Route path="/exercise" element={<Excerise />} />

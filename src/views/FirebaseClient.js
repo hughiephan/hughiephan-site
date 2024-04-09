@@ -24,6 +24,7 @@ const researchRef = ref(database, 'research');
 const studentRef = ref(database, 'student');
 const assignmentRef = ref(database, 'assignment');
 const topicRef = ref(database, 'topic');
+const domainRef = ref(database, 'domain');
 
 export async function getCourse(courseId) {
     return await get(courseRef).then(function (snapshot) {
@@ -204,5 +205,31 @@ export async function getTopic(topicId) {
         }
     }).catch(function (error) {
         console.error("Error loading topic data: ", error);
+    });
+};
+
+export async function getAllDomain() {
+    return await get(domainRef).then(function (snapshot) {
+        if (snapshot.exists()) {
+            const data = snapshot.val();
+            return data
+        } else {
+            console.log("No domain data found");
+        }
+    }).catch(function (error) {
+        console.error("Error loading domain data: ", error);
+    });
+};
+
+export async function getDomain(domainId) {
+    return await get(domainRef).then(function (snapshot) {
+        if (snapshot.exists()) {
+            const data = snapshot.val();
+            return data[domainId]
+        } else {
+            console.log("No domain data found");
+        }
+    }).catch(function (error) {
+        console.error("Error loading domain data: ", error);
     });
 };

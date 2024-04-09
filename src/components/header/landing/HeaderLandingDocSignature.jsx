@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import HeaderPopupForm from "../../form/HeaderPopupForm";
 // import MegaMenuLanding from "../../header/mega-menu/MegaMenuLanding";
-import { getAllCourse, getAllStudent, getAllTopic } from '../../../views/FirebaseClient';
+import { getAllCourse, getAllStudent, getAllTopic, getAllDomain } from '../../../views/FirebaseClient';
 
 Modal.setAppElement("#root");
 
@@ -16,15 +16,18 @@ const HeaderLandingDocSignature = () => {
   const [allCourse, setAllCourse] = useState('');
   const [allStudent, setAllStudent] = useState('');
   const [allTopic, setAllTopic] = useState('');
+  const [allDomain, setAllDomain] = useState('');
 
   useEffect(() => {
     const fetchAllCourse = async () => { setAllCourse(await getAllCourse()); }
     const fetchAllStudent = async () => { setAllStudent(await getAllStudent()); }
     const fetchAllTopic = async () => { setAllTopic(await getAllTopic()); }
+    const fetchAllDomain = async () => { setAllDomain(await getAllDomain()); }
 
     fetchAllCourse()
     fetchAllStudent()
     fetchAllTopic()
+    fetchAllDomain()
   }, []);
 
   // useEffect(() => {
@@ -123,6 +126,21 @@ const HeaderLandingDocSignature = () => {
 
                     <li className="nav-item dropdown">
                       <a className="nav-link dropdown-toggle" data-toggle="dropdown">
+                        Domain
+                      </a>
+                      <ul className="dropdown-menu">
+                        {allDomain && allDomain.map((domain, i) => (
+                          <li key={i}>
+                            <Link to={`/domain/${i}`} className="dropdown-item">
+                              {domain.title}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+
+                    <li className="nav-item dropdown">
+                      <a className="nav-link dropdown-toggle" data-toggle="dropdown">
                         Material
                       </a>
                       <ul className="dropdown-menu">
@@ -170,7 +188,7 @@ const HeaderLandingDocSignature = () => {
                       </ul>
                     </li>
 
-                    <li className="nav-item dropdown">
+                    {/* <li className="nav-item dropdown">
                       <a className="nav-link dropdown-toggle" data-toggle="dropdown">
                         Student
                       </a>
@@ -188,7 +206,7 @@ const HeaderLandingDocSignature = () => {
                           </li>
                         ))}
                       </ul>
-                    </li>
+                    </li> */}
                     <li className="nav-item">
                       <a href="/#/research" className="nav-link">
                         Research
@@ -245,6 +263,14 @@ const HeaderLandingDocSignature = () => {
             </li>
           ))}
 
+          {allDomain && allDomain.map((domain, i) => (
+            <li key={i} className="nav-item">
+              <a href={`/#/domain/${i}`} className="nav-link" onClick={handleClick}>
+                {domain.title}
+              </a>
+            </li>
+          ))} 
+
           <li className="nav-item">
             <a href="/#/lesson" className="nav-link" onClick={handleClick}>
               Lesson
@@ -281,7 +307,7 @@ const HeaderLandingDocSignature = () => {
             </a>
           </li>
 
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <a href="/#/book" className="nav-link" onClick={handleClick}>
               Book Lesson
             </a>
@@ -292,7 +318,7 @@ const HeaderLandingDocSignature = () => {
                 Student ({student.name})
               </a>
             </li>
-          ))}
+          ))} */}
           <li className="nav-item">
             <a href="/#/research" className="nav-link" onClick={handleClick}>
               Research
