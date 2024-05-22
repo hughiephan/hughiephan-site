@@ -16,29 +16,57 @@ const LearningPath = (props) => {
         if (node.tutorial || node.tutorial == 0) return <Link to={`/tutorial/${node.tutorial}`}> Tutorial: {node.label} </Link>
         if (node.lab || node.lab == 0) return <Link to={`/assignment/${node.lab}`}> Lab: {node.label} </Link>
         if (node.project || node.project == 0) return <Link to={`/assignment/${node.project}`}> Project: {node.label} </Link>
-        if (node.link) return <a href={node.link}> {node.label} </a>
+        if (node.link && node.type && node.type.toLowerCase() == 'kaggle') return (
+            <div>
+                <img height="20" src="https://www.kaggle.com/static/images/logos/kaggle-logo-transparent-300.png" style={{ display: 'inline-block', verticalAlign: 'middle' }} />
+                <a href={node.link} style={{ verticalAlign: 'middle', marginLeft: '8px' }}>
+                    {node.label}
+                </a>
+            </div>
+        )
+        if (node.link && node.type && node.type.toLowerCase() == 'colab') return (
+            <div>
+                <img height="20" src="https://colab.research.google.com/img/colab_favicon_256px.png" style={{ display: 'inline-block', verticalAlign: 'middle' }} />
+                <a href={node.link} style={{ verticalAlign: 'middle', marginLeft: '8px' }}>
+                    {node.label}
+                </a>
+            </div>
+        )
+        if (node.link && node.type && node.type.toLowerCase() == 'github') return (
+            <div>
+                <i className="fa fa-git"> </i> {" "}
+                <a href={node.link}> {node.label} </a>
+            </div>
+        )
+        if (node.link && node.type && node.type.toLowerCase() == 'paper') return (
+            <div>
+                <i className="fa fa-book"> </i> {" "}
+                <a href={node.link}> {node.label} </a>
+            </div>
+        )
+        if (node.link && node.type && node.type.toLowerCase() == 'medium') return (
+            <div>
+                <i className="fa fa-medium"> </i> {" "}
+                <a href={node.link}> {node.label} </a>
+            </div>
+        )
+        if (node.link && node.type && node.type.toLowerCase() == 'youtube') return (
+            <div>
+                <i className="fa fa-youtube-play"> </i> {" "}
+                <a href={node.link}> {node.label} </a>
+            </div>
+        )
+        if (node.link) return (
+            <div>
+                <a href={node.link}> {node.label} </a>
+            </div>
+        )
         return node.label
     };
-    
-    // const customNodeTemplate = (node) => {
-    //     if (node.type === 'person') {
-    //         return (
-    //             <div className="flex flex-column">
-    //                 <div className="flex flex-column align-items-center">
-    //                     <img alt={node.data.name} src={node.data.image} className="mb-3 w-3rem h-3rem" />
-    //                     <span className="font-bold mb-2">{node.data.name}</span>
-    //                     <span>{node.data.title}</span>
-    //                 </div>
-    //             </div>
-    //         );
-    //     }
-
-    //     return node.label;
-    // };
 
     return (
         <div style={customStyles} className="card overflow-x-auto">
-          <OrganizationChart value={[learningPath]} nodeTemplate={customNodeTemplate} />
+            <OrganizationChart value={[learningPath]} nodeTemplate={customNodeTemplate} />
         </div>
     )
 }
