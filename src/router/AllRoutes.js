@@ -30,7 +30,8 @@ import ScrollTopBehaviour from "../components/ScrollTopBehaviour";
 // import Team6 from "../views/inner-pages/pages/team/Team6";
 // import TeamDetailsV1 from "../views/inner-pages/pages/team/TeamDetailsV1";
 // import TeamDetailsV2 from "../views/inner-pages/pages/team/TeamDetailsV2";
-// import FaqDetails from "../views/inner-pages/pages/FaqDetails";
+import FaqDetails from "../views/inner-pages/pages/FaqDetails";
+import Experiment from "../views/inner-pages/pages/experiment/Experiment";
 
 // Contact us inner pages
 // import ContactCustomerSupport from "../views/inner-pages/pages/contact/ContactCustomerSupport";
@@ -144,7 +145,8 @@ const AllRoutes = () => {
         <Route path="/team-details-v2" element={<TeamDetailsV2 />} /> */}
 
         {/* faq inner pages */}
-        {/* <Route path="/faq-details" element={<FaqDetails />} /> */}
+        <Route path="/fpt-undergrad" element={<FaqDetails />} />
+        <Route path="/experiment/:experimentId" element={<Experiment />} />
 
         {/* contact us inner pages */}
         {/* <Route path="/contact-cs" element={<ContactCustomerSupport />} />
@@ -200,7 +202,7 @@ const AllRoutes = () => {
         <Route path="/course/:courseId" element={<Course />} />
         <Route path="/topic/:topicId" element={<Topic />} />
         <Route path="/domain/:domainId" element={<Domain />} />
-        <Route path="/research" element={<Research />} />
+        <Route path="/project" element={<Research />} />
         <Route path="/book" element={<BookLesson />}/>
         <Route path="/exercise" element={<Excerise />} />
         <Route path="/student/:studentId" element={<Student />} />

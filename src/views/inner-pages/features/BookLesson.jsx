@@ -48,7 +48,7 @@ const BookLesson = () => {
                   data-aos-duration="1200"
                 >
                   <div className="text-wrapper">
-                    <h6>Book a Lesson</h6>
+                    <h6>Book a Lesson (Currently not available)</h6>
                     <h3 className="title font-gilroy-bold">
                       Personalized AI lessons
                     </h3>

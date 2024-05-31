@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import HeaderPopupForm from "../../form/HeaderPopupForm";
 // import MegaMenuLanding from "../../header/mega-menu/MegaMenuLanding";
-import { getAllCourse, getAllStudent, getAllTopic, getAllDomain } from '../../../views/FirebaseClient';
+import { getAllCourse, getAllStudent, getAllTopic, getAllExperiment, getAllDomain } from '../../../views/FirebaseClient';
 
 Modal.setAppElement("#root");
 
@@ -15,19 +15,25 @@ const HeaderLandingDocSignature = () => {
   const [navbar, setNavbar] = useState(false);
   const [allCourse, setAllCourse] = useState('');
   const [allStudent, setAllStudent] = useState('');
-  const [allTopic, setAllTopic] = useState('');
+  // const [allTopic, setAllTopic] = useState('');
   const [allDomain, setAllDomain] = useState('');
+  const [allExperiment, setAllExperiment] = useState('');
 
   useEffect(() => {
     const fetchAllCourse = async () => { setAllCourse(await getAllCourse()); }
     const fetchAllStudent = async () => { setAllStudent(await getAllStudent()); }
-    const fetchAllTopic = async () => { setAllTopic(await getAllTopic()); }
+    // const fetchAllTopic = async () => { setAllTopic(await getAllTopic()); }
     const fetchAllDomain = async () => { setAllDomain(await getAllDomain()); }
+    const fetchAllExperiment = async () => {
+      const allExperiment = await getAllExperiment()
+      setAllExperiment(allExperiment);
+    }
 
     fetchAllCourse()
     fetchAllStudent()
-    fetchAllTopic()
+    // fetchAllTopic()
     fetchAllDomain()
+    fetchAllExperiment()
   }, []);
 
   // useEffect(() => {
@@ -109,7 +115,7 @@ const HeaderLandingDocSignature = () => {
                       </ul>
                     </li>
 
-                    <li className="nav-item dropdown">
+                    {/* <li className="nav-item dropdown">
                       <a className="nav-link dropdown-toggle" data-toggle="dropdown">
                         Topic
                       </a>
@@ -122,7 +128,7 @@ const HeaderLandingDocSignature = () => {
                           </li>
                         ))}
                       </ul>
-                    </li>
+                    </li> */}
 
                     <li className="nav-item dropdown">
                       <a className="nav-link dropdown-toggle" data-toggle="dropdown">
@@ -141,7 +147,7 @@ const HeaderLandingDocSignature = () => {
 
                     <li className="nav-item dropdown">
                       <a className="nav-link dropdown-toggle" data-toggle="dropdown">
-                        Material
+                        Teaching
                       </a>
                       <ul className="dropdown-menu">
                         <li>
@@ -164,6 +170,18 @@ const HeaderLandingDocSignature = () => {
                             Assignment
                           </Link>
                         </li>
+                        <li>
+                          <Link to="/book" className="dropdown-item">
+                            Book lesson
+                          </Link>
+                        </li>
+                        {allStudent && allStudent.map((student, i) => (
+                          <li key={i}>
+                            <Link to={`/student/${i}`} className="dropdown-item">
+                              Student ({student.name})
+                            </Link>
+                          </li>
+                        ))}
                       </ul>
                     </li>
 
@@ -174,7 +192,7 @@ const HeaderLandingDocSignature = () => {
                       <ul className="dropdown-menu">
                         <li>
                           <a href="/demo/item_based_cosine_recommend.html" className="dropdown-item">
-                            Item-based Recommend
+                            Item Based Recommend
                           </a>
                           <a href="/demo/rnn_reviewbot.html" className="dropdown-item">
                             Review Bot
@@ -207,11 +225,39 @@ const HeaderLandingDocSignature = () => {
                         ))}
                       </ul>
                     </li> */}
-                    <li className="nav-item">
+
+
+                    <li className="nav-item dropdown">
+                      <a className="nav-link dropdown-toggle" data-toggle="dropdown">
+                        Research
+                      </a>
+                      <ul className="dropdown-menu">
+                        <li>
+                          <Link to="/project" className="dropdown-item">
+                            Project
+                          </Link>
+                        </li>
+                        {allExperiment && allExperiment.map((experiment, i) => (
+                          <li key={i}>
+                            <Link to={`/experiment/${i}`} className="dropdown-item">
+                              Experiment ({experiment.name.split(' ').map(word => word[0]).join('')})
+                            </Link>
+                          </li>
+                        ))}
+                        <li>
+                          <Link to="/fpt-undergrad" className="dropdown-item">
+                            For Undergrad (FPT)
+                          </Link>
+                        </li>
+                      </ul>
+                    </li>
+
+
+                    {/* <li className="nav-item">
                       <a href="/#/research" className="nav-link">
                         Research
                       </a>
-                    </li>
+                    </li> */}
                   </Scrollspy>
                 </div>
               </div>
@@ -255,13 +301,13 @@ const HeaderLandingDocSignature = () => {
             </li>
           ))}
 
-          {allTopic && allTopic.map((topic, i) => (
+          {/* {allTopic && allTopic.map((topic, i) => (
             <li key={i} className="nav-item">
               <a href={`/#/topic/${i}`} className="nav-link" onClick={handleClick}>
                 {topic.title}
               </a>
             </li>
-          ))}
+          ))} */}
 
           {allDomain && allDomain.map((domain, i) => (
             <li key={i} className="nav-item">
@@ -269,7 +315,7 @@ const HeaderLandingDocSignature = () => {
                 {domain.title}
               </a>
             </li>
-          ))} 
+          ))}
 
           <li className="nav-item">
             <a href="/#/lesson" className="nav-link" onClick={handleClick}>
@@ -294,7 +340,7 @@ const HeaderLandingDocSignature = () => {
 
           <li className="nav-item">
             <a href="/demo/item_based_cosine_recommend.html" className="nav-link" onClick={handleClick}>
-              Item-based Recommend
+              Item Based Recommend
             </a>
             <a href="/demo/rnn_reviewbot.html" className="nav-link" onClick={handleClick}>
               Review Bot
@@ -307,7 +353,7 @@ const HeaderLandingDocSignature = () => {
             </a>
           </li>
 
-          {/* <li className="nav-item">
+          <li className="nav-item">
             <a href="/#/book" className="nav-link" onClick={handleClick}>
               Book Lesson
             </a>
@@ -318,10 +364,22 @@ const HeaderLandingDocSignature = () => {
                 Student ({student.name})
               </a>
             </li>
-          ))} */}
+          ))}
           <li className="nav-item">
-            <a href="/#/research" className="nav-link" onClick={handleClick}>
-              Research
+            <a href="/#/project" className="nav-link" onClick={handleClick}>
+              Project
+            </a>
+          </li>
+          {allExperiment && allExperiment.map((experiment, i) => (
+            <li key={i} className="nav-item">
+              <a href={`/#/experiment/${i}`} className="nav-link" onClick={handleClick}>
+                Experiment ({experiment.name.split(' ').map(word => word[0]).join('')})
+              </a>
+            </li>
+          ))}
+          <li className="nav-item">
+            <a href="/#/fpt-undergrad" className="nav-link" onClick={handleClick}>
+              For Undergrad (FPT)
             </a>
           </li>
         </Scrollspy>

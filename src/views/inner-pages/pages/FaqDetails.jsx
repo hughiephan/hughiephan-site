@@ -1,52 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import Header from "../../../components/header/Header";
 import Footer from "../../../components/footer/Footer";
-import CopyRight from "../../../components/footer/CopyRight";
+import HeaderLandingDocSignature from "../../../components/header/landing/HeaderLandingDocSignature";
+
 
 const FaqDetails = () => {
+  const [reaction, setReaction] = useState('');
+
   const handleSubmit = (event) => {
     event.preventDefault();
+  };
+
+  const handleReaction = (type) => {
+    setReaction(type);
   };
 
   return (
     <div className="main-page-wrapper">
       <Helmet>
-        <title>Faq Details || Deski-Saas & Software React Template</title>
+        <title>For FPT Undergrad</title>
       </Helmet>
       {/* End Page SEO Content */}
 
-      <Header />
+      <HeaderLandingDocSignature />
       {/* End Header */}
 
-      {/* =============================================
-            Fancy Hero One
-        ==============================================  */}
-      <div className="fancy-hero-one">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-9 m-auto">
-              <h2 className="font-rubik">Help & Support</h2>
-              <p className="sub-heading">
-                Advice and answers from our expert and proffesional deski Team
-              </p>
-            </div>
-          </div>
-          <form onClick={handleSubmit} className="search-form">
-            <input type="text" placeholder="Search for articles..." />
-            <button>
-              <img src="images/icon/47.svg" alt="icon" />
-            </button>
-          </form>
-        </div>
-        <div className="bubble-one"></div>
-        <div className="bubble-two"></div>
-        <div className="bubble-three"></div>
-        <div className="bubble-four"></div>
-        <div className="bubble-five"></div>
-        <div className="bubble-six"></div>
-      </div>
-      {/* /.fancy-hero-one */}
 
       {/* =============================================
             FAQS
@@ -57,9 +36,7 @@ const FaqDetails = () => {
           alt="shape"
           className="shapes shape-one"
         />
-        <div className="shapes shape-two"></div>
-        <div className="shapes shape-three"></div>
-        <div className="shapes shape-four"></div>
+
         <div className="container">
           <div className="row">
             <div className="col-xl-11 m-auto">
@@ -67,18 +44,12 @@ const FaqDetails = () => {
                 <div className="faqs-all-qus m-0">
                   <div className="article-preview mb-0">
                     <div className="d-flex">
-                      <img
-                        src="images/media/img_43.png"
-                        alt="media"
-                        className="avatar-img"
-                      />
                       <div>
-                        <h3 className="font-rubik">
-                          How to set up two-factor authentication (2FA)
+                        <h3 style={{ color: "black"}}className="font-rubik">
+                          Guide for Undergraduate Students at FPT University
                         </h3>
                         <div className="avatar-info">
-                          Written by <span>Jonny White</span> <br />
-                          12 apr, 2020
+                          31 May, 2024
                         </div>
                       </div>
                     </div>
@@ -86,54 +57,58 @@ const FaqDetails = () => {
 
                     <div className="article-details">
                       <p>
-                        To activate 2FA you will need an authenticator app
-                        installed on your smartphone. This could be Google
-                        Authenticator or Authy, both available for iOs and
-                        Android.
+                        Most students must submit a <a style={{ color: '#1e90ff' }} href="https://docs.google.com/document/d/162mYgciw8uCHKy0ra70rVnQ2Jb7_S-Z1/edit"> research proposal </a> prior to being accepted into my lab. This allows me to determine if our research interests align and to assess your commitment to preliminary research. However, if you encounter me in person, feel free to approach me directly to discuss your papers and ideas. Our objective would be publishing journal and conference papers and utilizing those results for the Final Capstone Project.
+                      </p>
+                      <br></br>
+                      <p>
+                        <b>My two requirements:</b>
                       </p>
                       <ul className="list-meta">
                         <li>
-                          Go to ‘Account settings’ from your Ticket Tailor
-                          dashboard.
+                          You need to write a <a style={{ color: '#1e90ff' }} href="https://github.com/hughiephan/DPL/raw/main/FPT%20Thesis%20Template.docx"> 50-page report </a>
                         </li>
                         <li>
-                          Under the heading ‘Two-factor authentication’ click
-                          the button labelled ‘Activate 2FA’.
-                        </li>
-                        <li>
-                          From your authenticator app on your phone, add a new
-                          login and it will ask you to scan the QR code shown
-                          here. Scan the QR code.
-                        </li>
-                        <li>
-                          The app will generate a code. Enter that code in the
-                          box below and click 'Activate 2FA'.
+                          Must attend an online meeting every two weeks to report your progress
                         </li>
                       </ul>
                       <p>
-                        <b>Please note:</b> If you lose access to your 2FA app
-                        you will need to contact customer support to go through
-                        a security questionnaire and have your account unlocked.
+                        <b>Optional: </b> Write a  <a style={{ color: '#1e90ff' }} href="https://www.overleaf.com/latex/templates/ieee-conference-template/grfzhhncsfqn"> 6-12 page research </a> and publish at a high-tier conference and journal
+                      </p>
+                      <br></br>
+                      <p>
+                        Still unsure about your current research topic? Then take a look at the courses available on this website. They include various research-level topics that might interest you.
+                        If you find NLP interesting then have a look at this <a style={{ color: '#1e90ff' }} href="https://neptune.ai/blog/tips-to-train-nlp-models"> NLP Tips</a>,
+                        or if Computer Vision interests you, start by first reading the <a style={{ color: '#1e90ff' }} href="https://neptune.ai/blog/image-segmentation-tips-and-tricks-from-kaggle-competitions"> Image Processing Tips</a>
                       </p>
 
                       <div className="reaction-wrapper">
-                        <h4>Did this answer your question?</h4>
+                        <h4>Did you find this guide helpful?</h4>
                         <div
                           className="d-flex align-items-center justify-content-center"
                           data-aos="zoom-in"
                           data-aos-duration="1200"
                           data-aos-delay="50"
                         >
-                          <button>
+                          <button onClick={() => handleReaction('happy')}>
                             <img src="images/icon/happy.svg" alt="icon" />
                           </button>
-                          <button>
+                          <button onClick={() => handleReaction('sad')}>
                             <img src="images/icon/sad.svg" alt="icon" />
                           </button>
-                          <button>
+                          <button onClick={() => handleReaction('surprised')}>
                             <img src="images/icon/surprised.svg" alt="icon" />
                           </button>
                         </div>
+                        {reaction && (
+                          <div style={{ padding: "10px" }}
+                            data-aos="zoom-in"
+                            data-aos-duration="500"
+                            data-aos-delay="0">
+                            {reaction === 'happy' && <p>I'm glad you're happy!</p>}
+                            {reaction === 'sad' && <p>Sorry to hear that! Feel free to contact me directly at phanthanhhuy1996@gmail.com</p>}
+                            {reaction === 'surprised' && <p>Let me know how I can support you at phanthanhhuy1996@gmail.com</p>}
+                          </div>
+                        )}
                       </div>
                       {/* /.reaction-wrapper */}
                     </div>
@@ -149,24 +124,6 @@ const FaqDetails = () => {
         </div>
       </div>
       {/* /.faqs-inner-page */}
-
-      <footer className="theme-footer-one pt-130 md-pt-70">
-        <div className="top-footer">
-          <div className="container">
-            <Footer />
-          </div>
-          {/* /.container */}
-        </div>
-        {/* /.top-footer */}
-
-        <div className="container">
-          <div className="bottom-footer-content">
-            <CopyRight />
-          </div>
-          {/*  /.bottom-footer */}
-        </div>
-      </footer>
-      {/* /.theme-footer-one */}
     </div>
   );
 };

@@ -25,6 +25,7 @@ const studentRef = ref(database, 'student');
 const assignmentRef = ref(database, 'assignment');
 const topicRef = ref(database, 'topic');
 const domainRef = ref(database, 'domain');
+const experimentRef = ref(database, 'experiment');
 
 export async function getCourse(courseId) {
     return await get(courseRef).then(function (snapshot) {
@@ -231,5 +232,31 @@ export async function getDomain(domainId) {
         }
     }).catch(function (error) {
         console.error("Error loading domain data: ", error);
+    });
+};
+
+export async function getAllExperiment() {
+    return await get(experimentRef).then(function (snapshot) {
+        if (snapshot.exists()) {
+            const data = snapshot.val();
+            return data
+        } else {
+            console.log("No experiment data found");
+        }
+    }).catch(function (error) {
+        console.error("Error loading experiment data: ", error);
+    });
+};
+
+export async function getExperiment(experimentId) {
+    return await get(experimentRef).then(function (snapshot) {
+        if (snapshot.exists()) {
+            const data = snapshot.val();
+            return data[experimentId]
+        } else {
+            console.log("No experiment data found");
+        }
+    }).catch(function (error) {
+        console.error("Error loading experiment data: ", error);
     });
 };

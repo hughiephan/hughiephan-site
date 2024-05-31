@@ -59,7 +59,7 @@ const Research = () => {
                   </li>
                   <li className="nav-item">
                     <a className="nav-link" href="#opt4">
-                      4. Guide
+                      4. Undergrad Projects (FPT)
                     </a>
                   </li>
                 </ul>
@@ -73,8 +73,9 @@ const Research = () => {
                     {allResearch && allResearch.filter(research => research.type === "proposal").map((research, i) => (
                       <div>
                         <h3> {research.title} </h3>
+                        <div className="update-date"> {research.author} </div>
+                        {research.from && <div style={{ marginTop: "-20px" }} className="update-date"> From: {research.from} </div>}
                         <p> {research.description} </p>
-
                         {(research.proposal || research.paper || research.report) &&
                           <div>
                             Detail (access required):
@@ -117,6 +118,7 @@ const Research = () => {
                       <div>
                         <h3> {research.title} </h3>
                         <div className="update-date"> {research.author} </div>
+                        {research.from && <div style={{ marginTop: "-20px" }} className="update-date"> From: {research.from} </div>}
                         <p> {research.description} </p>
 
                         {(research.proposal || research.paper || research.report) &&
@@ -161,6 +163,7 @@ const Research = () => {
                       <div>
                         <h3> {research.title} </h3>
                         <div className="update-date"> {research.author} </div>
+                        {research.from && <div style={{ marginTop: "-20px" }} className="update-date"> From: {research.from} </div>}
                         <p> {research.description} </p>
 
                         {(research.proposal || research.paper || research.report) &&
@@ -174,7 +177,7 @@ const Research = () => {
                               </a>
                             }
                             <span> </span> <span> </span>
-                            
+
                             {research.student &&
                               <a href={research.student} target="_blank" rel="noreferrer">
                                 <i className="fa fa-file-o"> Student Proposal</i>
@@ -204,27 +207,59 @@ const Research = () => {
                     ))}
                   </div> <br />
                   <div id="opt4">
-                    <h2 className="font-gilroy-bold">Guide for students</h2>
-                    <div>
+                    <h2 className="font-gilroy-bold">Undergrad Projects (FPT)</h2>
+                    {allResearch && allResearch.filter(research => research.type === "report").map((research, i) => (
+                      <div>
+                        <h3> {research.title} </h3>
+                        <div className="update-date"> {research.author} </div>
+                        {research.from && <div style={{ marginTop: "-20px" }} className="update-date"> From: {research.from} </div>}
+                        <p> {research.description} </p>
 
-                      <p> To graduate you need to write a 50-page Thesis following FPT Thesis format. Most of the students I'm guiding are encouranged to write an Acadmic Paper based on the Thesis. Conference Paper length should be about: 6 to 10 pages or Journal article can range from around 8 to 15 pages </p>
+                        {(research.proposal || research.paper || research.report) &&
+                          <div>
+                            Detail (access required):
+                            <span> </span>
 
-                      <h4> Research Proposal </h4>
-                      <p> https://docs.google.com/document/d/162mYgciw8uCHKy0ra70rVnQ2Jb7_S-Z1/edit </p>
+                            {research.proposal &&
+                              <a href={research.proposal} target="_blank" rel="noreferrer">
+                                <i className="fa fa-file-text-o"> Proposal</i>
+                              </a>
+                            }
+                            <span> </span> <span> </span>
 
-                      <h4> Image Processing Tips </h4>
-                      <p> https://neptune.ai/blog/image-segmentation-tips-and-tricks-from-kaggle-competitions </p>
+                            {research.student &&
+                              <a href={research.student} target="_blank" rel="noreferrer">
+                                <i className="fa fa-file-o"> Student Proposal</i>
+                              </a>
+                            }
+                            <span> </span> <span> </span>
 
-                      <h4> Natural Language Processing Tips </h4>
-                      <p> https://neptune.ai/blog/tips-to-train-nlp-models </p>
+                            {research.paper &&
+                              <a href={research.paper} target="_blank" rel="noreferrer">
+                                <i className="fa fa-book"> Paper</i>
+                              </a>
+                            }
+                            <span> </span> <span> </span>
 
-                      <h4> FPT Thesis Template </h4>
-                      <p> https://github.com/hughiephan/DPL/raw/main/FPT%20Thesis%20Template.docx </p>
+                            {research.report &&
+                              <a href={research.report} target="_blank" rel="noreferrer">
+                                <i className="fa fa-pencil-square-o"> Report</i>
+                              </a>
+                            }
+                            <span> </span> <span> </span>
+                            {research.git &&
+                              <a href={research.git} target="_blank" rel="noreferrer">
+                                <i className="fa fa-github"> Git</i>
+                              </a>
+                            }
+                          </div>
+                        }
 
-                      <h4> Writing Format</h4>
-                      <p> https://www.overleaf.com/latex/templates/ieee-conference-template/grfzhhncsfqn </p>
-
-                    </div>
+                        {research.link && research.link.map((link, i) => (
+                          <a href={link}> {link} </a>
+                        ))}
+                      </div>
+                    ))}
                   </div>
                 </div>
                 {/*  /.tab-content */}
