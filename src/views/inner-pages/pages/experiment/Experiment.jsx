@@ -8,6 +8,7 @@ import "gantt-task-react/dist/index.css";
 import { getExperiment } from '../../../FirebaseClient';
 import { Link } from "react-router-dom";
 import ExperimentLevel from "../../../../components/pricing/pricing-two/ExperimentLevel"
+import WandbIframe from "../../../WandbIframe";
 
 const Experiment = () => {
   const { experimentId } = useParams();
@@ -119,7 +120,7 @@ const Experiment = () => {
         columnWidth={columnWidth}
       />
 
-      <div style={{ background: "white" }} className="faqs-inner-page">
+      <div style={{ background: "white", padding: "120px 0 0" }} className="faqs-inner-page">
         <img
           src="images/shape/66.svg"
           alt="shape"
@@ -159,8 +160,44 @@ const Experiment = () => {
       </div>
       {/* End faqs-inner-page */}
 
+
+      {/* =============================================
+            Documentation
+        ==============================================  */}
+
+      <div className="doc-container mt-70 sm-m0">
+        <div className="container">
+          <div className="row flex-xl-nowrap no-gutters">
+            {/* <!-- ****************************** DOC MAIN BODY ********************************* --> */}
+            <main className="col-12 doc-main-body">
+              <h5 className="font-rubik mb-20">
+                Changelog: <mark>31/05/2024</mark>
+              </h5>
+              <div className="mark-blue">
+                <pre>
+                  Experiment initialized
+                </pre>
+              </div>
+              {/* <!-- /.mark-blue --> */}
+              <WandbIframe></WandbIframe>
+              <h5 className="font-rubik mb-20">
+                Changelog: <mark>1/6/2024</mark>
+              </h5>
+              <div className="mark-blue">
+                <pre>
+                  Experiment initialized
+                </pre>
+              </div>
+            </main>
+            {/* <!-- /.doc-main-body --> */}
+          </div>
+        </div>
+      </div>
+      {/* <!-- /.doc-container --> */}
+
+
       <div className="pricing-section-one">
-        <div style={{padding: "0px"}}className="fancy-hero-one">
+        <div style={{ padding: "0px" }} className="fancy-hero-one">
           <div className="bubble-one"></div>
           <div className="bubble-two"></div>
           <div className="bubble-three"></div>
