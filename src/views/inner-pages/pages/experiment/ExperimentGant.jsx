@@ -1,16 +1,80 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import HeaderLandingDocSignature from "../../../../components/header/landing/HeaderLandingDocSignature";
+import { ViewMode, Gantt } from "gantt-task-react";
+import { getStartEndDateForProject, initTasks } from "./helper";
+// import "gantt-task-react/dist/index.css";
 import { getExperiment } from '../../../FirebaseClient';
 import { Link } from "react-router-dom";
-import HeaderLandingDocSignature from "../../../../components/header/landing/HeaderLandingDocSignature";
 import ExperimentLevel from "../../../../components/pricing/pricing-two/ExperimentLevel"
 import WandbIframe from "../../../WandbIframe";
 import DrawIframe from "../../../DrawIframe";
 
 const Experiment = () => {
   const { experimentId } = useParams();
+  const [view, setView] = React.useState(ViewMode.Day);
+  const [tasks, setTasks] = React.useState(initTasks());
+  const [isChecked, setIsChecked] = React.useState(true);
   const [experiment, setExperiment] = useState('');
+
+  let columnWidth = 100;
+  if (view === ViewMode.Year) {
+    columnWidth = 350;
+  } else if (view === ViewMode.Month) {
+    columnWidth = 300;
+  } else if (view === ViewMode.Week) {
+    columnWidth = 250;
+  }
+
+  // const handleTaskChange = (task) => {
+  //   console.log("On date change Id:" + task.id);
+  //   let newTasks = tasks.map(t => (t.id === task.id ? task : t));
+  //   if (task.project) {
+  //     const [start, end] = getStartEndDateForProject(newTasks, task.project);
+  //     const project = newTasks[newTasks.findIndex(t => t.id === task.project)];
+  //     if (
+  //       project.start.getTime() !== start.getTime() ||
+  //       project.end.getTime() !== end.getTime()
+  //     ) {
+  //       const changedProject = { ...project, start, end };
+  //       newTasks = newTasks.map(t =>
+  //         t.id === task.project ? changedProject : t
+  //       );
+  //     }
+  //   }
+  //   setTasks(newTasks);
+  // };
+
+  // const handleTaskDelete = (task) => {
+  //   const conf = window.confirm("Are you sure about " + task.name + " ?");
+  //   if (conf) {
+  //     setTasks(tasks.filter(t => t.id !== task.id));
+  //   }
+  //   return conf;
+  // };
+
+  // const handleProgressChange = async (task) => {
+  //   setTasks(tasks.map(t => (t.id === task.id ? task : t)));
+  //   console.log("On progress change Id:" + task.id);
+  // };
+
+  // const handleDblClick = (task) => {
+  //   alert("On Double Click event Id:" + task.id);
+  // };
+
+  // const handleClick = (task) => {
+  //   console.log("On Click event Id:" + task.id);
+  // };
+
+  // const handleSelect = (task, isSelected) => {
+  //   console.log(task.name + " has " + (isSelected ? "selected" : "unselected"));
+  // };
+
+  // const handleExpanderClick = (task) => {
+  //   setTasks(tasks.map(t => (t.id === task.id ? task : t)));
+  //   console.log("On expander click Id:" + task.id);
+  // };
 
   useEffect(() => {
     const fetchExperiment = async () => {
@@ -43,14 +107,22 @@ const Experiment = () => {
         </div>
       </div>
 
-      {/* =============================================
-            Experiment Iframe
-        ==============================================  */}
-      {experiment.drawio ? <DrawIframe drawio={experiment.drawio}> </DrawIframe> : null}
+      <DrawIframe></DrawIframe>
+{/* 
+      <Gantt
+        tasks={tasks}
+        viewMode={view}
+        onDateChange={handleTaskChange}
+        onDelete={handleTaskDelete}
+        onProgressChange={handleProgressChange}
+        onDoubleClick={handleDblClick}
+        onClick={handleClick}
+        onSelect={handleSelect}
+        onExpanderClick={handleExpanderClick}
+        listCellWidth={!isChecked ? "155px" : ""}
+        columnWidth={columnWidth}
+      /> */}
 
-      {/* =============================================
-            Experiment Details
-        ==============================================  */}
       <div style={{ background: "white", padding: "120px 0 0" }} className="faqs-inner-page">
         <img
           src="images/shape/66.svg"
@@ -86,42 +158,42 @@ const Experiment = () => {
       </div>
       {/* End faqs-inner-page */}
 
-      {/* =============================================
-            Changelog
-        ==============================================  */}
-      {experiment.changelog && experiment.changelog.length > 0 && (
-        <div>
-          {experiment.changelog.map((c, i) => (
-            <div>
-              <div className="doc-container mt-70 sm-m0">
-                <div className="container">
-                  <div className="row flex-xl-nowrap no-gutters">
-                    {/* <!-- ****************************** Changelog MAIN BODY ********************************* --> */}
-                    <main className="col-12 doc-main-body">
-                      <h5 className="font-rubik mb-20">
-                        Changelog: <mark>{c.date}</mark>
-                      </h5>
-                      <div className="mark-blue">
-                        <pre>
-                          {c.comment}
-                        </pre>
-                      </div>
-                      {/* <!-- /.mark-blue --> */}
-                      <WandbIframe wandb={c.wandb}></WandbIframe>
-                    </main>
-                    {/* <!-- /.doc-main-body --> */}
-                  </div>
-                </div>
-              </div>
-              {/* <!-- /.doc-container --> */}
-            </div>
-          ))}
-        </div>
-      )}
 
       {/* =============================================
-            Experiment Levels
+            Documentation
         ==============================================  */}
+
+      <div className="doc-container mt-70 sm-m0">
+        <div className="container">
+          <div className="row flex-xl-nowrap no-gutters">
+            {/* <!-- ****************************** DOC MAIN BODY ********************************* --> */}
+            <main className="col-12 doc-main-body">
+              <h5 className="font-rubik mb-20">
+                Changelog: <mark>31/05/2024</mark>
+              </h5>
+              <div className="mark-blue">
+                <pre>
+                  Experiment initialized
+                </pre>
+              </div>
+              {/* <!-- /.mark-blue --> */}
+              <WandbIframe></WandbIframe>
+              <h5 className="font-rubik mb-20">
+                Changelog: <mark>1/6/2024</mark>
+              </h5>
+              <div className="mark-blue">
+                <pre>
+                  Experiment initialized
+                </pre>
+              </div>
+            </main>
+            {/* <!-- /.doc-main-body --> */}
+          </div>
+        </div>
+      </div>
+      {/* <!-- /.doc-container --> */}
+
+
       <div className="pricing-section-one">
         <div style={{ padding: "0px" }} className="fancy-hero-one">
           <div className="bubble-one"></div>

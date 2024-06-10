@@ -1,5 +1,5 @@
-const WandbIframe = (props) => {
-  const { height, wandb} = props;
+const DrawIframe = (props) => {
+  const { height, drawio } = props;
 
   const containerStyle = {
     border: "none",
@@ -10,7 +10,7 @@ const WandbIframe = (props) => {
   return (
     <div style={containerStyle}>
       <iframe
-        src={wandb}
+        src={drawio}
         width="100%"
         height="100%"
       ></iframe>
@@ -18,8 +18,8 @@ const WandbIframe = (props) => {
   );
 };
 
-WandbIframe.defaultProps = {
-  height: "1500px"
+DrawIframe.defaultProps = {
+  height: "500px"
 };
 
-export default WandbIframe;
+export default DrawIframe;
