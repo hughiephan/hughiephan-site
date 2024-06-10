@@ -144,10 +144,6 @@ const AllRoutes = () => {
         <Route path="/team-details-v1" element={<TeamDetailsV1 />} />
         <Route path="/team-details-v2" element={<TeamDetailsV2 />} /> */}
 
-        {/* faq inner pages */}
-        <Route path="/fpt-undergrad" element={<FaqDetails />} />
-        <Route path="/experiment/:experimentId" element={<Experiment />} />
-
         {/* contact us inner pages */}
         {/* <Route path="/contact-cs" element={<ContactCustomerSupport />} />
         <Route path="/contact-eo" element={<ContactEventOrganizer />} />
@@ -197,21 +193,24 @@ const AllRoutes = () => {
         <Route path="/blog-v4" element={<BlogV4 />} />
         <Route path="/blog-v5" element={<BlogV5 />} />
         <Route path="/blog-v6" element={<BlogV6 />} /> */}
+        
+        {/* <Route path="/topic/:topicId" element={<Topic />} /> */}
 
         <Route path="/" element={<Home />} />
-        <Route path="/course/:courseId" element={<Course />} />
-        <Route path="/topic/:topicId" element={<Topic />} />
-        <Route path="/domain/:domainId" element={<Domain />} />
+        <Route path="/course/:courseId/:courseName" element={<Course />} />
+        <Route path="/domain/:domainId/:domainName" element={<Domain />} />
         <Route path="/project" element={<Research />} />
         <Route path="/book" element={<BookLesson />}/>
         <Route path="/exercise" element={<Excerise />} />
-        <Route path="/student/:studentId" element={<Student />} />
+        <Route path="/student/:studentId/:studentName" element={<Student />} />
         <Route path="/lesson" element={<Lesson />} />
-        <Route path="/lesson/:lessonId" element={<LessonDetails />} />
+        <Route path="/lesson/:lessonId/:lessonName" element={<LessonDetails />} />
         <Route path="/tutorial" element={<Tutorial />} />
-        <Route path="/tutorial/:tutorialId" element={<TutorialDetails />} />
-        <Route path="/assignment" element={<Assignment />} />
-        <Route path="/assignment/:assignmentId" element={<AssignmentDetails />} />
+        <Route path="/tutorial/:tutorialId/:tutorialName" element={<TutorialDetails />} />
+        <Route path="/assignment" element={<Assignment />} /> 
+        <Route path="/assignment/:assignmentId/:assignmentName" element={<AssignmentDetails />} />
+        <Route path="/fpt-undergrad" element={<FaqDetails />} />
+        <Route path="/experiment/:experimentId/:experimentName" element={<Experiment />} />
 
         {/* NotFound Route */}
         <Route path="/*" element={<NotFound />} />

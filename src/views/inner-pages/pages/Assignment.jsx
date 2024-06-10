@@ -83,7 +83,7 @@ const Assignment = () => {
                   {allAssignment && allAssignment.map((assignment, i) => (
                     <Link
                       className="article-preview d-flex"
-                      to={`/assignment/${i}`}
+                      to={`/assignment/${i}/${assignment.title.toLowerCase().replace(/\s+/g, '-')}`}
                       key={i}
                       data-aos="fade-up"
                       data-aos-duration="1200"

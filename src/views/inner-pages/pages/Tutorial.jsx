@@ -83,17 +83,15 @@ const Tutorial = () => {
                   {allTutorial && allTutorial.map((tutorial, i) => (
                     <Link
                       className="article-preview d-flex"
-                      to={`/tutorial/${i}`}
+                      to={`/tutorial/${i}/${tutorial.title.toLowerCase().replace(/\s+/g, '-')}`}
                       key={i}
                       data-aos="fade-up"
                       data-aos-duration="1200"
                     >
-                    
                       <div>
                         <h3 className="font-rubik">{tutorial.title}</h3>
                         <div className="avatar-info">
                           {tutorial.date} <br /> 
-                          {/* From Tutorial: <span> {tutorial.course} </span>  <br/> */}
                           {tutorial.description}
                         </div>
                       </div>

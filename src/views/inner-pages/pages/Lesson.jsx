@@ -74,21 +74,21 @@ const Lesson = () => {
 
               <div className="all-faqs">
                 <div className="faqs-all-qus">
-                  {allLesson && allLesson.map((course, i) => (
+                  {allLesson && allLesson.map((lesson, i) => (
                     <Link
                       className="article-preview d-flex"
-                      to={`/lesson/${i}`}
+                      to={`/lesson/${i}/${lesson.title.toLowerCase().replace(/\s+/g, '-')}`}
                       key={i}
                       data-aos="fade-up"
                       data-aos-duration="1200"
                     >
                     
                       <div>
-                        <h3 className="font-rubik">{course.title}</h3>
+                        <h3 className="font-rubik">{lesson.title}</h3>
                         <div className="avatar-info">
-                          {course.date} <br /> 
-                          From Course: <span> {course.course} </span> - Topic: <span> {course.topic} </span> <br/>
-                          {course.description}
+                          {lesson.date} <br /> 
+                          From Course: <span> {lesson.course} </span> - Topic: <span> {lesson.topic} </span> <br/>
+                          {lesson.description}
                         </div>
                       </div>
                     </Link>
