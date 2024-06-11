@@ -12,10 +12,10 @@ const LearningPath = (props) => {
     const { learningPath } = props;
 
     const customNodeTemplate = (node) => {
-        if (node.lesson || node.lesson == 0) return <Link to={`/lesson/${node.lesson}`}> Lesson: {node.label} </Link>
-        if (node.tutorial || node.tutorial == 0) return <Link to={`/tutorial/${node.tutorial}`}> Tutorial: {node.label} </Link>
-        if (node.lab || node.lab == 0) return <Link to={`/assignment/${node.lab}`}> Lab: {node.label} </Link>
-        if (node.project || node.project == 0) return <Link to={`/assignment/${node.project}`}> Project: {node.label} </Link>
+        if (node.lesson || node.lesson == 0) return <Link to={`/lesson/${node.lesson}/${node.label.toLowerCase().replace(/\s+/g, '-')}`}> Lesson: {node.label} </Link>
+        if (node.tutorial || node.tutorial == 0) return <Link to={`/tutorial/${node.tutorial}/${node.label.toLowerCase().replace(/\s+/g, '-')}`}> Tutorial: {node.label} </Link>
+        if (node.lab || node.lab == 0) return <Link to={`/assignment/${node.lab}/${node.label.toLowerCase().replace(/\s+/g, '-')}`}> Lab: {node.label} </Link>
+        if (node.project || node.project == 0) return <Link to={`/assignment/${node.project}/${node.label.toLowerCase().replace(/\s+/g, '-')}`}> Project: {node.label} </Link>
         if (node.link && node.type && node.type.toLowerCase() == 'kaggle') return (
             <div>
                 <img height="20" src="https://www.kaggle.com/static/images/logos/kaggle-logo-transparent-300.png" style={{ display: 'inline-block', verticalAlign: 'middle' }} />
