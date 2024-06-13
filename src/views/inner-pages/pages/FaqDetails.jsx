@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import Header from "../../../components/header/Header";
-import Footer from "../../../components/footer/Footer";
 import HeaderLandingDocSignature from "../../../components/header/landing/HeaderLandingDocSignature";
+import { getAllResearch } from "../../FirebaseClient"
 
 
 const FaqDetails = () => {
   const [reaction, setReaction] = useState('');
+  const [allResearch, setAllResearch] = useState('');
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
+  useEffect(() => {
+    const fetchAllResearch = async () => {
+      const allResearch = await getAllResearch()
+      setAllResearch(allResearch);
+    }
+    fetchAllResearch()
+  }, []);
 
   const handleReaction = (type) => {
     setReaction(type);
@@ -45,11 +49,11 @@ const FaqDetails = () => {
                   <div className="article-preview mb-0">
                     <div className="d-flex">
                       <div>
-                        <h3 style={{ color: "black"}}className="font-rubik">
+                        <h3 style={{ color: "black" }} className="font-rubik">
                           Guide for Undergraduate Students at FPT University
                         </h3>
                         <div className="avatar-info">
-                          31 May, 2024
+                          13 June, 2024
                         </div>
                       </div>
                     </div>
@@ -57,11 +61,11 @@ const FaqDetails = () => {
 
                     <div className="article-details">
                       <p>
-                        Most students must submit a <a style={{ color: '#1e90ff' }} href="https://docs.google.com/document/d/162mYgciw8uCHKy0ra70rVnQ2Jb7_S-Z1/edit"> research proposal </a> prior to being accepted into my lab. This allows me to determine if our research interests align and to assess your commitment to preliminary research. However, if you encounter me in person, feel free to approach me directly to discuss your papers and ideas. Our objective would be publishing journal and conference papers and utilizing those results for the Final Capstone Project.
+                        Students must submit a <a style={{ color: '#1e90ff' }} href="https://docs.google.com/document/d/162mYgciw8uCHKy0ra70rVnQ2Jb7_S-Z1/edit"> research proposal </a> prior to being accepted into my lab. This allows me to determine if our research interests align and to assess your commitment to preliminary research. However, if you encounter me in person, feel free to approach me directly to discuss your papers and ideas. Our objective would be publishing journal and conference papers and utilizing those results for the Final Capstone Project.
                       </p>
                       <br></br>
                       <p>
-                        <b>My two requirements:</b>
+                        <b>Graduation requirements:</b>
                       </p>
                       <ul className="list-meta">
                         <li>
@@ -74,12 +78,25 @@ const FaqDetails = () => {
                       <p>
                         <b>Optional: </b> Write a  <a style={{ color: '#1e90ff' }} href="https://www.overleaf.com/latex/templates/ieee-conference-template/grfzhhncsfqn"> 6-12 page research </a> and publish at a high-tier conference and journal
                       </p>
+
                       <br></br>
                       <p>
-                        Still unsure about your current research topic? Then take a look at the courses available on this website. They include various research-level topics that might interest you.
+                        Still unsure about your current research topic? Then take a look at the courses and research projects available on this website. They include various research-level topics that might interest you.
                         If you find NLP interesting then have a look at this <a style={{ color: '#1e90ff' }} href="https://neptune.ai/blog/tips-to-train-nlp-models"> NLP Tips</a>,
                         or if Computer Vision interests you, start by first reading the <a style={{ color: '#1e90ff' }} href="https://neptune.ai/blog/image-segmentation-tips-and-tricks-from-kaggle-competitions"> Image Processing Tips</a>
                       </p>
+
+                      <br></br>
+                      <p> If you wish to join an existing group, please first discuss with the corresponding author. If they agree, I would be happy to welcome you into my lab.</p>
+                      <ul className="list-meta">
+                        {allResearch && allResearch.filter(research => research.type === "on-going").map((research, i) => (
+                          research.author.split(',').map(author => author.trim()).length < 4 && research.email ? (
+                            <li key={i}>
+                              {research.email} ({research.title})
+                            </li>
+                          ) : null
+                        ))}
+                      </ul>
 
                       <div className="reaction-wrapper">
                         <h4>Did you find this guide helpful?</h4>
