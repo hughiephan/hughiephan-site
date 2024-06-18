@@ -4,7 +4,7 @@ import HeaderLandingDocSignature from "../../../components/header/landing/Header
 import { getAllResearch } from "../../FirebaseClient"
 
 
-const FaqDetails = () => {
+const StudentGuide = () => {
   const [reaction, setReaction] = useState('');
   const [allResearch, setAllResearch] = useState('');
 
@@ -23,7 +23,7 @@ const FaqDetails = () => {
   return (
     <div className="main-page-wrapper">
       <Helmet>
-        <title>For FPT Undergrad</title>
+        <title>FPT Student Guide</title>
       </Helmet>
       {/* End Page SEO Content */}
 
@@ -69,7 +69,7 @@ const FaqDetails = () => {
                       </p>
                       <ul className="list-meta">
                         <li>
-                          You need to write a <a style={{ color: '#1e90ff' }} href="https://github.com/hughiephan/DPL/raw/main/FPT%20Thesis%20Template.docx"> 50-page report </a>
+                          You need to write a <a style={{ color: '#1e90ff' }} href="https://docs.google.com/document/d/1b1vj8spQSF8Yt2KqZhRCb6Huvp8uLDlv"> 50-page report </a>
                         </li>
                         <li>
                           Must attend an online meeting every two weeks to report your progress
@@ -81,7 +81,7 @@ const FaqDetails = () => {
 
                       <br></br>
                       <p>
-                        Still unsure about your current research topic? Then take a look at the courses and research projects available on this website. They include various research-level topics that might interest you.
+                        Still unsure about your current research topic? Then take a look at the courses and <a style={{ color: '#1e90ff' }} href="/#/project"> research projects </a> available on this website. They include various research-level topics that might interest you.
                         If you find NLP interesting then have a look at this <a style={{ color: '#1e90ff' }} href="https://neptune.ai/blog/tips-to-train-nlp-models"> NLP Tips</a>,
                         or if Computer Vision interests you, start by first reading the <a style={{ color: '#1e90ff' }} href="https://neptune.ai/blog/image-segmentation-tips-and-tricks-from-kaggle-competitions"> Image Processing Tips</a>
                       </p>
@@ -122,7 +122,7 @@ const FaqDetails = () => {
                             data-aos-duration="500"
                             data-aos-delay="0">
                             {reaction === 'happy' && <p>I'm glad you're happy!</p>}
-                            {reaction === 'sad' && <p>Sorry to hear that! Feel free to contact me directly at phanthanhhuy1996@gmail.com</p>}
+                            {reaction === 'sad' && <p>Sorry to hear that! Feel free to give me a feedback at <a style={{ color: '#1e90ff' }} href="https://www.kudoboard.com/boards/imidi2cd">https://www.kudoboard.com/boards/imidi2cd</a> </p>}
                             {reaction === 'surprised' && <p>Let me know how I can support you at phanthanhhuy1996@gmail.com</p>}
                           </div>
                         )}
@@ -145,4 +145,4 @@ const FaqDetails = () => {
   );
 };
 
-export default FaqDetails;
+export default StudentGuide;

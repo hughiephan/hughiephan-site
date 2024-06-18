@@ -30,7 +30,7 @@ import ScrollTopBehaviour from "../components/ScrollTopBehaviour";
 // import Team6 from "../views/inner-pages/pages/team/Team6";
 // import TeamDetailsV1 from "../views/inner-pages/pages/team/TeamDetailsV1";
 // import TeamDetailsV2 from "../views/inner-pages/pages/team/TeamDetailsV2";
-import FaqDetails from "../views/inner-pages/pages/FaqDetails";
+import StudentGuide from "../views/inner-pages/pages/StudentGuide";
 import Experiment from "../views/inner-pages/pages/experiment/Experiment";
 
 // Contact us inner pages
@@ -94,7 +94,7 @@ import Lesson from "../views/inner-pages/pages/Lesson";
 import Tutorial from "../views/inner-pages/pages/Tutorial";
 import Assignment from "../views/inner-pages/pages/Assignment";
 import BookLesson from "../views/inner-pages/features/BookLesson";
-import Research from "../views/inner-pages/features/miscellaneous/Research";
+import Project from "../views/inner-pages/features/miscellaneous/Project";
 import Excerise from "../views/inner-pages/service/Exercise";
 import Student from "../views/inner-pages/portfolio/Student";
 import LessonDetails from "../views/inner-pages/blog-pages/LessonDetails";
@@ -104,6 +104,7 @@ import Course from "../views/inner-pages/pages/about/Course";
 import Topic from "../views/inner-pages/pages/about/Topic";
 import Domain from "../views/inner-pages/pages/about/Domain";
 import NotFound from "../views/NotFound";
+import Published from "../views/inner-pages/features/miscellaneous/Published";
 
 
 const AllRoutes = () => {
@@ -199,7 +200,8 @@ const AllRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/course/:courseId/:courseName" element={<Course />} />
         <Route path="/domain/:domainId/:domainName" element={<Domain />} />
-        <Route path="/project" element={<Research />} />
+        <Route path="/project" element={<Project />} />
+        <Route path="/published" element={<Published />} />
         <Route path="/book" element={<BookLesson />}/>
         <Route path="/exercise" element={<Excerise />} />
         <Route path="/student/:studentId/:studentName" element={<Student />} />
@@ -209,7 +211,7 @@ const AllRoutes = () => {
         <Route path="/tutorial/:tutorialId/:tutorialName" element={<TutorialDetails />} />
         <Route path="/assignment" element={<Assignment />} /> 
         <Route path="/assignment/:assignmentId/:assignmentName" element={<AssignmentDetails />} />
-        <Route path="/fpt-undergrad" element={<FaqDetails />} />
+        <Route path="/fpt-undergrad" element={<StudentGuide />} />
         <Route path="/experiment/:experimentId/:experimentName" element={<Experiment />} />
 
         {/* NotFound Route */}

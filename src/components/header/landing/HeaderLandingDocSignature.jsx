@@ -184,28 +184,6 @@ const HeaderLandingDocSignature = () => {
                         ))}
                       </ul>
                     </li>
-
-                    <li className="nav-item dropdown">
-                      <a className="nav-link dropdown-toggle" data-toggle="dropdown">
-                        Demo
-                      </a>
-                      <ul className="dropdown-menu">
-                        <li>
-                          <a href="/demo/item_based_cosine_recommend.html" className="dropdown-item">
-                            Item Based Recommend
-                          </a>
-                          <a href="/demo/rnn_reviewbot.html" className="dropdown-item">
-                            Review Bot
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/game" className="dropdown-item">
-                            Chase Game
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-
                     <li className="nav-item dropdown">
                       <a className="nav-link dropdown-toggle" data-toggle="dropdown">
                         Research
@@ -225,12 +203,34 @@ const HeaderLandingDocSignature = () => {
                         ))}
                         <li>
                           <Link to="/fpt-undergrad" className="dropdown-item">
-                            For Undergrad (FPT)
+                            Student Guide (FPT)
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/published" className="dropdown-item">
+                            Published
                           </Link>
                         </li>
                       </ul>
                     </li>
 
+                    <li className="nav-item dropdown">
+                      <a className="nav-link dropdown-toggle" data-toggle="dropdown">
+                        Product
+                      </a>
+                      <ul className="dropdown-menu">
+                        <li>
+                          <a href="https://aicomponent.co" className="dropdown-item">
+                            AI Component
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/game" className="dropdown-item">
+                            Game
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
 
                     {/* <li className="nav-item">
                       <a href="/#/research" className="nav-link">
@@ -316,28 +316,11 @@ const HeaderLandingDocSignature = () => {
               Assignment
             </a>
           </li>
-
-          <li className="nav-item">
-            <a href="/demo/item_based_cosine_recommend.html" className="nav-link" onClick={handleClick}>
-              Item Based Recommend
-            </a>
-            <a href="/demo/rnn_reviewbot.html" className="nav-link" onClick={handleClick}>
-              Review Bot
-            </a>
-          </li>
-
-          <li className="nav-item">
-            <a href="/game/index.html" className="nav-link" onClick={handleClick}>
-              Chase Game
-            </a>
-          </li>
-
           <li className="nav-item">
             <a href="/#/book" className="nav-link" onClick={handleClick}>
               Book Lesson
             </a>
           </li>
-
           {allStudent && allStudent.map((student, i) => (
             <li key={i} className="nav-item">
               <a href={`/#/student/${i}/${student.name.toLowerCase().replace(/\s+/g, '-')}`} className="nav-link" onClick={handleClick}>
@@ -362,7 +345,22 @@ const HeaderLandingDocSignature = () => {
 
           <li className="nav-item">
             <a href="/#/fpt-undergrad" className="nav-link" onClick={handleClick}>
-              For Undergrad (FPT)
+              Student Guide (FPT)
+            </a>
+          </li>
+
+          <li className="nav-item">
+            <a href="/#/published" className="nav-link" onClick={handleClick}>
+              Published
+            </a>
+          </li>
+
+          <li className="nav-item">
+            <a href="https://aicomponent.co" className="nav-link" onClick={handleClick}>
+              AI Component
+            </a>
+            <a href="/game" className="nav-link" onClick={handleClick}>
+              Game
             </a>
           </li>
         </Scrollspy>
