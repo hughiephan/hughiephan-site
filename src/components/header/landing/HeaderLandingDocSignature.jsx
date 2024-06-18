@@ -171,6 +171,11 @@ const HeaderLandingDocSignature = () => {
                           </Link>
                         </li>
                         <li>
+                          <a href="/game" className="dropdown-item">
+                            Game
+                          </a>
+                        </li>
+                        <li>
                           <Link to="/book" className="dropdown-item">
                             Book lesson
                           </Link>
@@ -222,11 +227,6 @@ const HeaderLandingDocSignature = () => {
                         <li>
                           <a href="https://aicomponent.co" className="dropdown-item">
                             AI Component
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/game" className="dropdown-item">
-                            Game
                           </a>
                         </li>
                       </ul>
@@ -317,6 +317,11 @@ const HeaderLandingDocSignature = () => {
             </a>
           </li>
           <li className="nav-item">
+            <a href="/game" className="nav-link" onClick={handleClick}>
+              Game
+            </a>
+          </li>
+          <li className="nav-item">
             <a href="/#/book" className="nav-link" onClick={handleClick}>
               Book Lesson
             </a>
@@ -358,9 +363,6 @@ const HeaderLandingDocSignature = () => {
           <li className="nav-item">
             <a href="https://aicomponent.co" className="nav-link" onClick={handleClick}>
               AI Component
-            </a>
-            <a href="/game" className="nav-link" onClick={handleClick}>
-              Game
             </a>
           </li>
         </Scrollspy>
