@@ -199,21 +199,21 @@ const HeaderLandingDocSignature = () => {
                             Project
                           </Link>
                         </li>
-                        {allExperiment && allExperiment.map((experiment, i) => (
+                        {/* {allExperiment && allExperiment.map((experiment, i) => (
                           <li key={i}>
                             <Link to={`/experiment/${i}/${experiment.name.toLowerCase().replace(/\s+/g, '-')}`} className="dropdown-item">
                               Experiment ({experiment.name.split(' ').map(word => word[0]).join('')})
                             </Link>
                           </li>
-                        ))}
-                        <li>
-                          <Link to="/fpt-undergrad" className="dropdown-item">
-                            Student Guide (FPT)
-                          </Link>
-                        </li>
+                        ))} */}
                         <li>
                           <Link to="/published" className="dropdown-item">
                             Published
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/fpt-undergrad" className="dropdown-item">
+                            Student Guide (FPT)
                           </Link>
                         </li>
                       </ul>
@@ -340,23 +340,23 @@ const HeaderLandingDocSignature = () => {
             </a>
           </li>
 
-          {allExperiment && allExperiment.map((experiment, i) => (
+          {/* {allExperiment && allExperiment.map((experiment, i) => (
             <li key={i} className="nav-item">
               <a href={`/#/experiment/${i}/${experiment.name.toLowerCase().replace(/\s+/g, '-')}`} className="nav-link" onClick={handleClick}>
                 Experiment ({experiment.name.split(' ').map(word => word[0]).join('')})
               </a>
             </li>
-          ))}
-
-          <li className="nav-item">
-            <a href="/#/fpt-undergrad" className="nav-link" onClick={handleClick}>
-              Student Guide (FPT)
-            </a>
-          </li>
+          ))} */}
 
           <li className="nav-item">
             <a href="/#/published" className="nav-link" onClick={handleClick}>
               Published
+            </a>
+          </li>
+
+          <li className="nav-item">
+            <a href="/#/fpt-undergrad" className="nav-link" onClick={handleClick}>
+              Student Guide (FPT)
             </a>
           </li>
 
