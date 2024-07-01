@@ -30,8 +30,7 @@ import ScrollTopBehaviour from "../components/ScrollTopBehaviour";
 // import Team6 from "../views/inner-pages/pages/team/Team6";
 // import TeamDetailsV1 from "../views/inner-pages/pages/team/TeamDetailsV1";
 // import TeamDetailsV2 from "../views/inner-pages/pages/team/TeamDetailsV2";
-import StudentGuide from "../views/inner-pages/pages/StudentGuide";
-import Experiment from "../views/inner-pages/pages/experiment/Experiment";
+
 
 // Contact us inner pages
 // import ContactCustomerSupport from "../views/inner-pages/pages/contact/ContactCustomerSupport";
@@ -53,6 +52,7 @@ import Experiment from "../views/inner-pages/pages/experiment/Experiment";
 // import SignUp from "../views/inner-pages/features/miscellaneous/SignUp";
 // import SolutionMangement from "../views/inner-pages/features/SolutionMangement";
 // import FeaturesCustomerSupport from "../views/inner-pages/features/FeaturesCustomerSupport";
+
 
 // SERVICE PAGES ROUTES
 // import ServiceV1 from "../views/inner-pages/service/ServiceV1";
@@ -101,10 +101,12 @@ import LessonDetails from "../views/inner-pages/blog-pages/LessonDetails";
 import TutorialDetails from "../views/inner-pages/blog-pages/TutorialDetails";
 import AssignmentDetails from "../views/inner-pages/blog-pages/AssignmentDetails";
 import Course from "../views/inner-pages/pages/about/Course";
-import Topic from "../views/inner-pages/pages/about/Topic";
 import Domain from "../views/inner-pages/pages/about/Domain";
 import NotFound from "../views/NotFound";
 import Published from "../views/inner-pages/features/miscellaneous/Published";
+import StudentGuide from "../views/inner-pages/pages/StudentGuide";
+import Experiment from "../views/inner-pages/pages/experiment/Experiment";
+import Math from "../views/inner-pages/features/Math";
 
 
 const AllRoutes = () => {
@@ -200,6 +202,7 @@ const AllRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/course/:courseId/:courseName" element={<Course />} />
         <Route path="/domain/:domainId/:domainName" element={<Domain />} />
+        <Route path="/math" element={<Math />} />
         <Route path="/project" element={<Project />} />
         <Route path="/published" element={<Published />} />
         <Route path="/book" element={<BookLesson />}/>
