@@ -1,0 +1,42 @@
+.research-tab-container {
+    margin-left: -10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.research-tab {
+    display: flex;
+    padding: 10px 20px 10px 10px;
+    background: linear-gradient(to right, #eecaca 30%, #ffffff 50%);
+    background-size: 200% 150%;
+    background-position: right bottom;
+    border-radius: 10px;
+    transition: background-position 0.5s ease;
+}
+
+.research-tab:hover {
+    background-position: left bottom;
+}
+
+.research-tab i {
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.research-tab a {
+    font-family: "Rubik", sans-serif;
+    color: #515151;
+}
+
+.research-tab .content p {
+    line-height: 35px !important;
+    margin-bottom: 10px !important;
+}
+
+.research-tab a:hover {
+    color: rgb(41, 40, 40);
+}
+
+.content {
+    flex: 1;
+}

@@ -69,7 +69,7 @@ const Published = () => {
 
                         {(research.proposal || research.paper || research.report || research.git) &&
                           <div>
-                            Detail (access required):
+                            Detail:
                             <span> </span>
 
                             {research.proposal &&
@@ -125,7 +125,7 @@ const Published = () => {
 
                         {(research.proposal || research.paper || research.report || research.git) &&
                           <div>
-                            Detail (access required):
+                            Detail:
                             {/* <span> </span>
 
                             {research.proposal &&
