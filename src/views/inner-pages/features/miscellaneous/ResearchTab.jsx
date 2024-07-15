@@ -60,14 +60,24 @@ const ResearchTab = (props) => {
                     <div className="content">
                         <a href={research.paper}>Paper</a>
                     </div>
-                </div>}
+                </div>
+            }
             {research.demo &&
                 <div className="research-tab">
                     <i className="fa fa-play-circle"></i>
                     <div className="content">
                         <a>Demo</a>
                     </div>
-                </div>}
+                </div>
+            }
+            {research.prototype &&
+                <div className="research-tab">
+                    <i className="fa fa-code-fork"></i>
+                    <div className="content">
+                        <a>Prototype</a>
+                    </div>
+                </div>
+            }
         </div>
     );
 };

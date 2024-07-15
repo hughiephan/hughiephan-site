@@ -50,14 +50,19 @@ const Project = () => {
                   </li>
                   <li className="nav-item">
                     <a className="nav-link" href="#opt2">
-                      2. On-going Research
+                      2. Supervising Projects
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#opt3">
+                      3. Personal Research
                     </a>
                   </li>
                 </ul>
                 <div className="nav-tabs" style={{ padding: '30px 30px', marginTop: '-50px' }}>
                   <span style={{ display: 'flex', alignItems: 'center' }}>
                     <img style={{ width: '30px' }} src="images/icon/40.svg" alt="media" />
-                    <p style={{ fontSize: "15px", padding: '5px 5px', margin: 0 }}>Priority Research</p>
+                    <p style={{ fontSize: "15px", padding: '5px 5px', margin: 0 }}>Recommend joining</p>
                   </span>
                   <span style={{ display: 'flex', alignItems: 'center' }}>
                     <p style={{ fontSize: "15px", padding: '5px 5px', margin: 0 }}>Documents of research proposals and on-going research require access. If you wish to join a project, please send me an email.</p>
@@ -76,9 +81,8 @@ const Project = () => {
                           {research.priority ? <img style={{ paddingLeft: "5px", width: "30px" }} src="images/icon/40.svg" alt="media" /> : null}
                         </h3>
                         <div className="update-date"> {research.author} </div>
-                        {research.from && <div style={{ marginTop: "-20px" }} className="update-date"> From: {research.from} </div>}
                         <p> {research.description} </p>
-                        {(research.proposal || research.paper || research.report || research.git) &&
+                        {(research.git) &&
                           <div>
                             <ResearchTab research={research}></ResearchTab>
                           </div>
@@ -87,14 +91,27 @@ const Project = () => {
                     ))}
                   </div>
                   <div id="opt2">
-                    <h2 className="font-gilroy-bold">On-going Research <img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
+                    <h2 className="font-gilroy-bold">Supervising Projects <img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
                     {allResearch && allResearch.filter(research => research.type === "on-going").map((research, i) => (
                       <div>
                         <h3> {research.title} </h3>
                         <div className="update-date"> {research.author} </div>
-                        {research.from && <div style={{ marginTop: "-20px" }} className="update-date"> From: {research.from} </div>}
                         <p> {research.description} </p>
-                        {/* {(research.proposal || research.paper || research.report || research.git) && */}
+                        {(research.git) &&
+                          <div>
+                            <ResearchTab research={research}></ResearchTab>
+                          </div>
+                        }
+                      </div>
+                    ))}
+                  </div>
+                  <div id="opt3">
+                    <h2 className="font-gilroy-bold">Personal Research <img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
+                    {allResearch && allResearch.filter(research => research.type === "personal").map((research, i) => (
+                      <div>
+                        <h3> {research.title} </h3>
+                        <div className="update-date"> {research.author} </div>
+                        <p> {research.description} </p>
                         {(research.git) &&
                           <div>
                             <ResearchTab research={research}></ResearchTab>

@@ -200,8 +200,13 @@ const HeaderLandingDocSignature = () => {
                       </a>
                       <ul className="dropdown-menu">
                         <li>
+                          <Link to="/fpt-undergrad" className="dropdown-item">
+                            Student Guide
+                          </Link>
+                        </li>
+                        <li>
                           <Link to="/project" className="dropdown-item">
-                            Project
+                            Avaiable Projects
                           </Link>
                         </li>
                         {/* {allExperiment && allExperiment.map((experiment, i) => (
@@ -216,14 +221,8 @@ const HeaderLandingDocSignature = () => {
                             Published
                           </Link>
                         </li>
-                        <li>
-                          <Link to="/fpt-undergrad" className="dropdown-item">
-                            Student Guide (FPT)
-                          </Link>
-                        </li>
                       </ul>
                     </li>
-
                     <li className="nav-item dropdown">
                       <a className="nav-link dropdown-toggle" data-toggle="dropdown">
                         Product
@@ -344,8 +343,14 @@ const HeaderLandingDocSignature = () => {
           ))}
 
           <li className="nav-item">
+            <a href="/#/fpt-undergrad" className="nav-link" onClick={handleClick}>
+              Student Guide
+            </a>
+          </li>
+
+          <li className="nav-item">
             <a href="/#/project" className="nav-link" onClick={handleClick}>
-              Project
+              Avaiable Projects
             </a>
           </li>
 
@@ -360,12 +365,6 @@ const HeaderLandingDocSignature = () => {
           <li className="nav-item">
             <a href="/#/published" className="nav-link" onClick={handleClick}>
               Published
-            </a>
-          </li>
-
-          <li className="nav-item">
-            <a href="/#/fpt-undergrad" className="nav-link" onClick={handleClick}>
-              Student Guide (FPT)
             </a>
           </li>
 

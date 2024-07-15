@@ -49,7 +49,7 @@ const Published = () => {
                   </li>
                   <li className="nav-item">
                     <a className="nav-link" href="#opt2">
-                      2. Capstone Projects (FPT)
+                      2. Capstone Projects
                     </a>
                   </li>
                 </ul>
@@ -115,7 +115,7 @@ const Published = () => {
                     ))}
                   </div> <br />
                   <div id="opt2">
-                    <h2 className="font-gilroy-bold">Capstone Projects (FPT) <img src="images/shape/line-shape-13.svg" alt="shape"/></h2>
+                    <h2 className="font-gilroy-bold">Capstone Projects <img src="images/shape/line-shape-13.svg" alt="shape"/></h2>
                     {allResearch && allResearch.filter(research => research.type === "report").map((research, i) => (
                       <div>
                         <h3> {research.title} </h3>
