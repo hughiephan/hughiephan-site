@@ -61,11 +61,7 @@ const Project = () => {
                 </ul>
                 <div className="nav-tabs" style={{ padding: '30px 30px', marginTop: '-50px' }}>
                   <span style={{ display: 'flex', alignItems: 'center' }}>
-                    <img style={{ width: '30px' }} src="images/icon/40.svg" alt="media" />
-                    <p style={{ fontSize: "15px", padding: '5px 5px', margin: 0 }}>Recommend joining</p>
-                  </span>
-                  <span style={{ display: 'flex', alignItems: 'center' }}>
-                    <p style={{ fontSize: "15px", padding: '5px 5px', margin: 0 }}>Documents of research proposals and on-going research require access. If you wish to join a project, please send me an email.</p>
+                    <p style={{ fontSize: "15px", padding: '5px 5px', margin: 0 }}>You are welcome to join any project here if you wish. If you are interested, please send me an email. Please note that most of the documents in this research require access.</p>
                   </span>
                 </div>
               </div>
@@ -78,15 +74,12 @@ const Project = () => {
                       <div>
                         <h3 style={{ display: "flex" }}>
                           {research.title}
-                          {research.priority ? <img style={{ paddingLeft: "5px", width: "30px" }} src="images/icon/40.svg" alt="media" /> : null}
                         </h3>
                         <div className="update-date"> {research.author} </div>
                         <p> {research.description} </p>
-                        {(research.git) &&
-                          <div>
-                            <ResearchTab research={research}></ResearchTab>
-                          </div>
-                        }
+                        <div>
+                          <ResearchTab research={research}></ResearchTab>
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -97,11 +90,9 @@ const Project = () => {
                         <h3> {research.title} </h3>
                         <div className="update-date"> {research.author} </div>
                         <p> {research.description} </p>
-                        {(research.git) &&
-                          <div>
-                            <ResearchTab research={research}></ResearchTab>
-                          </div>
-                        }
+                        <div>
+                          <ResearchTab research={research}></ResearchTab>
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -112,11 +103,9 @@ const Project = () => {
                         <h3> {research.title} </h3>
                         <div className="update-date"> {research.author} </div>
                         <p> {research.description} </p>
-                        {(research.git) &&
-                          <div>
-                            <ResearchTab research={research}></ResearchTab>
-                          </div>
-                        }
+                        <div>
+                          <ResearchTab research={research}></ResearchTab>
+                        </div>
                       </div>
                     ))}
                   </div>

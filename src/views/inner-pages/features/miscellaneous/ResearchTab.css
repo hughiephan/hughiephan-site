@@ -4,15 +4,29 @@
     flex-wrap: wrap;
 }
 
+.default-research-tab {
+    display: flex;
+    padding: 10px 20px 10px 10px;
+    background: linear-gradient(to right, #f3f3f37e 30%, #ffffff 50%);
+    background-size: 200% 150%;
+    border-radius: 10px;
+}
+
 .research-tab {
     display: flex;
     padding: 10px 20px 10px 10px;
-    background: linear-gradient(to right, #eecaca 30%, #ffffff 50%);
+    background: linear-gradient(to right, #f7f7f7 30%, #ffffff 50%);
     background-size: 200% 150%;
     background-position: right bottom;
     border-radius: 10px;
     transition: background-position 0.5s ease;
 }
+
+.research-tab-todo {
+    background: linear-gradient(to right, #ffeed0 30%, #ffffff 50%);
+    background-size: 200% 150%;
+}
+
 
 .research-tab:hover {
     background-position: left bottom;
