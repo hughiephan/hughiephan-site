@@ -21,7 +21,7 @@ const ResearchTab = (props) => {
             }
             {research.proposal &&
                 <div className={research.todo.includes("proposal") ? "research-tab-todo research-tab" : "research-tab"}>
-                    <i className="fa fa-sticky-note-o"></i>
+                    <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/61.svg" alt="media" />
                     <div className="content">
                         <a href={research.proposal}>Proposal</a>
                     </div>
@@ -131,6 +131,23 @@ const ResearchTab = (props) => {
             }
 
 
+            {!research.video &&
+                <div className={research.todo.includes("demo") ? "research-tab-todo default-research-tab" : "default-research-tab"}>
+                    <div className="content">
+                        Video
+                    </div>
+                </div>
+            }
+            {research.video &&
+                <div className={research.todo.includes("demo") ? "research-tab-todo research-tab" : "research-tab"}>
+                    <i className="fa fa-play-circle"></i>
+                    <div className="content">
+                        <a href={research.video}>Video</a>
+                    </div>
+                </div>
+            }
+
+
             {!research.demo &&
                 <div className={research.todo.includes("demo") ? "research-tab-todo default-research-tab" : "default-research-tab"}>
                     <div className="content">
@@ -140,13 +157,46 @@ const ResearchTab = (props) => {
             }
             {research.demo &&
                 <div className={research.todo.includes("demo") ? "research-tab-todo research-tab" : "research-tab"}>
-                    <i className="fa fa-play-circle"></i>
+                    <i className="fa fa-feed"></i>
                     <div className="content">
                         <a href={research.demo}>Demo</a>
                     </div>
                 </div>
             }
 
+            {/* etc */}
+            {research.competition &&
+                <div className={research.todo.includes("demo") ? "research-tab-todo research-tab" : "research-tab"}>
+                    <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/13.svg" alt="media" />
+                    <div className="content">
+                        <a>{research.competition}</a>
+                    </div>
+                </div>
+            }
+            {research.conference &&
+                <div className={research.todo.includes("demo") ? "research-tab-todo research-tab" : "research-tab"}>
+                    <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/15.svg" alt="media" />
+                    <div className="content">
+                        <a>{research.conference}</a>
+                    </div>
+                </div>
+            }
+            {research.journal &&
+                <div className={research.todo.includes("demo") ? "research-tab-todo research-tab" : "research-tab"}>
+                    <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/16.svg" alt="media" />
+                    <div className="content">
+                        <a>{research.journal}</a>
+                    </div>
+                </div>
+            }
+            {research.talk &&
+                <div className="default-research-tab">
+                    <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/60.svg" alt="media" />
+                    <div className="content">
+                        <a>{research.talk}</a>
+                    </div>
+                </div>
+            }
             {research.priority &&
                 <div className="default-research-tab">
                     <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/40.svg" alt="media" />
