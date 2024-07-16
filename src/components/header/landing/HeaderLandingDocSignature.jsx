@@ -218,7 +218,7 @@ const HeaderLandingDocSignature = () => {
                         ))} */}
                         <li>
                           <Link to="/published" className="dropdown-item">
-                            Published
+                            Publications
                           </Link>
                         </li>
                       </ul>
@@ -364,7 +364,7 @@ const HeaderLandingDocSignature = () => {
 
           <li className="nav-item">
             <a href="/#/published" className="nav-link" onClick={handleClick}>
-              Published
+              Publications
             </a>
           </li>
 

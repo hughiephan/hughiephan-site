@@ -1,5 +1,16 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import './ResearchTab.css';
+
+function getClassName(research, className, properties) {
+
+    if (research.done.includes(properties)) {
+        className += " research-tab-done";
+    } else if (research.todo.includes(properties)) {
+        className += " research-tab-todo";
+    }
+    return className;
+}
 
 const ResearchTab = (props) => {
     let { research } = props;
@@ -9,19 +20,25 @@ const ResearchTab = (props) => {
             todo: ""
         };
     }
+    if (!research.done) {
+        research = {
+            ...research,
+            done: ""
+        };
+    }
 
     return (
         <div className="research-tab-container">
             {!research.proposal &&
-                <div className={research.todo.includes("proposal") ? "research-tab-todo default-research-tab" : "default-research-tab"}>
+                <div className={getClassName(research, "default-research-tab", "proposal")}>
                     <div className="content">
                         Proposal
                     </div>
                 </div>
             }
             {research.proposal &&
-                <div className={research.todo.includes("proposal") ? "research-tab-todo research-tab" : "research-tab"}>
-                    <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/61.svg" alt="media" />
+                <div className={getClassName(research, "research-tab", "proposal")}>
+                    <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/190.svg" alt="media" />
                     <div className="content">
                         <a href={research.proposal}>Proposal</a>
                     </div>
@@ -30,14 +47,14 @@ const ResearchTab = (props) => {
 
 
             {!research.presentation &&
-                <div className={research.todo.includes("presentation") ? "research-tab-todo default-research-tab" : "default-research-tab"}>
+                <div className={getClassName(research, "default-research-tab", "presentation")}>
                     <div className="content">
                         Presentation
                     </div>
                 </div>
             }
             {research.presentation &&
-                <div className={research.todo.includes("presentation") ? "research-tab-todo research-tab" : "research-tab"}>
+                <div className={getClassName(research, "research-tab", "presentation")}>
                     <i className="fa fa-file-pdf-o"></i>
                     <div className="content">
                         <a>Presentation</a>
@@ -47,14 +64,14 @@ const ResearchTab = (props) => {
 
 
             {!research.report &&
-                <div className={research.todo.includes("report") ? "research-tab-todo default-research-tab" : "default-research-tab"}>
+                <div className={getClassName(research, "default-research-tab", "report")}>
                     <div className="content">
                         Report
                     </div>
                 </div>
             }
             {research.report &&
-                <div className={research.todo.includes("report") ? "research-tab-todo research-tab" : "research-tab"}>
+                <div className={getClassName(research, "research-tab", "report")}>
                     <i className="fa fa-pencil-square-o"></i>
                     <div className="content">
                         <a href={research.report}>Report</a>
@@ -64,14 +81,14 @@ const ResearchTab = (props) => {
 
 
             {!research.notebook &&
-                <div className={research.todo.includes("notebook") ? "research-tab-todo default-research-tab" : "default-research-tab"}>
+                <div className={getClassName(research, "default-research-tab", "notebook")}>
                     <div className="content">
                         Notebook
                     </div>
                 </div>
             }
             {research.notebook &&
-                <div className={research.todo.includes("notebook") ? "research-tab-todo research-tab" : "research-tab"}>
+                <div className={getClassName(research, "research-tab", "notebook")}>
                     <i className="fa fa-code-fork"></i>
                     <div className="content">
                         <a href={research.notebook}>Notebook</a>
@@ -81,14 +98,14 @@ const ResearchTab = (props) => {
 
 
             {!research.dataset &&
-                <div className={research.todo.includes("dataset") ? "research-tab-todo default-research-tab" : "default-research-tab"}>
+                <div className={getClassName(research, "default-research-tab", "dataset")}>
                     <div className="content">
                         Dataset
                     </div>
                 </div>
             }
             {research.dataset &&
-                <div className={research.todo.includes("dataset") ? "research-tab-todo research-tab" : "research-tab"}>
+                <div className={getClassName(research, "research-tab", "dataset")}>
                     <i className="fa fa-database"></i>
                     <div className="content">
                         <a href={research.dataset}>Dataset</a>
@@ -98,14 +115,14 @@ const ResearchTab = (props) => {
 
 
             {!research.git &&
-                <div className={research.todo.includes("git") ? "research-tab-todo default-research-tab" : "default-research-tab"}>
+                <div className={getClassName(research, "default-research-tab", "git")}>
                     <div className="content">
                         Github
                     </div>
                 </div>
             }
             {research.git &&
-                <div className={research.todo.includes("git") ? "research-tab-todo research-tab" : "research-tab"}>
+                <div className={getClassName(research, "research-tab", "git")}>
                     <i className="fa fa-github"></i>
                     <div className="content">
                         <a href={research.git}>Github</a>
@@ -115,14 +132,14 @@ const ResearchTab = (props) => {
 
 
             {!research.paper &&
-                <div className={research.todo.includes("paper") ? "research-tab-todo default-research-tab" : "default-research-tab"}>
+                <div className={getClassName(research, "default-research-tab", "paper")}>
                     <div className="content">
                         Paper
                     </div>
                 </div>
             }
             {research.paper &&
-                <div className={research.todo.includes("paper") ? "research-tab-todo research-tab" : "research-tab"}>
+                <div className={getClassName(research, "research-tab", "paper")}>
                     <i className="fa fa-book"></i>
                     <div className="content">
                         <a href={research.paper}>Paper</a>
@@ -132,14 +149,14 @@ const ResearchTab = (props) => {
 
 
             {!research.video &&
-                <div className={research.todo.includes("demo") ? "research-tab-todo default-research-tab" : "default-research-tab"}>
+                <div className={getClassName(research, "default-research-tab", "video")}>
                     <div className="content">
                         Video
                     </div>
                 </div>
             }
             {research.video &&
-                <div className={research.todo.includes("demo") ? "research-tab-todo research-tab" : "research-tab"}>
+                <div className={getClassName(research, "research-tab", "video")}>
                     <i className="fa fa-play-circle"></i>
                     <div className="content">
                         <a href={research.video}>Video</a>
@@ -149,14 +166,14 @@ const ResearchTab = (props) => {
 
 
             {!research.demo &&
-                <div className={research.todo.includes("demo") ? "research-tab-todo default-research-tab" : "default-research-tab"}>
+                <div className={getClassName(research, "default-research-tab", "demo")}>
                     <div className="content">
                         Demo
                     </div>
                 </div>
             }
             {research.demo &&
-                <div className={research.todo.includes("demo") ? "research-tab-todo research-tab" : "research-tab"}>
+                <div className={getClassName(research, "research-tab", "demo")}>
                     <i className="fa fa-feed"></i>
                     <div className="content">
                         <a href={research.demo}>Demo</a>
@@ -166,7 +183,7 @@ const ResearchTab = (props) => {
 
             {/* etc */}
             {research.competition &&
-                <div className={research.todo.includes("demo") ? "research-tab-todo research-tab" : "research-tab"}>
+                <div className="research-tab">
                     <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/13.svg" alt="media" />
                     <div className="content">
                         <a>{research.competition}</a>
@@ -174,7 +191,7 @@ const ResearchTab = (props) => {
                 </div>
             }
             {research.conference &&
-                <div className={research.todo.includes("demo") ? "research-tab-todo research-tab" : "research-tab"}>
+                <div className="research-tab">
                     <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/15.svg" alt="media" />
                     <div className="content">
                         <a>{research.conference}</a>
@@ -182,7 +199,7 @@ const ResearchTab = (props) => {
                 </div>
             }
             {research.journal &&
-                <div className={research.todo.includes("demo") ? "research-tab-todo research-tab" : "research-tab"}>
+                <div className="research-tab">
                     <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/16.svg" alt="media" />
                     <div className="content">
                         <a>{research.journal}</a>
@@ -190,7 +207,7 @@ const ResearchTab = (props) => {
                 </div>
             }
             {research.talk &&
-                <div className="default-research-tab">
+                <div className="research-tab">
                     <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/60.svg" alt="media" />
                     <div className="content">
                         <a>{research.talk}</a>
@@ -198,10 +215,18 @@ const ResearchTab = (props) => {
                 </div>
             }
             {research.priority &&
-                <div className="default-research-tab">
+                <div className="research-tab">
                     <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/40.svg" alt="media" />
                     <div className="content">
                         <a>Recommend Joining</a>
+                    </div>
+                </div>
+            }
+            {research.experiment &&
+                <div className="research-tab">
+                    <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/26.svg" alt="media" />
+                    <div className="content">
+                        <Link to={`/experiment/${research.experiment.id}/${research.experiment.name}`}> Experiment </Link>
                     </div>
                 </div>
             }
