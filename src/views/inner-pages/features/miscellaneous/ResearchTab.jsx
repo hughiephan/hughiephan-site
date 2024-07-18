@@ -46,35 +46,18 @@ const ResearchTab = (props) => {
             }
 
 
-            {!research.presentation &&
-                <div className={getClassName(research, "default-research-tab", "presentation")}>
+            {!research.paper &&
+                <div className={getClassName(research, "default-research-tab", "paper")}>
                     <div className="content">
-                        Presentation
+                        Paper
                     </div>
                 </div>
             }
-            {research.presentation &&
-                <div className={getClassName(research, "research-tab", "presentation")}>
-                    <i className="fa fa-file-pdf-o"></i>
+            {research.paper &&
+                <div className={getClassName(research, "research-tab", "paper")}>
+                    <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/144.svg" alt="media" />
                     <div className="content">
-                        <a>Presentation</a>
-                    </div>
-                </div>
-            }
-
-
-            {!research.report &&
-                <div className={getClassName(research, "default-research-tab", "report")}>
-                    <div className="content">
-                        Report
-                    </div>
-                </div>
-            }
-            {research.report &&
-                <div className={getClassName(research, "research-tab", "report")}>
-                    <i className="fa fa-pencil-square-o"></i>
-                    <div className="content">
-                        <a href={research.report}>Report</a>
+                        <a href={research.paper}>Paper</a>
                     </div>
                 </div>
             }
@@ -97,23 +80,6 @@ const ResearchTab = (props) => {
             }
 
 
-            {!research.dataset &&
-                <div className={getClassName(research, "default-research-tab", "dataset")}>
-                    <div className="content">
-                        Dataset
-                    </div>
-                </div>
-            }
-            {research.dataset &&
-                <div className={getClassName(research, "research-tab", "dataset")}>
-                    <i className="fa fa-database"></i>
-                    <div className="content">
-                        <a href={research.dataset}>Dataset</a>
-                    </div>
-                </div>
-            }
-
-
             {!research.git &&
                 <div className={getClassName(research, "default-research-tab", "git")}>
                     <div className="content">
@@ -131,22 +97,21 @@ const ResearchTab = (props) => {
             }
 
 
-            {!research.paper &&
-                <div className={getClassName(research, "default-research-tab", "paper")}>
+            {!research.dataset &&
+                <div className={getClassName(research, "default-research-tab", "dataset")}>
                     <div className="content">
-                        Paper
+                        Dataset
                     </div>
                 </div>
             }
-            {research.paper &&
-                <div className={getClassName(research, "research-tab", "paper")}>
-                    <i className="fa fa-book"></i>
+            {research.dataset &&
+                <div className={getClassName(research, "research-tab", "dataset")}>
+                    <i className="fa fa-database"></i>
                     <div className="content">
-                        <a href={research.paper}>Paper</a>
+                        <a href={research.dataset}>Dataset</a>
                     </div>
                 </div>
             }
-
 
             {!research.video &&
                 <div className={getClassName(research, "default-research-tab", "video")}>
@@ -157,9 +122,26 @@ const ResearchTab = (props) => {
             }
             {research.video &&
                 <div className={getClassName(research, "research-tab", "video")}>
-                    <i className="fa fa-play-circle"></i>
+                    <i style={{ opacity: "95%" }} className="fa fa-play-circle"></i>
                     <div className="content">
                         <a href={research.video}>Video</a>
+                    </div>
+                </div>
+            }
+
+
+            {!research.presentation &&
+                <div className={getClassName(research, "default-research-tab", "presentation")}>
+                    <div className="content">
+                        Presentation
+                    </div>
+                </div>
+            }
+            {research.presentation &&
+                <div className={getClassName(research, "research-tab", "presentation")}>
+                    <img style={{ opacity: "85%", paddingRight: "5px", width: "30px" }} src="images/icon/209.svg" alt="media" />
+                    <div className="content">
+                        <a href={research.presentation}>Presentation</a>
                     </div>
                 </div>
             }
@@ -174,41 +156,59 @@ const ResearchTab = (props) => {
             }
             {research.demo &&
                 <div className={getClassName(research, "research-tab", "demo")}>
-                    <i className="fa fa-feed"></i>
+                    <i className="fa fa-tablet"></i>
                     <div className="content">
                         <a href={research.demo}>Demo</a>
                     </div>
                 </div>
             }
 
+
+            {!research.report &&
+                <div className={getClassName(research, "default-research-tab", "report")}>
+                    <div className="content">
+                        Report
+                    </div>
+                </div>
+            }
+            {research.report &&
+                <div className={getClassName(research, "research-tab", "report")}>
+                    <i className="fa fa-pencil-square-o"></i>
+                    <div className="content">
+                        <a href={research.report}>Report</a>
+                    </div>
+                </div>
+            }
+
+
             {/* etc */}
             {research.competition &&
                 <div className="research-tab">
-                    <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/13.svg" alt="media" />
+                    <img style={{ opacity: "50%", paddingRight: "5px", width: "30px" }} src="images/icon/211.svg" alt="media" />
                     <div className="content">
-                        <a>{research.competition}</a>
+                        <a>Event ({research.competition})</a>
                     </div>
                 </div>
             }
             {research.conference &&
                 <div className="research-tab">
-                    <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/15.svg" alt="media" />
+                    <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/210.svg" alt="media" />
                     <div className="content">
-                        <a>{research.conference}</a>
+                        <a>Conference ({research.conference})</a>
                     </div>
                 </div>
             }
             {research.journal &&
                 <div className="research-tab">
-                    <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/16.svg" alt="media" />
+                    <img style={{ opacity: "70%", paddingRight: "5px", width: "30px" }} src="images/icon/213.svg" alt="media" />
                     <div className="content">
-                        <a>{research.journal}</a>
+                        <a>Journal ({research.journal})</a>
                     </div>
                 </div>
             }
             {research.talk &&
                 <div className="research-tab">
-                    <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/60.svg" alt="media" />
+                    <img style={{ opacity: "60%", paddingRight: "5px", width: "30px" }} src="images/icon/212.svg" alt="media" />
                     <div className="content">
                         <a>{research.talk}</a>
                     </div>
