@@ -7,6 +7,7 @@ import HeaderLandingDocSignature from "../../../../components/header/landing/Hea
 import ExperimentLevel from "../../../../components/pricing/pricing-two/ExperimentLevel"
 import WandbIframe from "../../../WandbIframe";
 import DrawIframe from "../../../DrawIframe";
+import './Experiment.css'
 
 const Experiment = () => {
   const { experimentId } = useParams();
@@ -66,17 +67,21 @@ const Experiment = () => {
               <div className="all-faqs">
                 <div className="faqs-all-qus">
                   {experiment && experiment.children.map((e, i) => (
-                    <Link className="article-preview d-flex" key={i} >
+                    <a
+                      className={`article-preview d-flex ${e.status}`}
+                      key={i}
+                      href={e.link}
+                    >
                       <div>
                         <h3 className="font-rubik">Experiment {i + 1}: {e.title}</h3>
                         <div className="avatar-info">
-                          <span>Created date: {e.date} </span> <br></br>
-                          {e.assignee && <div> <span> Assigned to: {e.assignee} </span><br></br> </div>}
-                          {e.level && <div> <span> Level: {e.level} </span><br></br> </div>}
+                          <span>Created date: {e.date} </span> <br />
+                          {e.assignee && <div> <span> Assigned to: {e.assignee} </span><br /> </div>}
+                          {/* {e.level && <div> <span> Level: {e.level} </span><br /> </div>} */}
                           {e.description}
                         </div>
                       </div>
-                    </Link>
+                    </a>
                   ))}
                 </div>
               </div>
@@ -122,7 +127,7 @@ const Experiment = () => {
       {/* =============================================
             Experiment Levels
         ==============================================  */}
-      <div className="pricing-section-one">
+      {/* <div className="pricing-section-one">
         <div style={{ padding: "0px" }} className="fancy-hero-one">
           <div className="bubble-one"></div>
           <div className="bubble-two"></div>
@@ -131,7 +136,6 @@ const Experiment = () => {
           <div className="bubble-five"></div>
           <div className="bubble-six"></div>
         </div>
-        {/* /.fancy-hero-one */}
         <div className="pricing-table-area">
           <img
             src="images/shape/62.svg"
@@ -148,9 +152,8 @@ const Experiment = () => {
               <ExperimentLevel />
             </div>
           </div>
-          {/* End .container */}
         </div>
-      </div>
+      </div> */}
       {/* /.pricing-section-one */}
 
     </div>

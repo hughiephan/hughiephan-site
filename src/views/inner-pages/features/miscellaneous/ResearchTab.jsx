@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import './ResearchTab.css';
 
 function getClassName(research, className, properties) {
-
     if (research.done.includes(properties)) {
         className += " research-tab-done";
     } else if (research.todo.includes(properties)) {

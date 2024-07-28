@@ -1,0 +1,9 @@
+.done {
+    background: linear-gradient(to right, #c4f1c173 50%, #ffffff 50%) !important;
+    background-size: 200% 150% !important;
+}
+
+.in-progress {
+    background: linear-gradient(to right, #f5e4b25e 50%, #ffffff 50%) !important;
+    background-size: 200% 150% !important;
+}
