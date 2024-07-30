@@ -88,7 +88,7 @@ const StudentGuide = () => {
                       <p> If you wish to join an existing group, please first discuss with the corresponding author. If they agree, I would be happy to welcome you into my lab.</p>
                       <ul className="list-meta">
                         {allResearch && allResearch.filter(research => research.type === "on-going").map((research, i) => (
-                          research.author.split(',').map(author => author.trim()).length < 4 && research.email ? (
+                          research.author && research.author.split(',').map(author => author.trim()).length < 4 && research.email ? (
                             <li key={i}>
                               {research.email} ({research.title})
                             </li>
