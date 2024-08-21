@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { getExperiment } from '../../../FirebaseClient';
-import { Link } from "react-router-dom";
 import HeaderLandingDocSignature from "../../../../components/header/landing/HeaderLandingDocSignature";
-import ExperimentLevel from "../../../../components/pricing/pricing-two/ExperimentLevel"
 import WandbIframe from "../../../WandbIframe";
 import DrawIframe from "../../../DrawIframe";
 import './Experiment.css'
+import Reference from "../../features/miscellaneous/Reference"
+
 
 const Experiment = () => {
   const { experimentId } = useParams();
@@ -49,10 +49,25 @@ const Experiment = () => {
         ==============================================  */}
       {experiment.drawio ? <DrawIframe drawio={experiment.drawio}> </DrawIframe> : null}
 
+
+      {/* =============================================
+            Experiment Reference
+        ==============================================  */}
+      {experiment.reference !== null && experiment.reference !== undefined && (
+        <div style={{ paddingLeft: "20px", paddingRight: "20px" }}>
+          <h5 className="font-rubik mb-20">
+            <mark>Reference</mark>
+          </h5>
+          <Reference referenceId={experiment.reference}></Reference>
+        </div>
+      )}
+
+
       {/* =============================================
             Experiment Details
         ==============================================  */}
       <div style={{ background: "white", padding: "120px 0 0" }} className="faqs-inner-page">
+
         <img
           src="images/shape/66.svg"
           alt="shape"
@@ -66,7 +81,7 @@ const Experiment = () => {
             <div className="col-xl-11 m-auto">
               <div className="all-faqs">
                 <div className="faqs-all-qus">
-                  {experiment && experiment.children.map((e, i) => (
+                  {/* {experiment && experiment.children.map((e, i) => (
                     <a
                       className={`article-preview d-flex ${e.status}`}
                       key={i}
@@ -77,12 +92,11 @@ const Experiment = () => {
                         <div className="avatar-info">
                           <span>Created date: {e.date} </span> <br />
                           {e.assignee && <div> <span> Assigned to: {e.assignee} </span><br /> </div>}
-                          {/* {e.level && <div> <span> Level: {e.level} </span><br /> </div>} */}
                           {e.description}
                         </div>
                       </div>
                     </a>
-                  ))}
+                  ))} */}
                 </div>
               </div>
             </div>
@@ -104,7 +118,7 @@ const Experiment = () => {
                     {/* <!-- ****************************** Changelog MAIN BODY ********************************* --> */}
                     <main className="col-12 doc-main-body">
                       <h5 className="font-rubik mb-20">
-                        Changelog: <mark>{c.date}</mark>
+                        <mark>Changelog:</mark> {c.date}
                       </h5>
                       <div className="mark-blue">
                         <pre>

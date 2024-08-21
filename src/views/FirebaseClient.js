@@ -27,6 +27,7 @@ const topicRef = ref(database, 'topic');
 const domainRef = ref(database, 'domain');
 const experimentRef = ref(database, 'experiment');
 const mathRef = ref(database, 'math');
+const referenceRef = ref(database, 'reference');
 
 export async function getCourse(courseId) {
     return await get(courseRef).then(function (snapshot) {
@@ -272,5 +273,18 @@ export async function getAllMath() {
         }
     }).catch(function (error) {
         console.error("Error loading math data: ", error);
+    });
+};
+
+export async function getReference(referenceId) {
+    return await get(referenceRef).then(function (snapshot) {
+        if (snapshot.exists()) {
+            const data = snapshot.val();
+            return data[referenceId]
+        } else {
+            console.log("No reference data found");
+        }
+    }).catch(function (error) {
+        console.error("Error loading reference data: ", error);
     });
 };
