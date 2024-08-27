@@ -18,28 +18,28 @@ const Reference = (props) => {
             <Table>
                 <TableHead>
                     <TableRow>
+                        <TableCell>Type</TableCell>
                         <TableCell>Topic</TableCell>
-                        <TableCell>Paper</TableCell>
+                        <TableCell>Name</TableCell>
+                        <TableCell>Prototype</TableCell>
+                        <TableCell>Experiment</TableCell>
                         <TableCell>Description</TableCell>
-                        <TableCell>Notebook</TableCell>
+                        <TableCell>Result</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {reference && reference.children.map((reference) => (
                         <TableRow key={reference.topic}>
+                            <TableCell>{reference.type}</TableCell>
                             <TableCell>{reference.topic}</TableCell>
                             <TableCell>
-                                <a 
-                                    href={reference.url} 
-                                    style={{ color: reference.url ? '#0aa3f5' : 'black' }}
-                                >
+                                <a href={reference.url} style={{ color: reference.url ? '#0aa3f5' : 'black' }}>
                                     {reference.title}
                                 </a>
                             </TableCell>
-                            <TableCell>{reference.description}</TableCell>
                             <TableCell>
-                                {reference.notebook && (
-                                    <a href={reference.notebook}>
+                                {reference.kaggle && (
+                                    <a href={reference.kaggle}>
                                         <img 
                                             height="20" 
                                             src="https://www.kaggle.com/static/images/logos/kaggle-logo-transparent-300.png" 
@@ -49,6 +49,9 @@ const Reference = (props) => {
                                     </a>
                                 )}
                             </TableCell>
+                            <TableCell>{reference.experiment}</TableCell>
+                            <TableCell>{reference.description}</TableCell>
+                            <TableCell>{reference.result}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
