@@ -233,6 +233,11 @@ const HeaderLandingDocSignature = () => {
                             AI Component
                           </a>
                         </li>
+                        <li>
+                          <a href="https://rxstrategist.aicomponent.co" className="dropdown-item">
+                            RxStrategist
+                          </a>
+                        </li>
                       </ul>
                     </li>
 
@@ -371,6 +376,9 @@ const HeaderLandingDocSignature = () => {
           <li className="nav-item">
             <a href="https://aicomponent.co" className="nav-link" onClick={handleClick}>
               AI Component
+            </a>
+            <a href="https://rxstrategist.aicomponent.co" className="nav-link" onClick={handleClick}>
+              RxStrategist
             </a>
           </li>
         </Scrollspy>
