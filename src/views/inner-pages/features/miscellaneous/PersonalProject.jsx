@@ -20,7 +20,7 @@ const PersonalProject = () => {
     <div className="doc-container main-page-wrapper">
       <Helmet>
         <title>
-          Available Project
+          Personal Project
         </title>
       </Helmet>
       {/* End Page SEO Content */}
