@@ -205,8 +205,13 @@ const HeaderLandingDocSignature = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/project" className="dropdown-item">
+                          <Link to="/available-project" className="dropdown-item">
                             Available Projects
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/personal-project" className="dropdown-item">
+                            Personal Projects
                           </Link>
                         </li>
                         {/* {allExperiment && allExperiment.map((experiment, i) => (
@@ -354,8 +359,14 @@ const HeaderLandingDocSignature = () => {
           </li>
 
           <li className="nav-item">
-            <a href="/#/project" className="nav-link" onClick={handleClick}>
+            <a href="/#/available-project" className="nav-link" onClick={handleClick}>
               Available Projects
+            </a>
+          </li>
+
+          <li className="nav-item">
+            <a href="/#/personal-project" className="nav-link" onClick={handleClick}>
+              Personal Projects
             </a>
           </li>
 

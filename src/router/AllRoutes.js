@@ -94,7 +94,8 @@ import Lesson from "../views/inner-pages/pages/Lesson";
 import Tutorial from "../views/inner-pages/pages/Tutorial";
 import Assignment from "../views/inner-pages/pages/Assignment";
 import BookLesson from "../views/inner-pages/features/BookLesson";
-import Project from "../views/inner-pages/features/miscellaneous/Project";
+import AvailableProject from "../views/inner-pages/features/miscellaneous/AvailableProject";
+import PersonalProject from "../views/inner-pages/features/miscellaneous/PersonalProject";
 import Excerise from "../views/inner-pages/service/Exercise";
 import Student from "../views/inner-pages/portfolio/Student";
 import LessonDetails from "../views/inner-pages/blog-pages/LessonDetails";
@@ -203,7 +204,8 @@ const AllRoutes = () => {
         <Route path="/course/:courseId/:courseName" element={<Course />} />
         <Route path="/domain/:domainId/:domainName" element={<Domain />} />
         <Route path="/math" element={<Math />} />
-        <Route path="/project" element={<Project />} />
+        <Route path="/available-project" element={<AvailableProject />} />
+        <Route path="/personal-project" element={<PersonalProject />} />
         <Route path="/published" element={<Published />} />
         <Route path="/book" element={<BookLesson />}/>
         <Route path="/exercise" element={<Excerise />} />

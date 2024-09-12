@@ -74,6 +74,9 @@ const StudentGuide = () => {
                         <li>
                           Must attend an online meeting every two weeks to report your progress
                         </li>
+                        <li>
+                          Mandatory to participate in three university-required reviews.
+                        </li>
                       </ul>
                       <p>
                         <b>Optional: </b> Write a  <a style={{ color: '#1e90ff' }} href="https://www.overleaf.com/latex/templates/ieee-conference-template/grfzhhncsfqn"> 6-12 page research </a> and publish at a high-tier conference and journal
@@ -125,7 +128,10 @@ const StudentGuide = () => {
                       </p>
                       <ul className="list-meta">
                         <li>
-                          Access to 4 x A4000 (16GB) and 4 x GTX3090 (24GB). These GPU will be accessible once you've created a prototype demonstration and preliminary paper
+                          Stage 1: Access to 4 x A4000 (16GB) and 4 x GTX3090 (24GB). These GPU will be accessible once you've created a prototype demonstration and preliminary paper
+                        </li>
+                        <li>
+                          Stage 2: Access to 88 GPUs from the HPC System if your research is related to automated driving, along with an existing prototype demonstration and preliminary paper, is approved by QUT directors.
                         </li>
                         <li>
                           Gain the knowledge needed to conduct research and publish academic papers through hands-on research tasks and guidance from experts. I also try to promote communication among lab members so you can easily seek assistance or discuss your novel ideas with other peers

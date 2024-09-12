@@ -5,7 +5,7 @@ import ScrollspyNav from "react-scrollspy-nav";
 import { getAllResearch } from "../../../FirebaseClient"
 import ResearchTab from "./ResearchTab";
 
-const Project = () => {
+const PersonalProject = () => {
   const [allResearch, setAllResearch] = useState('');
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const Project = () => {
     <div className="doc-container main-page-wrapper">
       <Helmet>
         <title>
-          Research
+          Available Project
         </title>
       </Helmet>
       {/* End Page SEO Content */}
@@ -45,17 +45,7 @@ const Project = () => {
                 <ul className="nav nav-tabs">
                   <li className="nav-item">
                     <a className="nav-link active" href="#opt1">
-                      1. Research Proposals
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#opt2">
-                      2. Supervising Projects
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#opt3">
-                      3. Personal Research
+                      1. Personal Research
                     </a>
                   </li>
                 </ul>
@@ -69,34 +59,6 @@ const Project = () => {
                 {/* Tab panes */}
                 <div className="tab-content ">
                   <div id="opt1">
-                    <h2 className="font-gilroy-bold">Research Proposals <img src="images/shape/line-shape-13.svg" alt="shape" /></h2>
-                    {allResearch && allResearch.filter(research => research.type === "proposal").map((research, i) => (
-                      <div>
-                        <h3 style={{ display: "flex" }}>
-                          {research.title}
-                        </h3>
-                        <div className="update-date"> {research.author} </div>
-                        <p> {research.description} </p>
-                        <div>
-                          <ResearchTab research={research}></ResearchTab>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <div id="opt2">
-                    <h2 className="font-gilroy-bold">Supervising Projects <img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
-                    {allResearch && allResearch.filter(research => research.type === "on-going").map((research, i) => (
-                      <div>
-                        <h3> {research.title} </h3>
-                        <div className="update-date"> {research.author} </div>
-                        <p> {research.description} </p>
-                        <div>
-                          <ResearchTab research={research}></ResearchTab>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <div id="opt3">
                     <h2 className="font-gilroy-bold">Personal Research <img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
                     {allResearch && allResearch.filter(research => research.type === "personal").map((research, i) => (
                       <div>
@@ -120,4 +82,4 @@ const Project = () => {
   );
 };
 
-export default Project;
+export default PersonalProject;
