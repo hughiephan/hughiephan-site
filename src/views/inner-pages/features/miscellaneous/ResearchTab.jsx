@@ -136,11 +136,33 @@ const ResearchTab = (props) => {
                     </div>
                 </div>
             }
-            {research.presentation &&
+            {research.format != "presentationList" && research.presentation &&
                 <div className={getClassName(research, "research-tab", "presentation")}>
                     <img style={{ opacity: "85%", paddingRight: "5px", width: "30px" }} src="images/icon/209.svg" alt="media" />
                     <div className="content">
                         <a href={research.presentation}>Presentation</a>
+                    </div>
+                </div>
+            }
+
+            {research.format == "presentationList" && research.presentationList &&
+                <div className={getClassName(research, "research-tab", "presentation")}>
+                    <img style={{ opacity: "85%", paddingRight: "5px", width: "30px" }} src="images/icon/209.svg" alt="media" />
+                    <div className="content">
+                        <nav className="navbar">
+                            <li style={{ listStyleType: "none" }} className="dropdown">
+                                <a className="nav-link dropdown-toggle" data-toggle="dropdown">
+                                    Presentation
+                                </a>
+                                <ul className="dropdown-menu">
+                                    {research.presentationList.map((p, index) => (
+                                        <li key={index} style={{ listStyleType: "none" }}>
+                                            <a href={p.url}> {p.label}</a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </li>
+                        </nav>
                     </div>
                 </div>
             }
