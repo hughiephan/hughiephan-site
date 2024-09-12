@@ -225,7 +225,7 @@ const ResearchTab = (props) => {
                 <div className="research-tab">
                     <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/26.svg" alt="media" />
                     <div className="content">
-                        <Link to={`/experiment/${research.experiment.id}/${research.experiment.name}`}> Experiment </Link>
+                        <Link to={`/experiment/${research.experiment.id}/${research.title.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-').replace(/-+/g, '-')}`}> Experiment </Link>
                     </div>
                 </div>
             }
