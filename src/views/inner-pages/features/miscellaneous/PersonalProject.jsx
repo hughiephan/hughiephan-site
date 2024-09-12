@@ -64,7 +64,7 @@ const PersonalProject = () => {
                 {/* Tab panes */}
                 <div className="tab-content ">
                   <div id="opt1">
-                    <h2 className="font-gilroy-bold">Personal Research <img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
+                    <h2 className="font-gilroy-bold">Research Studies <img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
                     {allResearch && allResearch.filter(research => research.type === "personal").map((research, i) => (
                       <div>
                         <h3> {research.title} </h3>
