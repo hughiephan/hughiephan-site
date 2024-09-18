@@ -22,7 +22,6 @@ const Reference = (props) => {
                         <TableCell>Topic</TableCell>
                         <TableCell>Name</TableCell>
                         <TableCell>Prototype</TableCell>
-                        <TableCell>Experiment</TableCell>
                         <TableCell>Description</TableCell>
                         <TableCell>Result</TableCell>
                     </TableRow>
@@ -37,7 +36,7 @@ const Reference = (props) => {
                                     {reference.title}
                                 </a>
                             </TableCell>
-                            <TableCell>
+                            <TableCell style={{background: reference.todo && reference.todo.includes("kaggle") ? "#FFF3DE" : "inherit",}}>
                                 {reference.kaggle && (
                                     <a href={reference.kaggle}>
                                         <img 
@@ -49,7 +48,6 @@ const Reference = (props) => {
                                     </a>
                                 )}
                             </TableCell>
-                            <TableCell>{reference.experiment}</TableCell>
                             <TableCell>{reference.description}</TableCell>
                             <TableCell>{reference.result}</TableCell>
                         </TableRow>
