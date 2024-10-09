@@ -25,7 +25,13 @@ const ResearchTab = (props) => {
             done: ""
         };
     }
-
+    if (!research.format) {
+        research = {
+            ...research,
+            format: ""
+        };
+    }
+    
     return (
         <div className="research-tab-container">
             {!research.proposal &&
@@ -138,7 +144,7 @@ const ResearchTab = (props) => {
                     </div>
                 </div>
             }
-            {research.format && !research.format.includes("presentationList") && research.presentation &&
+            {!research.format.includes("presentationList") && research.presentation &&
                 <div className={getClassName(research, "research-tab", "presentation")}>
                     <img style={{ opacity: "85%", paddingRight: "5px", width: "30px" }} src="images/icon/209.svg" alt="media" />
                     <div className="content">
@@ -147,7 +153,7 @@ const ResearchTab = (props) => {
                 </div>
             }
 
-            {research.format && research.format.includes("presentationList") && research.presentationList &&
+            {research.format.includes("presentationList") && research.presentationList &&
                 <div className={getClassName(research, "research-tab", "presentation")}>
                     <img style={{ opacity: "85%", paddingRight: "5px", width: "30px" }} src="images/icon/209.svg" alt="media" />
                     <div className="content">
@@ -200,7 +206,7 @@ const ResearchTab = (props) => {
                     </div>
                 </div>
             }
-            {research.format && !research.format.includes("reportList") && research.report &&
+            {!research.format.includes("reportList") && research.report &&
                 <div className={getClassName(research, "research-tab", "report")}>
                     <i className="fa fa-pencil-square-o"></i>
                     <div className="content">
@@ -208,7 +214,7 @@ const ResearchTab = (props) => {
                     </div>
                 </div>
             }
-            {research.format && research.format.includes("reportList") && research.reportList &&
+            {research.format.includes("reportList") && research.reportList &&
                 <div className={getClassName(research, "research-tab", "report")}>
                     <i className="fa fa-pencil-square-o"></i>
                     <div className="content">
