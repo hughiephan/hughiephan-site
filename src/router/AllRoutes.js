@@ -108,7 +108,7 @@ import Published from "../views/inner-pages/features/miscellaneous/Published";
 import StudentGuide from "../views/inner-pages/pages/StudentGuide";
 import Experiment from "../views/inner-pages/pages/experiment/Experiment";
 import Math from "../views/inner-pages/features/Math";
-
+import ReadingList from "../views/inner-pages/pages/ReadingList";
 
 const AllRoutes = () => {
   return (
@@ -218,6 +218,7 @@ const AllRoutes = () => {
         <Route path="/assignment/:assignmentId/:assignmentName" element={<AssignmentDetails />} />
         <Route path="/fpt-undergrad" element={<StudentGuide />} />
         <Route path="/experiment/:experimentId/:experimentName" element={<Experiment />} />
+        <Route path="/reading" element={<ReadingList />} />
 
         {/* NotFound Route */}
         <Route path="/*" element={<NotFound />} />

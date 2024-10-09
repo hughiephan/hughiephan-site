@@ -129,6 +129,8 @@ const ResearchTab = (props) => {
             }
 
 
+
+
             {!research.presentation &&
                 <div className={getClassName(research, "default-research-tab", "presentation")}>
                     <div className="content">
@@ -136,7 +138,7 @@ const ResearchTab = (props) => {
                     </div>
                 </div>
             }
-            {research.format != "presentationList" && research.presentation &&
+            {research.format && !research.format.includes("presentationList") && research.presentation &&
                 <div className={getClassName(research, "research-tab", "presentation")}>
                     <img style={{ opacity: "85%", paddingRight: "5px", width: "30px" }} src="images/icon/209.svg" alt="media" />
                     <div className="content">
@@ -145,7 +147,7 @@ const ResearchTab = (props) => {
                 </div>
             }
 
-            {research.format == "presentationList" && research.presentationList &&
+            {research.format && research.format.includes("presentationList") && research.presentationList &&
                 <div className={getClassName(research, "research-tab", "presentation")}>
                     <img style={{ opacity: "85%", paddingRight: "5px", width: "30px" }} src="images/icon/209.svg" alt="media" />
                     <div className="content">
@@ -168,6 +170,7 @@ const ResearchTab = (props) => {
             }
 
 
+
             {!research.demo &&
                 <div className={getClassName(research, "default-research-tab", "demo")}>
                     <div className="content">
@@ -185,6 +188,11 @@ const ResearchTab = (props) => {
             }
 
 
+
+
+
+
+
             {!research.report &&
                 <div className={getClassName(research, "default-research-tab", "report")}>
                     <div className="content">
@@ -192,11 +200,32 @@ const ResearchTab = (props) => {
                     </div>
                 </div>
             }
-            {research.report &&
+            {research.format && !research.format.includes("reportList") && research.report &&
                 <div className={getClassName(research, "research-tab", "report")}>
                     <i className="fa fa-pencil-square-o"></i>
                     <div className="content">
                         <a href={research.report}>Report</a>
+                    </div>
+                </div>
+            }
+            {research.format && research.format.includes("reportList") && research.reportList &&
+                <div className={getClassName(research, "research-tab", "report")}>
+                    <i className="fa fa-pencil-square-o"></i>
+                    <div className="content">
+                        <nav className="navbar">
+                            <li style={{ listStyleType: "none" }} className="dropdown">
+                                <a className="nav-link dropdown-toggle" data-toggle="dropdown">
+                                    Report
+                                </a>
+                                <ul className="dropdown-menu">
+                                    {research.reportList.map((p, index) => (
+                                        <li key={index} style={{ listStyleType: "none" }}>
+                                            <a href={p.url}> {p.label}</a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </li>
+                        </nav>
                     </div>
                 </div>
             }

@@ -156,6 +156,11 @@ const HeaderLandingDocSignature = () => {
                           </Link>
                         </li>
                         <li>
+                          <Link to="/reading" className="dropdown-item">
+                            Reading
+                          </Link>
+                        </li>
+                        <li>
                           <Link to="/lesson" className="dropdown-item">
                             Lesson
                           </Link>
@@ -185,7 +190,7 @@ const HeaderLandingDocSignature = () => {
                             Book lesson
                           </Link>
                         </li>
-                        {allStudent && allStudent.map((student, i) => (
+                        {allStudent && allStudent.map((student, i) => !student.archive && (
                           <li key={i}>
                             <Link to={`/student/${i}/${student.name.toLowerCase().replace(/\s+/g, '-')}`} className="dropdown-item">
                               Student ({student.name})
@@ -315,6 +320,11 @@ const HeaderLandingDocSignature = () => {
             </a>
           </li>
           <li className="nav-item">
+            <a href="/#/reading" className="nav-link" onClick={handleClick}>
+              Reading
+            </a>
+          </li>
+          <li className="nav-item">
             <a href="/#/lesson" className="nav-link" onClick={handleClick}>
               Lesson
             </a>
@@ -344,13 +354,14 @@ const HeaderLandingDocSignature = () => {
               Book Lesson
             </a>
           </li>
-          {allStudent && allStudent.map((student, i) => (
-            <li key={i} className="nav-item">
-              <a href={`/#/student/${i}/${student.name.toLowerCase().replace(/\s+/g, '-')}`} className="nav-link" onClick={handleClick}>
-                Student ({student.name})
-              </a>
-            </li>
-          ))}
+          {allStudent && allStudent
+            .map((student, i) => !student.archive && (
+              <li key={i} className="nav-item">
+                <a href={`/#/student/${i}/${student.name.toLowerCase().replace(/\s+/g, '-')}`} className="nav-link" onClick={handleClick}>
+                  Student ({student.name})
+                </a>
+              </li>
+            ))}
 
           <li className="nav-item">
             <a href="/#/fpt-undergrad" className="nav-link" onClick={handleClick}>

@@ -5,41 +5,32 @@ import { Link } from "react-router-dom";
 const HeroBannerThree = () => {
   return (
     <div className="hero-banner-three">
-      <div className="container">
+      <div style={{height: "380px"}} className="container">
         <div className="row">
           <div className="col-xl-9 col-lg-11 col-md-8 m-auto">
-            <h1 className="font-rubik">Doc software you looking for.</h1>
+            <h1 style={{fontSize: "40px"}} className="font-rubik">Reading</h1>
           </div>
           {/* End .col */}
 
           <div className="col-xl-8 col-lg-9 m-auto">
-            <p className="sub-text font-rubik">
-              With deski Docs, you can write, edit, and collaborate wherever you
-              are with 7 day trial
+            <p style={{fontSize: "25px"}} className="sub-text font-rubik">
+              My collection of AI and math readings.
             </p>
           </div>
           {/* End .col */}
         </div>
         {/* End .row */}
 
-        <div className="search-filter-form">
+        {/* <div className="search-filter-form">
           <FormDoc />
-        </div>
+        </div> */}
         {/* End search-filter-from */}
 
-        <p className="sing-in-call">
-          Already using deski?{" "}
-          <Link to="/login" className="font-rubik">
-            Sign in.
-          </Link>
-          .
-        </p>
-
-        <img
+        {/* <img
           src="images/assets/ils_09.svg"
           alt="illustration"
           className="illustration"
-        />
+        /> */}
       </div>
       {/* /.container */}
 
