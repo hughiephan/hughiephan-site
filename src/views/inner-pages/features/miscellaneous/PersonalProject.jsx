@@ -58,6 +58,11 @@ const PersonalProject = () => {
                       3. PhD Thesis
                     </a>
                   </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#opt4">
+                      4. Archived Ideas
+                    </a>
+                  </li>
                 </ul>
                 <div className="nav-tabs" style={{ padding: '30px 30px', marginTop: '-50px' }}>
                   <span style={{ display: 'flex', alignItems: 'center' }}>
@@ -97,6 +102,19 @@ const PersonalProject = () => {
                   <div id="opt3">
                     <h2 className="font-gilroy-bold">PhD Thesis<img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
                     {allResearch && allResearch.filter(research => research.type === "thesis").map((research, i) => (
+                      <div>
+                        <h3> {research.title} </h3>
+                        <div className="update-date"> {research.author} </div>
+                        <p> {research.description} </p>
+                        <div>
+                          <ResearchTab research={research}></ResearchTab>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div id="opt4">
+                    <h2 className="font-gilroy-bold">Archived Ideas<img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
+                    {allResearch && allResearch.filter(research => research.type === "idea").map((research, i) => (
                       <div>
                         <h3> {research.title} </h3>
                         <div className="update-date"> {research.author} </div>
