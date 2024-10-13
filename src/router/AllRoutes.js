@@ -96,6 +96,7 @@ import Assignment from "../views/inner-pages/pages/Assignment";
 import BookLesson from "../views/inner-pages/features/BookLesson";
 import AvailableProject from "../views/inner-pages/features/miscellaneous/AvailableProject";
 import PersonalProject from "../views/inner-pages/features/miscellaneous/PersonalProject";
+import ArchivedProject from "../views/inner-pages/features/miscellaneous/ArchivedProject";
 import Excerise from "../views/inner-pages/service/Exercise";
 import Student from "../views/inner-pages/portfolio/Student";
 import LessonDetails from "../views/inner-pages/blog-pages/LessonDetails";
@@ -206,6 +207,7 @@ const AllRoutes = () => {
         <Route path="/math" element={<Math />} />
         <Route path="/available-project" element={<AvailableProject />} />
         <Route path="/personal-project" element={<PersonalProject />} />
+        <Route path="/archived-project" element={<ArchivedProject />} />
         <Route path="/published" element={<Published />} />
         <Route path="/book" element={<BookLesson />}/>
         <Route path="/exercise" element={<Excerise />} />
