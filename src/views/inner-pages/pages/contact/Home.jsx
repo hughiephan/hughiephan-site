@@ -38,7 +38,7 @@ const Home = () => {
                 {/* <h6>About me</h6> */}
                 <h2>Welcome to my website</h2>
                 <div className="sub-text mt-15">
-                  I'm Huy Phan, but you can call me Hughie. I'm an AI Lecturer at FPT University and my research is centered on creating next-generation AI models. On this website, you can discover the courses I'm currently teaching and my research as well. Feel free to contact me or just say hi!
+                  I'm Huy Phan, but you can call me Hughie. My research is centered on creating next-generation AI models. On this website, you can discover the courses I'm currently teaching and my research interests as well. Feel free to contact me or just say hi!
                 </div>
               </div>
             </div>
