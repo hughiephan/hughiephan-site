@@ -239,7 +239,7 @@ const ResearchTab = (props) => {
 
             {/* etc */}
             {research.competition &&
-                <div className="research-tab">
+                <div className={getClassName(research, "research-tab", "competition")}>
                     <img style={{ opacity: "50%", paddingRight: "5px", width: "30px" }} src="images/icon/211.svg" alt="media" />
                     <div className="content">
                         <a>Event ({research.competition})</a>
@@ -247,7 +247,7 @@ const ResearchTab = (props) => {
                 </div>
             }
             {research.conference &&
-                <div className="research-tab">
+                <div className={getClassName(research, "research-tab", "conference")}>
                     <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/210.svg" alt="media" />
                     <div className="content">
                         <a>Conference ({research.conference})</a>
@@ -255,7 +255,7 @@ const ResearchTab = (props) => {
                 </div>
             }
             {research.journal &&
-                <div className="research-tab">
+                <div className={getClassName(research, "research-tab", "journal")}>
                     <img style={{ opacity: "70%", paddingRight: "5px", width: "30px" }} src="images/icon/213.svg" alt="media" />
                     <div className="content">
                         <a>Journal ({research.journal})</a>
@@ -263,7 +263,7 @@ const ResearchTab = (props) => {
                 </div>
             }
             {research.talk &&
-                <div className="research-tab">
+                <div className={getClassName(research, "research-tab", "talk")}>
                     <img style={{ opacity: "60%", paddingRight: "5px", width: "30px" }} src="images/icon/212.svg" alt="media" />
                     <div className="content">
                         <a>{research.talk}</a>
@@ -271,7 +271,7 @@ const ResearchTab = (props) => {
                 </div>
             }
             {research.priority &&
-                <div className="research-tab">
+                <div className={getClassName(research, "research-tab", "priority")}>
                     <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/40.svg" alt="media" />
                     <div className="content">
                         <a>Recommend Joining</a>
@@ -279,7 +279,7 @@ const ResearchTab = (props) => {
                 </div>
             }
             {research.experiment &&
-                <div className="research-tab">
+                <div className={getClassName(research, "research-tab", "experiment")}>
                     <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/26.svg" alt="media" />
                     <div className="content">
                         <Link to={`/experiment/${research.experiment.id}/${research.title.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-').replace(/-+/g, '-')}`}> Experiment </Link>
