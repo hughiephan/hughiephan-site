@@ -175,30 +175,6 @@ const ResearchTab = (props) => {
                 </div>
             }
 
-
-
-            {!research.demo &&
-                <div className={getClassName(research, "default-research-tab", "demo")}>
-                    <div className="content">
-                        Demo
-                    </div>
-                </div>
-            }
-            {research.demo &&
-                <div className={getClassName(research, "research-tab", "demo")}>
-                    <i className="fa fa-tablet"></i>
-                    <div className="content">
-                        <a href={research.demo}>Demo</a>
-                    </div>
-                </div>
-            }
-
-
-
-
-
-
-
             {!research.report &&
                 <div className={getClassName(research, "default-research-tab", "report")}>
                     <div className="content">
@@ -235,7 +211,6 @@ const ResearchTab = (props) => {
                     </div>
                 </div>
             }
-
 
             {/* etc */}
             {research.competition &&
@@ -283,6 +258,47 @@ const ResearchTab = (props) => {
                     <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/26.svg" alt="media" />
                     <div className="content">
                         <Link to={`/experiment/${research.experiment.id}/${research.title.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-').replace(/-+/g, '-')}`}> Experiment </Link>
+                    </div>
+                </div>
+            }
+            {research.news &&
+                <div className={getClassName(research, "research-tab", "news")}>
+                    <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/108.svg" alt="media" />
+                    <div className="content">
+                        <a href={research.news}>News</a>
+                    </div>
+                </div>
+            }
+            {research.doi &&
+                <div className={getClassName(research, "research-tab", "doi")}>
+                    <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/67.svg" alt="media" />
+                    <div className="content">
+                        <a href={research.doi}>Doi</a>
+                    </div>
+                </div>
+            }
+
+
+            {!research.demo &&
+                <div className={getClassName(research, "default-research-tab", "demo")}>
+                    <div className="content">
+                        Demo
+                    </div>
+                </div>
+            }
+            {research.demo &&
+                <div className={getClassName(research, "research-tab", "demo")}>
+                    <img style={{ paddingBottom: "5px", paddingRight: "5px", width: "30px" }} src="images/icon/29.svg" alt="media" />
+                    <div className="content">
+                        <a href={research.demo}>Demo</a>
+                    </div>
+                </div>
+            }
+
+            {research.image &&
+                <div className={getClassName(research, "research-tab", "image")}>
+                    <div className="content">
+                        <img style={{ maxWidth: "550px" }} src={research.image} />
                     </div>
                 </div>
             }

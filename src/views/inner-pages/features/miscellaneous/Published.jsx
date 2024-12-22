@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import HeaderLandingDocSignature from "../../../../components/header/landing/HeaderLandingDocSignature";
 import ScrollspyNav from "react-scrollspy-nav";
 import { getAllResearch } from "../../../FirebaseClient"
+import ResearchTab from "./ResearchTab";
 
 const Published = () => {
   const [allResearch, setAllResearch] = useState('');
@@ -66,51 +67,7 @@ const Published = () => {
                         <div className="update-date"> {research.author} </div>
                         {research.from && <div style={{ marginTop: "-20px" }} className="update-date"> From: {research.from} </div>}
                         <p> {research.description} </p>
-
-                        {(research.proposal || research.paper || research.report || research.git) &&
-                          <div>
-                            Detail:
-                            <span> </span>
-
-                            {research.proposal &&
-                              <a href={research.proposal} target="_blank" rel="noreferrer">
-                                <i className="fa fa-file-text-o"> Proposal</i>
-                              </a>
-                            }
-                            <span> </span> <span> </span>
-
-                            {research.student &&
-                              <a href={research.student} target="_blank" rel="noreferrer">
-                                <i className="fa fa-file-o"> Student Proposal</i>
-                              </a>
-                            }
-                            <span> </span> <span> </span>
-
-                            {research.paper &&
-                              <a href={research.paper} target="_blank" rel="noreferrer">
-                                <i className="fa fa-book"> Paper</i>
-                              </a>
-                            }
-                            <span> </span> <span> </span>
-
-                            {research.report &&
-                              <a href={research.report} target="_blank" rel="noreferrer">
-                                <i className="fa fa-pencil-square-o"> Report</i>
-                              </a>
-                            }
-
-                            <span> </span> <span> </span>
-                            {research.git &&
-                              <a href={research.git} target="_blank" rel="noreferrer">
-                                <i className="fa fa-github"> Git</i>
-                              </a>
-                            }
-                          </div>
-                        }
-
-                        {research.link && research.link.map((link, i) => (
-                          <a href={link}> {link} </a>
-                        ))}
+                        <ResearchTab research={research}></ResearchTab>
                       </div>
                     ))}
                   </div> <br />
@@ -122,50 +79,7 @@ const Published = () => {
                         <div className="update-date"> {research.author} </div>
                         {research.from && <div style={{ marginTop: "-20px" }} className="update-date"> From: {research.from} </div>}
                         <p> {research.description} </p>
-
-                        {(research.proposal || research.paper || research.report || research.git) &&
-                          <div>
-                            Detail:
-                            {/* <span> </span>
-
-                            {research.proposal &&
-                              <a href={research.proposal} target="_blank" rel="noreferrer">
-                                <i className="fa fa-file-text-o"> Proposal</i>
-                              </a>
-                            }
-                            <span> </span> <span> </span>
-
-                            {research.student &&
-                              <a href={research.student} target="_blank" rel="noreferrer">
-                                <i className="fa fa-file-o"> Student Proposal</i>
-                              </a>
-                            }
-                            <span> </span> <span> </span>
-
-                            {research.paper &&
-                              <a href={research.paper} target="_blank" rel="noreferrer">
-                                <i className="fa fa-book"> Paper</i>
-                              </a>
-                            }
-                            <span> </span> <span> </span>
-
-                            {research.report &&
-                              <a href={research.report} target="_blank" rel="noreferrer">
-                                <i className="fa fa-pencil-square-o"> Report</i>
-                              </a>
-                            }
-                            <span> </span> <span> </span> */}
-                            {research.git &&
-                              <a href={research.git} target="_blank" rel="noreferrer">
-                                <i className="fa fa-github"> Git</i>
-                              </a>
-                            }
-                          </div>
-                        }
-
-                        {research.link && research.link.map((link, i) => (
-                          <a href={link}> {link} </a>
-                        ))}
+                        <ResearchTab research={research}></ResearchTab>
                       </div>
                     ))}
                   </div>
