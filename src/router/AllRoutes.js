@@ -110,6 +110,7 @@ import StudentGuide from "../views/inner-pages/pages/StudentGuide";
 import Experiment from "../views/inner-pages/pages/experiment/Experiment";
 import Math from "../views/inner-pages/features/Math";
 import ReadingList from "../views/inner-pages/pages/ReadingList";
+import Content from "../views/inner-pages/pages/Content";
 
 const AllRoutes = () => {
   return (
@@ -185,8 +186,8 @@ const AllRoutes = () => {
         <Route path="/changelog" element={<Changelog />} /> */}
 
         {/* inner Portfolio pages Dropdown   */}
-        {/* <Route path="/classic-style" element={<PortfolioV1 />} />
-        <Route path="/grid-two-col" element={<PortfolioV2 />} />
+        {/* <Route path="/classic-style" element={<PortfolioV1 />} /> */}
+        {/* <Route path="/grid-two-col" element={<PortfolioV2 />} />
         <Route path="/grid-three-col" element={<PortfolioV3 />} />
         <Route path="/gallery-slider" element={<PortfolioV4 />} />
         <Route path="/grid-single" element={<PortfolioV5 />} /> */}
@@ -221,6 +222,7 @@ const AllRoutes = () => {
         <Route path="/fpt-undergrad" element={<StudentGuide />} />
         <Route path="/experiment/:experimentId/:experimentName" element={<Experiment />} />
         <Route path="/reading" element={<ReadingList />} />
+        <Route path="/content" element={<Content />} />
 
         {/* NotFound Route */}
         <Route path="/*" element={<NotFound />} />
