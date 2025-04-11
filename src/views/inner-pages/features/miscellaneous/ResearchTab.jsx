@@ -253,14 +253,22 @@ const ResearchTab = (props) => {
                     </div>
                 </div>
             }
-            {research.experiment &&
+            {research.experimenturl &&
+                <div className={getClassName(research, "research-tab", "experiment")}>
+                    <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/26.svg" alt="media" />
+                    <div className="content">
+                        <a href={research.experimenturl}>Experiment</a>
+                    </div>
+                </div>
+            }
+            {/* {research.experiment &&
                 <div className={getClassName(research, "research-tab", "experiment")}>
                     <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/26.svg" alt="media" />
                     <div className="content">
                         <Link to={`/experiment/${research.experiment.id}/${research.title.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-').replace(/-+/g, '-')}`}> Experiment </Link>
                     </div>
                 </div>
-            }
+            } */}
             {research.news &&
                 <div className={getClassName(research, "research-tab", "news")}>
                     <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/108.svg" alt="media" />
