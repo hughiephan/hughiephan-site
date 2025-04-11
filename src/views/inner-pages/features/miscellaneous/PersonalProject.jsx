@@ -35,7 +35,7 @@ const PersonalProject = () => {
       <div className="terms_and_policy">
         <div className="container">
           <ScrollspyNav
-            scrollTargetIds={["opt1", "opt2", "opt3", "opt4"]}
+            scrollTargetIds={["opt1", "opt2"]}
             activeNavClass="active"
             offset={170}
             scrollDuration="300"
@@ -48,14 +48,14 @@ const PersonalProject = () => {
                       1. Research Studies
                     </a>
                   </li>
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <a className="nav-link" href="#opt2">
                       2. Research Goals
                     </a>
-                  </li>
+                  </li> */}
                   <li className="nav-item">
-                    <a className="nav-link" href="#opt3">
-                      3. PhD Thesis
+                    <a className="nav-link" href="#opt2">
+                      2. Thesis
                     </a>
                   </li>
                 </ul>
@@ -81,7 +81,7 @@ const PersonalProject = () => {
                       </div>
                     ))}
                   </div>
-                  <div id="opt2">
+                  {/* <div id="opt2">
                     <h2 className="font-gilroy-bold">Research Goals<img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
                     {allResearch && allResearch.filter(research => research.type === "goal").map((research, i) => (
                       <div>
@@ -93,9 +93,9 @@ const PersonalProject = () => {
                         </div>
                       </div>
                     ))}
-                  </div>
-                  <div id="opt3">
-                    <h2 className="font-gilroy-bold">PhD Thesis<img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
+                  </div> */}
+                  <div id="opt2">
+                    <h2 className="font-gilroy-bold">Thesis<img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
                     {allResearch && allResearch.filter(research => research.type === "thesis").map((research, i) => (
                       <div>
                         <h3> {research.title} </h3>
