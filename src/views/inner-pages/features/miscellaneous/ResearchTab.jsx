@@ -58,7 +58,7 @@ const ResearchTab = (props) => {
                     </div>
                 </div>
             }
-            {research.paper &&
+            {!research.format.includes("paperList") && research.paper &&
                 <div className={getClassName(research, "research-tab", "paper")}>
                     <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/144.svg" alt="media" />
                     <div className="content">
@@ -66,6 +66,28 @@ const ResearchTab = (props) => {
                     </div>
                 </div>
             }
+            {research.format.includes("paperList") && research.paperList &&
+                <div className={getClassName(research, "research-tab", "paper")}>
+                    <i className="fa fa-pencil-square-o"></i>
+                    <div className="content">
+                        <nav className="navbar">
+                            <li style={{ listStyleType: "none" }} className="dropdown">
+                                <a className="nav-link dropdown-toggle" data-toggle="dropdown">
+                                    Paper
+                                </a>
+                                <ul className="dropdown-menu">
+                                    {research.paperList.map((p, index) => (
+                                        <li key={index} style={{ listStyleType: "none" }}>
+                                            <a href={p.url}> {p.label}</a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </li>
+                        </nav>
+                    </div>
+                </div>
+            }
+
 
 
             {!research.notebook &&
