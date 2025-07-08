@@ -45,7 +45,13 @@ const PersonalProject = () => {
                 <ul className="nav nav-tabs">
                   <li className="nav-item">
                     <a className="nav-link active" href="#opt1">
-                      1. Research Studies
+                      1. Main pathway
+                    </a>
+                    <a className="nav-link" href="#opt2">
+                      2. Short-term pathway
+                    </a>
+                    <a className="nav-link" href="#opt3">
+                      3. Long-term pathway
                     </a>
                   </li>
                   {/* <li className="nav-item">
@@ -54,8 +60,8 @@ const PersonalProject = () => {
                     </a>
                   </li> */}
                   <li className="nav-item">
-                    <a className="nav-link" href="#opt2">
-                      2. Thesis
+                    <a className="nav-link" href="#opt4">
+                      4. Research thesis
                     </a>
                   </li>
                 </ul>
@@ -69,8 +75,8 @@ const PersonalProject = () => {
                 {/* Tab panes */}
                 <div className="tab-content ">
                   <div id="opt1">
-                    <h2 className="font-gilroy-bold">Research Studies <img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
-                    {allResearch && allResearch.filter(research => research.type === "study").map((research, i) => (
+                    <h2 className="font-gilroy-bold">Main pathway <img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
+                    {allResearch && allResearch.filter(research => research.type === "main").map((research, i) => (
                       <div>
                         <h3> {research.title} </h3>
                         <div className="update-date"> {research.author} </div>
@@ -81,9 +87,9 @@ const PersonalProject = () => {
                       </div>
                     ))}
                   </div>
-                  {/* <div id="opt2">
-                    <h2 className="font-gilroy-bold">Research Goals<img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
-                    {allResearch && allResearch.filter(research => research.type === "goal").map((research, i) => (
+                  <div id="opt2">
+                    <h2 className="font-gilroy-bold">Short-term pathway <img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
+                    {allResearch && allResearch.filter(research => research.type === "short").map((research, i) => (
                       <div>
                         <h3> {research.title} </h3>
                         <div className="update-date"> {research.author} </div>
@@ -93,9 +99,22 @@ const PersonalProject = () => {
                         </div>
                       </div>
                     ))}
-                  </div> */}
+                  </div>
                   <div id="opt2">
-                    <h2 className="font-gilroy-bold">Thesis<img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
+                    <h2 className="font-gilroy-bold">Long-term pathway<img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
+                    {allResearch && allResearch.filter(research => research.type === "long").map((research, i) => (
+                      <div>
+                        <h3> {research.title} </h3>
+                        <div className="update-date"> {research.author} </div>
+                        <p> {research.description} </p>
+                        <div>
+                          <ResearchTab research={research}></ResearchTab>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div id="opt4">
+                    <h2 className="font-gilroy-bold">Research thesis<img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
                     {allResearch && allResearch.filter(research => research.type === "thesis").map((research, i) => (
                       <div>
                         <h3> {research.title} </h3>

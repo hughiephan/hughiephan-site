@@ -107,18 +107,39 @@ const ResearchTab = (props) => {
             }
 
 
-            {!research.git &&
+            {!research.git && !research.format.includes("gitList") &&
                 <div className={getClassName(research, "default-research-tab", "git")}>
                     <div className="content">
                         Github
                     </div>
                 </div>
             }
-            {research.git &&
+            {!research.format.includes("gitList") && research.git &&
                 <div className={getClassName(research, "research-tab", "git")}>
                     <i className="fa fa-github"></i>
                     <div className="content">
                         <a href={research.git}>Github</a>
+                    </div>
+                </div>
+            }
+            {research.format.includes("gitList") && research.gitList &&
+                <div className={getClassName(research, "research-tab", "git")}>
+                    <i className="fa fa-github"></i>
+                    <div className="content">
+                        <nav className="navbar">
+                            <li style={{ listStyleType: "none" }} className="dropdown">
+                                <a className="nav-link dropdown-toggle" data-toggle="dropdown">
+                                    Github
+                                </a>
+                                <ul className="dropdown-menu">
+                                    {research.gitList.map((git, index) => (
+                                        <li key={index} style={{ listStyleType: "none" }}>
+                                            <a href={git.url}>{git.label}</a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </li>
+                        </nav>
                     </div>
                 </div>
             }
