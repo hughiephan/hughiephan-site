@@ -61,7 +61,7 @@ const PersonalProject = () => {
                   </li> */}
                   <li className="nav-item">
                     <a className="nav-link" href="#opt4">
-                      4. Thesis and submissions
+                      4. Thesis & submissions
                     </a>
                   </li>
                 </ul>
@@ -114,8 +114,11 @@ const PersonalProject = () => {
                     ))}
                   </div>
                   <div id="opt4">
-                    <h2 className="font-gilroy-bold">Thesis and submissions<img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
-                    {allResearch && allResearch.filter(research => research.type === "thesis" || research.type === "submission").map((research, i) => (
+                    <h2 className="font-gilroy-bold">Thesis & submissions<img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
+                    {allResearch && allResearch
+                      .filter(research => research.type === "thesis" || research.type === "submission")
+                      .sort((a, b) => (a.type === "thesis" && b.type !== "thesis" ? -1 : a.type !== "thesis" && b.type === "thesis" ? 1 : 0))
+                      .map((research, i) => (
                       <div>
                         <h3> {research.title} </h3>
                         <div className="update-date"> {research.author} </div>
