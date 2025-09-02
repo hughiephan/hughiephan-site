@@ -25,7 +25,7 @@ const ContactAddress = () => {
           </div>
           <div className="title">Location</div>
           <p style={{ fontSize: "25px" }} className="font-rubik">
-            Vietnam,  <br /> Ho Chi Minh city
+            Australia,  <br /> Brisbane city
           </p>
         </div>{" "}
         {/* /.address-info  */}
@@ -39,8 +39,8 @@ const ContactAddress = () => {
           </div>
           <div className="title">Contact</div>
           <p style={{ fontSize: "25px" }} className="font-rubik">
-            @Gmail <br />
-            phanthanhhuy1996
+            phanthanhhuy1996 <br />
+            @gmail.com 
           </p>
         </div>{" "}
         {/* /.address-info  */}
@@ -53,7 +53,7 @@ const ContactAddress = () => {
             <img src="images/icon/46.svg" alt="icon" />
           </div>
           <div className="title">Social Media</div>
-          <p style={{ fontSize: "25px" }} className="font-rubik">Find on</p>
+          {/* <p style={{ fontSize: "25px" }} className="font-rubik">Find on</p> */}
           <ul className="d-flex justify-content-center">
             <li>
               <a href="https://www.facebook.com/groups/hughiephan" target="_blank" rel="noreferrer">
@@ -66,11 +66,6 @@ const ContactAddress = () => {
               </a>
             </li>
             <li>
-              <a href="https://github.com/hughiephan" target="_blank" rel="noreferrer">
-                <i className="fa fa-github"></i>
-              </a>
-            </li>
-            <li>
               <a href="https://www.linkedin.com/in/hughie-phan" target="_blank" rel="noreferrer">
                 <i className="fa fa-linkedin"></i>
               </a>
@@ -78,6 +73,23 @@ const ContactAddress = () => {
             <li>
               <a href="https://medium.com/@hughiephan" target="_blank" rel="noreferrer">
                 <i className="fa fa-medium"></i>
+              </a>
+            </li>
+          </ul>
+          <ul className="d-flex justify-content-center">
+            <li>
+              <a href="https://github.com/hughiephan" target="_blank" rel="noreferrer">
+                <i className="fa fa-github"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://orcid.org/0009-0007-3982-5279" target="_blank" rel="noreferrer">
+                <img src="https://orcid.org/assets/vectors/orcid.logo.icon.svg" alt="ORCID" style={{ width: "22px", height: "27px", filter: "grayscale(100%)", transition: "filter 0.2s ease" }} onMouseEnter={(e) => (e.currentTarget.style.filter = "grayscale(0%)")} onMouseLeave={(e) => (e.currentTarget.style.filter = "grayscale(100%)")}></img>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.kaggle.com/hughiephan" target="_blank" rel="noreferrer">
+                <img src="https://www.kaggle.com/static/images/site-logo.svg" alt="Kaggle" style={{ marginTop: "-5px", width: "28px", height: "37px", filter: "grayscale(100%)", transition: "filter 0.2s ease" }} onMouseEnter={(e) => (e.currentTarget.style.filter = "grayscale(0%)")} onMouseLeave={(e) => (e.currentTarget.style.filter = "grayscale(100%)")}></img>
               </a>
             </li>
           </ul>
@@ -94,7 +106,7 @@ const ContactAddress = () => {
           </div>
           <div className="title">Academics</div>
           <div style={{ marginTop: "13px" }}>
-            <img style={{ width: "60px", display: "inline-block" }} src="https://github.com/hughiephan/hughiephan-site/assets/16631121/9e354abf-288c-4e1a-b95d-a4c92b010802"></img>
+            <img style={{ width: "60px", display: "inline-block" }} src="https://www.standyou.com/uploads/20230904165726_file_FP.jpeg"></img>
             <img style={{ width: "90px", display: "inline-block" }} src="https://www.reloadconsulting.com/wp-content/uploads/2014/11/Copy-of-DTESB-Logo-20.png"></img>
           </div>
         </div>{" "}

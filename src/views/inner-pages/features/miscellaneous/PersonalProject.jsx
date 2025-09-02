@@ -45,13 +45,13 @@ const PersonalProject = () => {
                 <ul className="nav nav-tabs">
                   <li className="nav-item">
                     <a className="nav-link active" href="#opt1">
-                      1. Main pathway
+                      1. Foundational
                     </a>
                     <a className="nav-link" href="#opt2">
-                      2. Short-term pathway
+                      2. Technical
                     </a>
                     <a className="nav-link" href="#opt3">
-                      3. Long-term pathway
+                      3. Applied
                     </a>
                   </li>
                   {/* <li className="nav-item">
@@ -61,7 +61,7 @@ const PersonalProject = () => {
                   </li> */}
                   <li className="nav-item">
                     <a className="nav-link" href="#opt4">
-                      4. Research thesis
+                      4. Thesis and submissions
                     </a>
                   </li>
                 </ul>
@@ -75,8 +75,8 @@ const PersonalProject = () => {
                 {/* Tab panes */}
                 <div className="tab-content ">
                   <div id="opt1">
-                    <h2 className="font-gilroy-bold">Main pathway <img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
-                    {allResearch && allResearch.filter(research => research.type === "main").map((research, i) => (
+                    <h2 className="font-gilroy-bold">Foundational <img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
+                    {allResearch && allResearch.filter(research => research.type === "foundational").map((research, i) => (
                       <div>
                         <h3> {research.title} </h3>
                         <div className="update-date"> {research.author} </div>
@@ -88,8 +88,8 @@ const PersonalProject = () => {
                     ))}
                   </div>
                   <div id="opt2">
-                    <h2 className="font-gilroy-bold">Short-term pathway <img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
-                    {allResearch && allResearch.filter(research => research.type === "short").map((research, i) => (
+                    <h2 className="font-gilroy-bold">Technical <img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
+                    {allResearch && allResearch.filter(research => research.type === "technical").map((research, i) => (
                       <div>
                         <h3> {research.title} </h3>
                         <div className="update-date"> {research.author} </div>
@@ -101,8 +101,8 @@ const PersonalProject = () => {
                     ))}
                   </div>
                   <div id="opt2">
-                    <h2 className="font-gilroy-bold">Long-term pathway<img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
-                    {allResearch && allResearch.filter(research => research.type === "long").map((research, i) => (
+                    <h2 className="font-gilroy-bold">Applied<img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
+                    {allResearch && allResearch.filter(research => research.type === "applied").map((research, i) => (
                       <div>
                         <h3> {research.title} </h3>
                         <div className="update-date"> {research.author} </div>
@@ -114,8 +114,8 @@ const PersonalProject = () => {
                     ))}
                   </div>
                   <div id="opt4">
-                    <h2 className="font-gilroy-bold">Research thesis<img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
-                    {allResearch && allResearch.filter(research => research.type === "thesis").map((research, i) => (
+                    <h2 className="font-gilroy-bold">Thesis and submissions<img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
+                    {allResearch && allResearch.filter(research => research.type === "thesis" || research.type === "submission").map((research, i) => (
                       <div>
                         <h3> {research.title} </h3>
                         <div className="update-date"> {research.author} </div>
