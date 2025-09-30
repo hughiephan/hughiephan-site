@@ -12,6 +12,7 @@ function getClassName(research, className, properties) {
 }
 
 const ResearchTab = (props) => {
+    const [showImage, setShowImage] = React.useState(false);
     let { research } = props;
     if (!research.todo) {
         research = {
@@ -380,6 +381,20 @@ const ResearchTab = (props) => {
                     <div className="content">
                         <img style={{ maxWidth: "550px" }} src={research.image} />
                     </div>
+                </div>
+            }
+
+            {research.imageButton &&
+                <div className={getClassName(research, "research-tab", "image")}>
+                    <div onClick={() => setShowImage(prev => !prev)} style={{ cursor: 'pointer', display: 'inline-flex', alignItems: 'center' }}>
+                        <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/116.svg" alt="media" />
+                        <span>Image</span>
+                    </div>
+                    {showImage && (
+                        <div className="content">
+                            <img style={{ maxWidth: "550px" }} src={research.imageButton} />
+                        </div>
+                    )}
                 </div>
             }
         </div>

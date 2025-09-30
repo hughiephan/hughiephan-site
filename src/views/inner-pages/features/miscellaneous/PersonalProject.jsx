@@ -61,7 +61,12 @@ const PersonalProject = () => {
                   </li> */}
                   <li className="nav-item">
                     <a className="nav-link" href="#opt4">
-                      4. Thesis & submissions
+                      4. Thesis
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#opt5">
+                      5. Submission
                     </a>
                   </li>
                 </ul>
@@ -100,7 +105,7 @@ const PersonalProject = () => {
                       </div>
                     ))}
                   </div>
-                  <div id="opt2">
+                  <div id="opt3">
                     <h2 className="font-gilroy-bold">Applied<img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
                     {allResearch && allResearch.filter(research => research.type === "applied").map((research, i) => (
                       <div>
@@ -114,11 +119,21 @@ const PersonalProject = () => {
                     ))}
                   </div>
                   <div id="opt4">
-                    <h2 className="font-gilroy-bold">Thesis & submissions<img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
-                    {allResearch && allResearch
-                      .filter(research => research.type === "thesis" || research.type === "submission")
-                      .sort((a, b) => (a.type === "thesis" && b.type !== "thesis" ? -1 : a.type !== "thesis" && b.type === "thesis" ? 1 : 0))
-                      .map((research, i) => (
+                    <h2 className="font-gilroy-bold">Thesis<img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
+                    {allResearch && allResearch.filter(research => research.type === "thesis").map((research, i) => (
+                      <div>
+                        <h3> {research.title} </h3>
+                        <div className="update-date"> {research.author} </div>
+                        <p> {research.description} </p>
+                        <div>
+                          <ResearchTab research={research}></ResearchTab>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div id="opt5">
+                    <h2 className="font-gilroy-bold">Submission<img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
+                    {allResearch && allResearch.filter(research => research.type === "submission").map((research, i) => (
                       <div>
                         <h3> {research.title} </h3>
                         <div className="update-date"> {research.author} </div>
