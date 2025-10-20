@@ -36,9 +36,11 @@ const Home = () => {
             <div className="row">
               <div className="col-xl-9 col-lg-11 col-md-10 m-auto">
                 {/* <h6>About me</h6> */}
-                <h2>Hi!</h2>
+                <h2>Hi there!</h2>
                 <div className="sub-text mt-15">
-                I'm Huy, but you can call me Hughie. My research is centered on developing interdisciplinary projects that connect three key areas: smart transportation and automated vehicles, psychology and medical sciences, and foundational AI. By bridging these fields, my work aims to uncover deeper insights into human-AI interaction, cognitive behavior, and intelligent system design. On this website, you can find information about the courses I’m teaching and my research interests. Feel free to contact me or just say hi!
+                  <span> You can call me Hughie since it’s easier to pronounce and sounds a bit like my real name. My research focuses on interdisciplinary projects that combine mobility studies, psychology, and foundational AI.</span> 
+                  <br />
+                  <span> Feel free to reach out or just say hello! </span>
                 </div>
               </div>
             </div>
