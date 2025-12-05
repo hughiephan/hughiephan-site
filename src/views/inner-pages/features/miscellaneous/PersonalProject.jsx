@@ -45,16 +45,10 @@ const PersonalProject = () => {
                 <ul className="nav nav-tabs">
                   <li className="nav-item">
                     <a className="nav-link active" href="#opt1">
-                      1. Hazard perception
+                      1. Journal
                     </a>
                     <a className="nav-link" href="#opt2">
-                      2. Visual attention
-                    </a>
-                    <a className="nav-link" href="#opt3">
-                      3. Context
-                    </a>
-                    <a className="nav-link" href="#opt4">
-                      4. Gaze
+                      2. Conference
                     </a>
                   </li>
                   {/* <li className="nav-item">
@@ -63,15 +57,16 @@ const PersonalProject = () => {
                     </a>
                   </li> */}
                   <li className="nav-item">
-                    <a className="nav-link" href="#opt5">
-                      5. Thesis
+                    <a className="nav-link" href="#opt3">
+                      3. Submission
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#opt6">
-                      6. Submission
+                    <a className="nav-link" href="#opt4">
+                      4. Thesis
                     </a>
                   </li>
+
                 </ul>
                 <div className="nav-tabs" style={{ padding: '30px 30px', marginTop: '-50px' }}>
                   <span style={{ display: 'flex', alignItems: 'center' }}>
@@ -83,8 +78,8 @@ const PersonalProject = () => {
                 {/* Tab panes */}
                 <div className="tab-content ">
                   <div id="opt1">
-                    <h2 className="font-gilroy-bold">Hazard perception <img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
-                    {allResearch && allResearch.filter(research => research.type === "hazard").map((research, i) => (
+                    <h2 className="font-gilroy-bold">Journal <img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
+                    {allResearch && allResearch.filter(research => research.type === "journal").map((research, i) => (
                       <div>
                         <h3> {research.title} </h3>
                         <div className="update-date"> {research.author} </div>
@@ -96,8 +91,8 @@ const PersonalProject = () => {
                     ))}
                   </div>
                   <div id="opt2">
-                    <h2 className="font-gilroy-bold">Visual attention <img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
-                    {allResearch && allResearch.filter(research => research.type === "attention").map((research, i) => (
+                    <h2 className="font-gilroy-bold">Conference <img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
+                    {allResearch && allResearch.filter(research => research.type === "conference").map((research, i) => (
                       <div>
                         <h3> {research.title} </h3>
                         <div className="update-date"> {research.author} </div>
@@ -108,7 +103,7 @@ const PersonalProject = () => {
                       </div>
                     ))}
                   </div>
-                  <div id="opt3">
+                  {/* <div id="opt3">
                     <h2 className="font-gilroy-bold">Context<img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
                     {allResearch && allResearch.filter(research => research.type === "context").map((research, i) => (
                       <div>
@@ -133,10 +128,10 @@ const PersonalProject = () => {
                         </div>
                       </div>
                     ))}
-                  </div>
-                  <div id="opt5">
-                    <h2 className="font-gilroy-bold">Thesis<img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
-                    {allResearch && allResearch.filter(research => research.type === "thesis").map((research, i) => (
+                  </div> */}
+                  <div id="opt3">
+                    <h2 className="font-gilroy-bold">Submission<img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
+                    {allResearch && allResearch.filter(research => research.type === "submission").map((research, i) => (
                       <div>
                         <h3> {research.title} </h3>
                         <div className="update-date"> {research.author} </div>
@@ -147,9 +142,9 @@ const PersonalProject = () => {
                       </div>
                     ))}
                   </div>
-                  <div id="opt6">
-                    <h2 className="font-gilroy-bold">Submission<img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
-                    {allResearch && allResearch.filter(research => research.type === "submission").map((research, i) => (
+                  <div id="opt4">
+                    <h2 className="font-gilroy-bold">Thesis<img src="images/shape/line-shape-13.svg" alt="shape" /> </h2>
+                    {allResearch && allResearch.filter(research => research.type === "thesis").map((research, i) => (
                       <div>
                         <h3> {research.title} </h3>
                         <div className="update-date"> {research.author} </div>
