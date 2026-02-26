@@ -298,22 +298,22 @@ const ResearchTab = (props) => {
                 </div>
             }
             
-            {!research.format.includes("experimentUrlList") && research.experimenturl &&
+            {/* {!research.format.includes("experimentUrlList") && research.experimenturl &&
                 <div className={getClassName(research, "research-tab", "experiment")}>
                     <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/26.svg" alt="media" />
                     <div className="content">
                         <a href={research.experimenturl}>Experiment</a>
                     </div>
                 </div>
-            }
-            {!research.experimenturl && !research.format.includes("experimentUrlList") &&
+            } */}
+            {/* {!research.experimenturl && !research.format.includes("experimentUrlList") &&
                 <div className={getClassName(research, "default-research-tab", "experiment")}>
                     <div className="content">
                         Experiment
                     </div>
                 </div>
-            }
-            {research.format.includes("experimentUrlList") && research.experimentUrlList &&
+            } */}
+            {/* {research.format.includes("experimentUrlList") && research.experimentUrlList &&
                 <div className={getClassName(research, "research-tab", "experiment")}>
                     <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/26.svg" alt="media" />
                     <div className="content">
@@ -333,7 +333,7 @@ const ResearchTab = (props) => {
                         </nav>
                     </div>
                 </div>
-            }
+            } */}
             {/* {research.experiment &&
                 <div className={getClassName(research, "research-tab", "experiment")}>
                     <img style={{ paddingRight: "5px", width: "30px" }} src="images/icon/26.svg" alt="media" />
