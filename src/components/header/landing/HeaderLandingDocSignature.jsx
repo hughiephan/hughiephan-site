@@ -130,7 +130,7 @@ const HeaderLandingDocSignature = () => {
                       </ul>
                     </li> */}
 
-                    <li className="nav-item dropdown">
+                    {/* <li className="nav-item dropdown">
                       <a className="nav-link dropdown-toggle" data-toggle="dropdown">
                         Domain
                       </a>
@@ -143,7 +143,7 @@ const HeaderLandingDocSignature = () => {
                           </li>
                         ))}
                       </ul>
-                    </li>
+                    </li> */}
 
                     <li className="nav-item dropdown">
                       <a className="nav-link dropdown-toggle" data-toggle="dropdown">
@@ -185,18 +185,18 @@ const HeaderLandingDocSignature = () => {
                             Game
                           </a>
                         </li>
-                        <li>
+                        {/* <li>
                           <Link to="/book" className="dropdown-item">
                             Book lesson
                           </Link>
-                        </li>
-                        {allStudent && allStudent.map((student, i) => !student.archive && (
+                        </li> */}
+                        {/* {allStudent && allStudent.map((student, i) => !student.archive && (
                           <li key={i}>
                             <Link to={`/student/${i}/${student.name.toLowerCase().replace(/\s+/g, '-')}`} className="dropdown-item">
                               Student ({student.name})
                             </Link>
                           </li>
-                        ))}
+                        ))} */}
                       </ul>
                     </li>
                     <li className="nav-item dropdown">
@@ -295,13 +295,13 @@ const HeaderLandingDocSignature = () => {
             </li>
           ))} */}
 
-          {allDomain && allDomain.map((domain, i) => (
+          {/* {allDomain && allDomain.map((domain, i) => (
             <li key={i} className="nav-item">
               <a href={`/#/domain/${i}/${domain.title.toLowerCase().replace(/\s+/g, '-')}`} className="nav-link" onClick={handleClick}>
                 {domain.title}
               </a>
             </li>
-          ))}
+          ))} */}
           <li className="nav-item">
             <a href="/#/math" className="nav-link" onClick={handleClick}>
               Math
@@ -337,19 +337,19 @@ const HeaderLandingDocSignature = () => {
               Game
             </a>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <a href="/#/book" className="nav-link" onClick={handleClick}>
               Book Lesson
             </a>
-          </li>
-          {allStudent && allStudent
+          </li> */}
+          {/* {allStudent && allStudent
             .map((student, i) => !student.archive && (
               <li key={i} className="nav-item">
                 <a href={`/#/student/${i}/${student.name.toLowerCase().replace(/\s+/g, '-')}`} className="nav-link" onClick={handleClick}>
                   Student ({student.name})
                 </a>
               </li>
-            ))}
+            ))} */}
 
           <li className="nav-item">
             <a href="/#/fpt-undergrad" className="nav-link" onClick={handleClick}>
