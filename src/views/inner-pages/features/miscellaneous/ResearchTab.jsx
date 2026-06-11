@@ -180,6 +180,36 @@ const ResearchTab = (props) => {
 
 
 
+            {!research.literature &&
+                <div className={getClassName(research, "default-research-tab", "literature")}>
+                    <div className="content">
+                        Literature
+                    </div>
+                </div>
+            }
+            {research.literature &&
+                <div className={getClassName(research, "research-tab", "literature")}>
+                    <img style={{ opacity: "85%", paddingRight: "5px", width: "30px" }} src="images/icon/84.svg" alt="media" />
+                    <div className="content">
+                        <nav className="navbar">
+                            <li style={{ listStyleType: "none" }} className="dropdown">
+                                <a className="nav-link dropdown-toggle" data-toggle="dropdown">
+                                    Literature
+                                </a>
+                                <ul className="dropdown-menu">
+                                    {research.literature.map((p, index) => (
+                                        <li key={index} style={{ listStyleType: "none" }}>
+                                            <a href={p.url}> {p.label}</a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </li>
+                        </nav>
+                    </div>
+                </div>
+            }
+
+
 
             {!research.presentation &&
                 <div className={getClassName(research, "default-research-tab", "presentation")}>
